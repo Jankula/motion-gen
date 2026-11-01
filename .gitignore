@@ -1,0 +1,7 @@
+# SMPL-X is licence-restricted: never commit the model files or the download
+models_smplx_v1_1/
+models_smplx_v1_1.zip
+
+# Python virtual environments, at any depth
+.venv/
+__pycache__/

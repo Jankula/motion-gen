@@ -1,0 +1,12 @@
+__pycache__/
+
+# SMPL-X is licence-restricted: never commit the model or data derived from it
+models/*
+!models/README.md
+agent_kit/body_info.json
+runs/**/body_info.json
+
+# rendered output (agent code, motion.npz and notes in runs/ are kept)
+runs/**/videos/
+runs/**/preview/
+runs/_smoke/

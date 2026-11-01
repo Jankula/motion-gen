@@ -1,0 +1,36 @@
+"""Render motion.npz from the four cameras into preview/contact_sheet.png.
+
+    python preview.py                          # 1.2 s window starting at 2.0 s
+    python preview.py --start 0.5 --duration 2
+
+Allowed at most $max_previews times in total.
+"""
+import argparse
+import subprocess
+import sys
+from pathlib import Path
+
+PYTHON = r"$python"
+WALKING_ROOT = r"$walking_root"
+MAX_PREVIEWS = $max_previews
+HERE = Path(__file__).resolve().parent
+COUNTER = HERE / ".preview_count"
+
+ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+ap.add_argument("--start", type=float, default=2.0, help="window start, seconds")
+ap.add_argument("--duration", type=float, default=1.2, help="window length, seconds")
+ap.add_argument("--cols", type=int, default=8, help="frames in the window")
+args = ap.parse_args()
+
+used = int(COUNTER.read_text()) if COUNTER.exists() else 0
+if used >= MAX_PREVIEWS:
+    sys.exit(f"No previews left (used {used} of {MAX_PREVIEWS}).")
+
+cmd = [
+    PYTHON, "-m", "walkenv.render", str(HERE / "motion.npz"), "--out", str(HERE / "preview"), "--no-video",
+    "--sheet-start", str(args.start), "--sheet-duration", str(args.duration), "--sheet-cols", str(args.cols),
+]
+if subprocess.run(cmd, cwd=WALKING_ROOT).returncode != 0:
+    sys.exit("Preview failed (this run was not counted).")
+COUNTER.write_text(str(used + 1))
+print(f"Wrote preview/contact_sheet.png. Previews left: {MAX_PREVIEWS - used - 1}")

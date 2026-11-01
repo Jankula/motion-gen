@@ -1,0 +1,7 @@
+{
+  "agent": "claude",
+  "mode": "blind",
+  "max_previews": 5,
+  "created": "20261101-192803",
+  "kickoff": "Read TASK.md and SMPLX_INTERFACE.md, then complete the task. Work autonomously until every deliverable in TASK.md is done."
+}
