@@ -1,0 +1,16 @@
+{
+  "experiment": "E03-turns",
+  "task": "turns",
+  "started_from": "E02-curved-path",
+  "feedback": "visual",
+  "max_previews": 8,
+  "created": "2026-11-02 00:11",
+  "kickoff": "Read TASK.md and SMPLX_INTERFACE.md, then complete the task. Work autonomously until every deliverable in TASK.md is done.",
+  "resumed": [
+    {
+      "at": "2026-11-02 13:05",
+      "session_id": "f3849163-5d02-464b-8fc4-53807bd6563b",
+      "reason": "the account's 5-hour usage limit was reached at 00:41; resumed after the limit reset"
+    }
+  ]
+}

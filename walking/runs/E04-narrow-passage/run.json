@@ -1,0 +1,21 @@
+{
+  "experiment": "E04-narrow-passage",
+  "task": "narrow-passage",
+  "started_from": "E03-turns",
+  "feedback": "visual",
+  "max_previews": 8,
+  "created": "2026-11-02 13:47",
+  "kickoff": "Read TASK.md and SMPLX_INTERFACE.md, then complete the task. Work autonomously until every deliverable in TASK.md is done.",
+  "resumed": [
+    {
+      "at": "2026-11-02 18:02",
+      "session_id": "08ed13f0-1a13-4e23-b62f-cab089372936",
+      "reason": "the account's 5-hour usage limit was reached after 7 min of work (13:54); resumed after the limit reset at 18:00"
+    },
+    {
+      "at": "2026-11-03 13:03",
+      "session_id": "08ed13f0-1a13-4e23-b62f-cab089372936",
+      "reason": "the account's 5-hour usage limit was reached a second time (18:49), shortly after the motion was written; resumed the next day"
+    }
+  ]
+}

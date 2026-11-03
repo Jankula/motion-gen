@@ -1,0 +1,21 @@
+"""Measure a motion on the real body mesh and print a table of results with targets.
+
+    python evaluate.py                       # motion.npz with task.json
+    python evaluate.py motion_E01.npz tasks/straight-walk.json
+
+Also writes <motion name>.metrics.json with every number and a plain-language meaning.
+"""
+import os
+import subprocess
+import sys
+from pathlib import Path
+
+PYTHON = r"$python"
+WALKING_ROOT = r"$walking_root"
+HERE = Path(__file__).resolve().parent
+
+motion = (HERE / (sys.argv[1] if len(sys.argv) > 1 else "motion.npz")).resolve()
+task = (HERE / (sys.argv[2] if len(sys.argv) > 2 else "task.json")).resolve()
+cmd = [PYTHON, "-m", "walkenv.evaluate", str(motion), "--task", str(task),
+       "--out", str(motion.with_name(f"{motion.stem}.metrics.json"))]
+sys.exit(subprocess.run(cmd, cwd=WALKING_ROOT, env={**os.environ, "PYTHONIOENCODING": "utf-8"}).returncode)

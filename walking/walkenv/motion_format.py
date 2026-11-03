@@ -2,8 +2,9 @@
 
 numpy only: this file is copied into every agent workspace as check_format.py.
 
-Usage: python check_format.py motion.npz
+Usage: python check_format.py motion.npz [task.json]
 """
+import json
 import sys
 
 import numpy as np
@@ -116,11 +117,16 @@ def _read(data, key, errors):
 
 
 def main(argv):
-    if len(argv) != 2:
+    if len(argv) not in (2, 3):
         print(__doc__.strip().splitlines()[-1])
         return 2
+    fps, frames = TASK_FPS, TASK_FRAMES
+    if len(argv) == 3:  # the task file says how long the clip must be
+        with open(argv[2], encoding="utf-8") as f:
+            task = json.load(f)
+        fps, frames = task["fps"], task["frames"]
     try:
-        m = load_motion(argv[1], expect_fps=TASK_FPS, expect_frames=TASK_FRAMES)
+        m = load_motion(argv[1], expect_fps=fps, expect_frames=frames)
     except MotionFormatError as e:
         print(f"INVALID {e}")
         return 1

@@ -1,12 +1,13 @@
-__pycache__/
-
 # SMPL-X is licence-restricted: never commit the model or data derived from it
 models/*
 !models/README.md
 agent_kit/body_info.json
 runs/**/body_info.json
 
-# rendered output (agent code, motion.npz and notes in runs/ are kept)
-runs/**/videos/
+# Rendered output. Each experiment keeps grid.mp4 (all camera views in one video) and the contact
+# sheets, because the reports link to them; the separate per-view videos stay local (they are large
+# and can be re-rendered with `python -m walkenv.render runs/<ID>`).
+runs/**/videos/*.mp4
+!runs/**/videos/grid.mp4
 runs/**/preview/
 runs/_smoke/

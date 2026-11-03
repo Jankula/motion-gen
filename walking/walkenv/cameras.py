@@ -1,7 +1,10 @@
-"""Camera placement for the four fixed viewpoints.
+"""Camera placement.
 
-Views are defined relative to the direction the body faces (not the direction it moves), so
-"front" always shows the face even if a motion drifts sideways or walks backwards.
+Two kinds of views:
+  - follow views (front, back, left, right) move with the walker and are defined relative to the
+    direction the body faces, smoothed over about a second: "front" always shows the face, also
+    while the person turns. left/right are the subject's own left/right side.
+  - scene views (top, overview) are fixed and show the whole scene: path, obstacles and the walker.
 """
 from dataclasses import dataclass
 
@@ -9,48 +12,49 @@ import numpy as np
 from scipy.spatial.transform import Rotation
 
 UP = np.array([0.0, 1.0, 0.0])
-VIEWS = ("front", "back", "left", "right")  # left/right = the subject's own left/right side
+FOLLOW_VIEWS = ("front", "back", "left", "right")
+SCENE_VIEWS = ("top", "overview")
+VIEWS = FOLLOW_VIEWS + SCENE_VIEWS
 
 
 @dataclass
 class CameraConfig:
-    mode: str = "track"  # "track": follow the walker; "fixed": static camera that sees the whole path
+    mode: str = "track"  # follow views: "track" follows the walker; "fixed" is static and sees the whole path
     distance: float = 4.5  # m, camera to subject (track mode, and minimum for fixed mode)
     height: float = 1.1  # m above the floor
     look_height: float = 0.9  # m above the floor, the point the camera aims at
-    fov: float = 30.0  # vertical field of view, degrees
+    fov: float = 30.0  # vertical field of view of the follow views, degrees
+    scene_fov: float = 40.0  # vertical field of view of the scene views, degrees
     smooth_seconds: float = 1.0  # track mode: window that removes step-to-step sway from the camera path
 
 
-def facing_direction(global_orient):
-    """Average horizontal facing direction (unit vector in XZ) over the clip."""
+def heading_angles(global_orient):
+    """Per-frame horizontal facing angle in radians (0 = +Z, pi/2 = +X), unwrapped so turns are continuous."""
     forward = Rotation.from_rotvec(global_orient).apply([0.0, 0.0, 1.0])  # rest pose faces +Z
-    forward[:, 1] = 0.0
-    mean = forward.mean(axis=0)
-    norm = np.linalg.norm(mean)
-    return mean / norm if norm > 1e-6 else np.array([0.0, 0.0, 1.0])
+    return np.unwrap(np.arctan2(forward[:, 0], forward[:, 2]))
 
 
-def view_direction(view, facing):
-    """Unit vector from the subject towards the camera."""
-    left = np.cross(UP, facing)  # rest pose: facing +Z, left is +X
-    return {"front": facing, "back": -facing, "left": left, "right": -left}[view]
-
-
-def camera_path(view, pelvis, facing, floor_y, fps, cfg, aspect):
-    """Per-frame camera positions and focal points, each (T, 3)."""
+def camera_path(view, pelvis, global_orient, floor_y, fps, cfg, aspect, bounds):
+    """Per-frame camera positions and focal points, each (T, 3), and the camera's up vector."""
+    if view in SCENE_VIEWS:
+        return _scene_camera(view, global_orient, floor_y, cfg, aspect, bounds, len(pelvis))
     ground = pelvis.copy()
     ground[:, 1] = 0.0
-    offset = view_direction(view, facing)
+    angles = heading_angles(global_orient)
 
     if cfg.mode == "track":
-        targets = _moving_average(ground, max(1, round(cfg.smooth_seconds * fps)))
+        window = max(1, round(cfg.smooth_seconds * fps))
+        targets = moving_average(ground, window)
+        angles = moving_average(angles[:, None], window)[:, 0]
+        offset = _view_direction(view, angles)
         distance = cfg.distance
     elif cfg.mode == "fixed":
+        mean = np.arctan2(np.sin(angles).mean(), np.cos(angles).mean())
+        offset = _view_direction(view, np.full(len(ground), mean))
         center = 0.5 * (ground.min(axis=0) + ground.max(axis=0))
         rel = ground - center
-        depth = np.abs(rel @ offset).max()  # extent towards/away from the camera
-        lateral = np.abs(rel @ np.cross(UP, offset)).max()  # extent across the image
+        depth = np.abs(rel @ offset[0]).max()  # extent towards/away from the camera
+        lateral = np.abs(rel @ np.cross(UP, offset[0])).max()  # extent across the image
         half_hfov = np.arctan(np.tan(np.radians(cfg.fov) / 2) * aspect)
         distance = max(depth + cfg.distance, (lateral + 1.0) / np.tan(half_hfov))
         targets = np.repeat(center[None], len(ground), axis=0)
@@ -59,10 +63,60 @@ def camera_path(view, pelvis, facing, floor_y, fps, cfg, aspect):
 
     focal = targets + UP * (floor_y + cfg.look_height)
     position = targets + offset * distance + UP * (floor_y + cfg.height)
-    return position, focal
+    return position, focal, UP
 
 
-def _moving_average(x, window):
+def _view_direction(view, angles):
+    """Unit vectors (T, 3) from the subject towards the camera."""
+    facing = np.stack([np.sin(angles), np.zeros_like(angles), np.cos(angles)], axis=1)
+    left = np.stack([facing[:, 2], np.zeros_like(angles), -facing[:, 0]], axis=1)  # cross(UP, facing)
+    return {"front": facing, "back": -facing, "left": left, "right": -left}[view]
+
+
+def _scene_camera(view, global_orient, floor_y, cfg, aspect, bounds, num_frames):
+    """Fixed camera seeing the whole scene, with the scene's long axis across the image width.
+
+    top: straight down; the walker's starting direction points to the image right (or up, for scenes
+    that are wider than long). overview: from the side and slightly behind the start, 35 degrees down.
+    """
+    lo, hi = (np.asarray(b, float) for b in bounds)
+    center = (lo + hi) / 2
+    start = heading_angles(global_orient[:1])[0]
+    fwd = np.array([np.sin(start), np.cos(start)])  # [x, z]
+    walker_right = np.array([-fwd[1], fwd[0]])
+    long_axis = np.array([1.0, 0.0]) if hi[0] - lo[0] >= hi[1] - lo[1] else np.array([0.0, 1.0])
+    if long_axis @ fwd < 0:
+        long_axis = -long_axis
+    corners = np.array([[lo[0], lo[1]], [lo[0], hi[1]], [hi[0], lo[1]], [hi[0], hi[1]]]) - center
+    tan_v = np.tan(np.radians(cfg.scene_fov) / 2)
+    tan_h = tan_v * aspect
+
+    if view == "top":
+        right = long_axis  # image right
+        up2 = np.array([right[1], -right[0]])  # image up when looking straight down
+        h = max((np.abs(corners @ right).max() + 1.5) / tan_h, (np.abs(corners @ up2).max() + 1.5) / tan_v)
+        focal = np.array([center[0], floor_y, center[1]])
+        position = focal + UP * h
+        up = np.array([up2[0], 0.0, up2[1]])
+    else:
+        side = np.array([long_axis[1], -long_axis[0]])
+        if side @ walker_right < 0:
+            side = -side
+        horizontal = side - 0.5 * fwd
+        horizontal /= np.linalg.norm(horizontal)
+        across = np.array([horizontal[1], -horizontal[0]])  # image right, roughly
+        elevation = np.radians(35)
+        depth = np.abs(corners @ horizontal).max()
+        d = max((np.abs(corners @ across).max() + 1.0) / tan_h, (depth * np.sin(elevation) + 1.2) / tan_v)
+        d += 0.5 * depth * np.cos(elevation)  # the near edge of the scene is closer than the centre
+        focal = np.array([center[0], floor_y + 0.5, center[1]])
+        position = focal + d * (np.cos(elevation) * np.array([horizontal[0], 0.0, horizontal[1]]) + np.sin(elevation) * UP)
+        up = UP
+    return np.repeat(position[None], num_frames, axis=0), np.repeat(focal[None], num_frames, axis=0), up
+
+
+def moving_average(x, window):
+    """Centered moving average along axis 0, with edge padding. x: (T, D)."""
     pad = window // 2
     padded = np.pad(x, ((pad, window - 1 - pad), (0, 0)), mode="edge")
     kernel = np.ones(window) / window

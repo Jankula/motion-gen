@@ -1,0 +1,10 @@
+{
+  "name": "turns",
+  "title": "Start, turn a corner, stop, and turn around on the spot",
+  "instruction": "One adult stands still at the start for a moment, then starts walking forward. After 3 m they turn 90 degrees to the right at the corner of the marked path and walk 2.5 m to the end of the path, where they come to a stop. Then they turn around on the spot (180 degrees) so that they face back the way they came, and stand still until the clip ends. Starting, turning and stopping should look like a real person doing it, including the steps it takes.",
+  "fps": 30,
+  "frames": 360,
+  "start": {"state": "standing", "position": [0, 0], "heading_deg": 0},
+  "end": {"state": "standing", "position": [-2.5, 3.0], "heading_deg": 90},
+  "path": {"points": [[0, 0], [0, 3.0], [-2.5, 3.0]], "tolerance_m": 0.3}
+}

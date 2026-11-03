@@ -1,0 +1,9 @@
+{
+  "experiment": "E02-curved-path",
+  "task": "curved-path",
+  "started_from": "E01-straight-walk",
+  "feedback": "visual",
+  "max_previews": 8,
+  "created": "2026-11-01 23:23",
+  "kickoff": "Read TASK.md and SMPLX_INTERFACE.md, then complete the task. Work autonomously until every deliverable in TASK.md is done."
+}

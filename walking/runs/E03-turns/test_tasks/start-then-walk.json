@@ -1,0 +1,34 @@
+{
+ "name": "start-then-walk",
+ "fps": 30,
+ "frames": 240,
+ "start": {
+  "state": "standing",
+  "position": [
+   0,
+   0
+  ],
+  "heading_deg": -90
+ },
+ "end": {
+  "state": "walking"
+ },
+ "path": {
+  "segments": [
+   {
+    "type": "straight",
+    "length": 2.0
+   },
+   {
+    "type": "arc",
+    "radius": 2.5,
+    "turn_deg": 60
+   },
+   {
+    "type": "straight",
+    "length": 10.0
+   }
+  ],
+  "tolerance_m": 0.15
+ }
+}

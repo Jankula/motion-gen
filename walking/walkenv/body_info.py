@@ -10,7 +10,7 @@ import re
 
 import numpy as np
 
-from .body import BODY_JOINT_NAMES, Body
+from .body import BODY_JOINT_NAMES, Body, _zero_motion
 from .paths import BODY_INFO
 
 
@@ -36,7 +36,31 @@ def body_info(body):
         info["landmarks"][f"{side}_toe_tip"] = _r(foot[foot[:, 2].argmax()])
         info["landmarks"][f"{side}_sole_outer_edge"] = _r(sole[(sole[:, 0] * sign).argmax()])
         info["landmarks"][f"{side}_sole_inner_edge"] = _r(sole[(sole[:, 0] * sign).argmin()])
+    info["dimensions_arms_down"] = _dimensions(body)
     return info
+
+
+def _dimensions(body):
+    """Torso width and depth with the arms lowered to the sides (arm vertices excluded)."""
+    m = _zero_motion(1)
+    m["body_pose"][0, BODY_JOINT_NAMES.index("left_shoulder") - 1, 2] = -np.radians(70)
+    m["body_pose"][0, BODY_JOINT_NAMES.index("right_shoulder") - 1, 2] = np.radians(70)
+    v, j = (a[0] for a in body.forward(m))
+    arm_joints = [BODY_JOINT_NAMES.index(f"{s}_{p}") for s in ("left", "right") for p in ("shoulder", "elbow", "wrist")]
+    arm_joints += list(range(25, 55))  # fingers
+    torso = v[~np.isin(body.model.lbs_weights.numpy().argmax(axis=1), arm_joints)]
+    shoulder_y, pelvis_y, neck_y = j[16, 1], j[0, 1], j[12, 1]
+
+    def extent(lo, hi, axis):
+        p = torso[(torso[:, 1] > lo) & (torso[:, 1] < hi)]
+        return round(float(p[:, axis].max() - p[:, axis].min()), 3)
+
+    return {
+        "note": "Measured on the skin with the arms hanging at the sides; the arms themselves are excluded.",
+        "torso_width_at_shoulders": extent(shoulder_y - 0.12, shoulder_y + 0.05, 0),
+        "hip_width": extent(pelvis_y - 0.15, pelvis_y + 0.05, 0),
+        "max_torso_depth_front_to_back": extent(pelvis_y - 0.2, neck_y, 2),
+    }
 
 
 def _r(p):

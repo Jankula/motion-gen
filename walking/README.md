@@ -1,6 +1,8 @@
-# Walking: can an agent make a human walk?
+# Walking: can an AI agent animate a human body without motion data?
 
-An agent (Claude Code, Codex, ...) gets the SMPL-X body model's parameter interface and is asked to produce a realistic walk using only its own knowledge: no motion-capture data, no motion datasets, no pretrained motion models. It writes a script that outputs per-frame SMPL-X parameters. This folder renders the result as video from four cameras (front, back, left, right).
+An agent (Claude Code) gets a task in words, the SMPL-X body model's parameter interface and the body's measurements. It writes a program that produces per-frame SMPL-X parameters, using only its own knowledge: no motion capture, no motion datasets, no pretrained motion models. This folder sets up each experiment, runs the agent, renders the result from six cameras and measures it.
+
+**The results are documented in [report/](report/README.md). Start there.**
 
 ## Setup (once)
 
@@ -18,45 +20,33 @@ python -m walkenv.body_info     # writes agent_kit/body_info.json (the body's me
 python -m walkenv.smoke_test    # renders runs/_smoke/; check it matches the list in walkenv/smoke_test.py
 ```
 
-## One attempt
+## One experiment
+
+Every experiment has an ID like `E02-curved-path`, used for its folder `runs/E02-curved-path/` and its report `report/experiments/E02-curved-path.md`.
 
 ```powershell
-python -m walkenv.new_run --agent claude --mode blind
+python -m walkenv.new_run E02-curved-path --task curved-path --from E01-straight-walk   # create the workspace
+python -m walkenv.launch E02-curved-path      # run Claude Code headless in it (about an hour); logs transcript.jsonl
+python -m walkenv.render runs/E02-curved-path     # videos + contact sheets into runs/E02-curved-path/videos/
+python -m walkenv.evaluate runs/E02-curved-path   # measurements into runs/E02-curved-path/motion.metrics.json
+python -m walkenv.summary runs/E02-curved-path    # duration, turns, cost, tool use into run_summary.json
 ```
 
-This creates `runs/<timestamp>_claude_blind/` and prints the commands to launch Claude Code or Codex inside it, interactively or headless. When the agent finishes:
+If a session stops early because the account's usage limit was reached, continue the same session once the limit has reset: `python -m walkenv.launch <ID> --resume --reason "usage limit"`.
 
-```powershell
-python -m walkenv.render runs/<timestamp>_claude_blind
-```
-
-The output in `runs/<run>/videos/` is `front.mp4`, `back.mp4`, `left.mp4`, `right.mp4`, `grid.mp4` (all four views at once) and `contact_sheet.png` (frames across about one stride, one row per view). Useful flags: `--camera fixed` for static cameras that see the whole path instead of following the walker, `--no-shadows`, `--size 1920x1080`.
-
-## Modes
-
-- **blind**: the agent never sees a render. This measures prior knowledge plus reasoning: the agent can still check its motion numerically, for example by writing its own forward kinematics.
-- **visual**: the agent also gets `preview.py`, which renders a contact sheet it can look at, limited to `--max-previews` uses. This measures whether it can improve from visual feedback.
-
-## What the agent sees
-
-The workspace contains only what is copied from [agent_kit/](agent_kit/):
-
-| file | content |
-|---|---|
-| `TASK.md` | the task, the deliverables, how the result is judged, the rules |
-| `CLAUDE.md`, `AGENTS.md` | the rules again, auto-loaded by Claude Code and Codex respectively |
-| `SMPLX_INTERFACE.md` | coordinate frame, rotation convention, forward kinematics, joint table, file format |
-| `body_info.json` | rest-pose joint positions, floor height, foot and head landmarks |
-| `check_format.py` | validates `motion.npz` (a copy of `walkenv/motion_format.py`) |
-| `preview.py` | visual mode only |
-
-The prompt states *what* is judged (foot sliding, ground contact, interpenetration, robotic motion, coordination, speed vs. leg motion, symmetry) and gives no gait knowledge: no joint-angle curves, cadence or step length. Isolation is by instruction only: the agent is told not to read outside its workspace, but nothing enforces it.
+Options of `new_run`: `--task` (a name in [tasks/](tasks/) or a path), `--from` (an earlier experiment whose code the agent starts from), `--feedback blind|visual` (whether the agent gets `evaluate.py` and `preview.py`), `--max-previews`. Options of `render`: `--camera fixed`, `--no-video` (contact sheets only), `--views`, `--size`, `--no-shadows`.
 
 ## Layout
 
 ```
-agent_kit/     prompt templates and docs copied into each workspace
-models/        SMPL-X model files (git-ignored)
-runs/          one folder per attempt; videos/ and preview/ are git-ignored
-walkenv/       body model wrapper, cameras, renderer, run creation
+agent_kit/     prompt templates and docs that new_run copies into each workspace
+tasks/         task files: instruction, path, obstacles, start and end poses
+models/        SMPL-X model files (git-ignored), or use the unzipped download at the repository root
+runs/          one folder per experiment: everything the agent saw and produced, the session log, videos
+report/        the documentation: setup, measurements, glossary, one page per experiment
+walkenv/       body model, cameras, renderer, evaluator, experiment creation and launch
 ```
+
+## What is kept in git
+
+Agent code, notes, motions, measurements, session logs, `grid.mp4` and the contact sheets of every experiment. The single-view videos are kept locally only, because they are large; re-create them with `python -m walkenv.render runs/<ID>`. The SMPL-X model, and files derived from it, are never committed.

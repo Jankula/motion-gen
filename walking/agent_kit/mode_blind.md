@@ -1,1 +1,0 @@
-- You will not see the rendered result, and no renderer is available to you. You may check your motion numerically with your own code, for example using the forward kinematics in `SMPLX_INTERFACE.md`.

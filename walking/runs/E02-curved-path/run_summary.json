@@ -1,0 +1,21 @@
+{
+  "model": "claude-opus-5-5",
+  "finished": true,
+  "parts": 1,
+  "usage_limit_interruptions": 0,
+  "duration_min": 37.6,
+  "turns": 79,
+  "cost_usd": 6.52,
+  "output_tokens": 141765,
+  "thinking_tokens": 86715,
+  "tool_calls": {
+    "Read": 18,
+    "Glob": 1,
+    "Bash": 33,
+    "PowerShell": 3,
+    "Write": 12,
+    "Edit": 9
+  },
+  "evaluate_runs": 4,
+  "previews_used": 4
+}
