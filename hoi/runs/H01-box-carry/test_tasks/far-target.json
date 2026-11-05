@@ -1,0 +1,41 @@
+{
+  "name": "far-target",
+  "title": "Pick up a box, carry it and put it down",
+  "instruction": "",
+  "fps": 30,
+  "frames": 600,
+  "start": {
+    "state": "standing",
+    "position": [
+      0,
+      0
+    ],
+    "heading_deg": 0
+  },
+  "end": {
+    "state": "standing"
+  },
+  "object": {
+    "label": "box",
+    "size": [
+      0.45,
+      0.3,
+      0.35
+    ],
+    "mass_kg": 12,
+    "start": {
+      "center": [
+        0,
+        3.5
+      ],
+      "yaw_deg": 0
+    }
+  },
+  "target": {
+    "center": [
+      5.0,
+      6.0
+    ],
+    "yaw_deg": 180
+  }
+}

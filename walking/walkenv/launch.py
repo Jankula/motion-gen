@@ -30,8 +30,8 @@ RESUME_MESSAGE = (
 )
 
 
-def launch(exp_id, model=None, resume=False, reason=None):
-    run = RUNS_DIR / exp_id
+def launch(exp_id, model=None, resume=False, reason=None, runs_dir=RUNS_DIR):
+    run = runs_dir / exp_id
     meta_path = run / "run.json"
     meta = json.loads(meta_path.read_text(encoding="utf-8"))
     claude = shutil.which("claude")
@@ -58,6 +58,7 @@ def launch(exp_id, model=None, resume=False, reason=None):
     if model:
         cmd += ["--model", model]
     env = {k: v for k, v in os.environ.items() if not k.startswith("CLAUDE")}
+    env["CLAUDE_CODE_DISABLE_AUTO_MEMORY"] = "1"  # the agent must not see notes kept about this project
     mode = "a" if resume else "w"
     with open(run / "transcript.jsonl", mode, encoding="utf-8") as out, open(run / "stderr.txt", mode, encoding="utf-8") as err:
         code = subprocess.run(cmd, cwd=run, env=env, stdout=out, stderr=err).returncode

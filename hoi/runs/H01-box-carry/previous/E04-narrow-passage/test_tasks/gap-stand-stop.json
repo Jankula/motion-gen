@@ -1,0 +1,62 @@
+{
+ "name": "gap-stand-stop",
+ "fps": 30,
+ "frames": 420,
+ "start": {
+  "state": "standing",
+  "position": [
+   0,
+   0
+  ],
+  "heading_deg": 0
+ },
+ "end": {
+  "state": "standing",
+  "position": [
+   0,
+   6.0
+  ],
+  "heading_deg": 0
+ },
+ "path": {
+  "points": [
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    6.0
+   ]
+  ],
+  "tolerance_m": 0.15
+ },
+ "obstacles": [
+  {
+   "label": "left",
+   "center": [
+    0.7,
+    3.0
+   ],
+   "size": [
+    1.0,
+    2.0,
+    0.6
+   ],
+   "yaw_deg": 0.0
+  },
+  {
+   "label": "right",
+   "center": [
+    -0.7,
+    3.0
+   ],
+   "size": [
+    1.0,
+    2.0,
+    0.6
+   ],
+   "yaw_deg": 0.0
+  }
+ ]
+}

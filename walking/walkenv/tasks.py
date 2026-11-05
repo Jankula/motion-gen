@@ -6,6 +6,8 @@ A task is a JSON file in tasks/. Conventions (the same ones the agent is told):
   - "path" is either {"segments": [...]} (straight pieces and arcs, starting from the start pose) or
     {"points": [[x, z], ...]} (a polyline with corners)
   - obstacles are upright boxes standing on the floor
+  - tasks with an object (see the hoi folder) also have "object" (what is moved and where it starts)
+    and "target" (where it has to end up); both give a "center" [x, z] and a "yaw_deg"
 """
 import json
 from pathlib import Path
@@ -72,6 +74,9 @@ def scene_bounds(task, extra_points=None):
         pts.append(np.asarray(task["end"]["position"], float)[None])
     for ob in task.get("obstacles", []):
         pts.append(box_corners_xz(ob))
+    if "object" in task:
+        pts.append(box_corners_xz({**task["object"]["start"], "size": task["object"]["size"]}))
+        pts.append(box_corners_xz({**task["target"], "size": task["object"]["size"]}))
     if extra_points is not None:
         pts.append(np.asarray(extra_points)[:, :2])
     pts = np.concatenate(pts)

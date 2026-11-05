@@ -32,7 +32,7 @@ KICKOFF = (
 HARNESS_FILES = {
     "TASK.md", "CLAUDE.md", "AGENTS.md", "SMPLX_INTERFACE.md", "body_info.json", "check_format.py", "preview.py",
     "evaluate.py", "run.json", "run_summary.json", "transcript.jsonl", "stderr.txt", "task.json", "tasks",
-    "previous", "videos", "preview", "__pycache__", ".preview_count",
+    "previous", "videos", "preview", "__pycache__", ".preview_count", "unseen",
 }
 
 
@@ -101,7 +101,7 @@ def create_run(exp_id, task_ref, source=None, feedback="visual", max_previews=8)
 def _copy_agent_files(src, dst):
     dst.mkdir(parents=True)
     for item in src.iterdir():
-        if item.name in HARNESS_FILES or item.suffix == ".npz" or item.name.endswith(".metrics.json"):
+        if item.name in HARNESS_FILES or item.suffix == ".npz" or item.name.endswith((".metrics.json", ".timeline.csv", ".throws.csv")):
             continue
         if item.is_dir():
             shutil.copytree(item, dst / item.name, ignore=shutil.ignore_patterns("__pycache__", "*.npz"))

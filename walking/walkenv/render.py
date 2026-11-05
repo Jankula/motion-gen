@@ -5,12 +5,14 @@
     python -m walkenv.render runs/E02-curved-path --no-video   # only the two contact sheets (fast)
 
 Views (see cameras.py): front, back, left, right follow the walker; top and overview show the whole
-scene. The scene shows the marked path (teal line), start and end markers (grey and teal rings),
-obstacles (translucent blue boxes, so they never hide the body) and the pelvis trail so far (orange).
+scene; for a task with an object, hands_left and hands_right are close-ups of the hands. The scene shows the marked path (teal line), start and end markers (grey and teal rings),
+obstacles (translucent blue boxes, so they never hide the body), the pelvis trail so far (orange), and
+for a task with an object the object itself (solid, cardboard coloured) and its target (teal outline), and
+for a task with balls the balls (solid, one colour each, so that they can be followed).
 
 Outputs:
   <view>.mp4            one video per view
-  grid.mp4              all views in one video (3x2 grid)
+  grid.mp4              all views in one video (3x2 grid, or 4x2 with the hand views)
   contact_sheet.png     follow views, frames across a short window (about one stride by default)
   overview_sheet.png    scene views, frames across the whole clip
 """
@@ -21,9 +23,10 @@ import imageio.v2 as imageio
 import numpy as np
 import pyvista as pv
 from PIL import Image, ImageDraw, ImageFont
+from scipy.spatial.transform import Rotation
 
 from .body import Body
-from .cameras import FOLLOW_VIEWS, SCENE_VIEWS, VIEWS, CameraConfig, camera_path
+from .cameras import FOLLOW_VIEWS, HAND_VIEWS, SCENE_VIEWS, VIEWS, CameraConfig, camera_path
 from .motion_format import load_motion
 from .tasks import load_task, scene_bounds
 
@@ -33,20 +36,30 @@ SHADOW_COLOR = "#6e6e6e"
 PATH_COLOR = "#1f9e89"
 TRAIL_COLOR = "#e07b24"
 OBSTACLE_COLOR = "#4f7cac"
+OBJECT_COLOR = "#c49a6c"
+OBJECT_EDGE_COLOR = "#7a5a36"
+BALL_COLORS = ("#d1343f", "#f2b705", "#1f6fd1", "#37a24b", "#8e44ad")
 TILE = 0.5  # m; stated in the task prompt, so keep them in sync
 BACKGROUND = ("#f5f7fa", "#b9c9da")  # bottom, top
 GRID_LAYOUTS = {
     frozenset(VIEWS): (("overview", "front", "left"), ("top", "back", "right")),
     frozenset(FOLLOW_VIEWS): (("front", "back"), ("left", "right")),
+    frozenset(VIEWS + HAND_VIEWS): (("overview", "front", "left", "hands_left"), ("top", "back", "right", "hands_right")),
 }
-VIEW_TITLES = {"top": "top (whole scene)", "overview": "overview (whole scene)"}
+VIEW_TITLES = {
+    "top": "top (whole scene)",
+    "overview": "overview (whole scene)",
+    "hands_left": "hands, from front left",
+    "hands_right": "hands, from front right",
+}
+BOX_EDGES = [(0, 1), (1, 3), (3, 2), (2, 0), (4, 5), (5, 7), (7, 6), (6, 4), (0, 4), (1, 5), (2, 6), (3, 7)]
 
 
 def render(
     motion_path,
     out_dir,
     task=None,
-    views=VIEWS,
+    views=None,
     camera=None,
     size=(1280, 720),
     videos=True,
@@ -58,11 +71,16 @@ def render(
     overview_cols=5,
     body=None,
 ):
-    """Render videos and contact sheets; returns the list of files written. task: a loaded task or None."""
+    """Render videos and contact sheets; returns the list of files written. task: a loaded task or None.
+
+    views: the views to render; by default all of them (the hand views only for a task with an object).
+    """
     camera = camera or CameraConfig()
     body = body or Body()
     task = task or {"start": {}, "path_points": None}
-    motion = load_motion(motion_path)
+    ball_count = task["balls"]["count"] if "balls" in task else None
+    motion = load_motion(motion_path, expect_object="object" in task, expect_balls=ball_count)
+    views = tuple(views or default_views(task))
     fps = motion["fps"]
     verts, joints = body.forward(motion)
     num_frames = len(verts)
@@ -70,17 +88,22 @@ def render(
     pelvis = joints[:, 0]
 
     bounds = _bounds(task, pelvis)
+    hands = joints[:, [20, 21]].mean(axis=1)  # the two wrists
+    if "balls" in task:
+        hands = hands + [0.0, 0.25, 0.0]  # the close-ups also have to show the balls in the air
     paths = {
-        v: camera_path(v, pelvis, motion["global_orient"], body.floor_y, fps, camera, width / height, bounds)
+        v: camera_path(v, pelvis, motion["global_orient"], body.floor_y, fps, camera, width / height, bounds, hands)
         for v in views
     }
-    follow = [v for v in views if v in FOLLOW_VIEWS]
+    follow = [v for v in views if v in FOLLOW_VIEWS + HAND_VIEWS]
     scene = [v for v in views if v in SCENE_VIEWS]
     sheet_idx = _sheet_frames(num_frames, fps, sheet_start, sheet_duration, sheet_cols) if follow else []
     overview_idx = _sheet_frames(num_frames, fps, 0.0, (num_frames - 1) / fps, overview_cols) if scene else []
     frames_to_render = range(num_frames) if videos else sorted(set(sheet_idx) | set(overview_idx))
 
     pl, body_mesh, shadow, trail = _build_scene(body, verts, pelvis, task, bounds, size, camera, shadows)
+    box = _add_object(pl, task, motion, body.floor_y, shadows) if "object" in task else None
+    balls = _add_balls(pl, task, shadows) if "balls" in task else None
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     written, writers = [], {}
@@ -97,6 +120,10 @@ def render(
     try:
         for t in frames_to_render:
             _set_pose(body_mesh, shadow, trail, verts[t], body.faces, pelvis, t, body.floor_y)
+            if box:
+                _set_object(box, t, body.floor_y)
+            if balls:
+                _set_balls(balls, motion["balls_transl"][t], body.floor_y)
             images = {}
             for v in views:
                 needed = v in writers or (t in sheet_idx and v in follow) or (t in overview_idx and v in scene)
@@ -133,8 +160,12 @@ def render(
     return written
 
 
+def default_views(task):
+    return VIEWS + HAND_VIEWS if "object" in task or "balls" in task else VIEWS
+
+
 def _bounds(task, pelvis):
-    if task.get("path_points") is None and not task.get("obstacles"):
+    if task.get("path_points") is None and not task.get("obstacles") and "object" not in task:
         lo, hi = pelvis[:, [0, 2]].min(axis=0), pelvis[:, [0, 2]].max(axis=0)
     else:
         lo, hi = scene_bounds(task, pelvis[:, [0, 2]])
@@ -207,6 +238,65 @@ def _set_pose(body_mesh, shadow, trail, v, faces, pelvis, t, floor_y):
         shadow.points = flat
     so_far = pelvis[np.minimum(np.arange(len(pelvis)), t)]  # points after t collapse onto the current one
     trail.points = np.c_[so_far[:, 0], np.full(len(so_far), floor_y + 0.006), so_far[:, 2]]
+
+
+def _add_object(pl, task, motion, floor_y, shadows):
+    """Add the moving box, its shadow and the outline of its target; returns what _set_object needs."""
+    half = np.array(task["object"]["size"], float) / 2  # x, height, z
+    corners = np.array([[x, y, z] for x in (-1, 1) for y in (-1, 1) for z in (-1, 1)]) * half
+    cube = pv.Cube(x_length=2 * half[0], y_length=2 * half[1], z_length=2 * half[2], clean=False)
+    cube.point_data.clear()  # the stored normals would not follow the box
+    pl.add_mesh(cube, color=OBJECT_COLOR, interpolation="flat", ambient=0.3, diffuse=0.7, specular=0.05)
+    edges = pv.PolyData(corners.copy(), lines=np.array([[2, a, b] for a, b in BOX_EDGES]).ravel())
+    pl.add_mesh(edges, color=OBJECT_EDGE_COLOR, line_width=3, lighting=False)
+    shadow = None
+    if shadows:
+        shadow = cube.copy()
+        pl.add_mesh(shadow, color=SHADOW_COLOR, lighting=False)
+
+    tgt = task["target"]
+    r = np.radians(tgt.get("yaw_deg", 0.0))
+    rot = np.array([[np.cos(r), np.sin(r)], [-np.sin(r), np.cos(r)]])  # yaw about +Y applied to [x, z]
+    outline = (np.array([[-1, -1], [1, -1], [1, 1], [-1, 1], [-1, -1]]) * half[[0, 2]]) @ rot.T + np.asarray(tgt["center"], float)
+    pl.add_mesh(pv.lines_from_points(np.c_[outline[:, 0], np.full(5, floor_y + 0.004), outline[:, 1]]),
+                color=PATH_COLOR, line_width=5, lighting=False)
+    return {
+        "mesh": cube, "rest": np.array(cube.points), "edges": edges, "corners": corners, "shadow": shadow,
+        "position": motion["object_transl"], "rotation": Rotation.from_rotvec(motion["object_orient"]).as_matrix(),
+    }
+
+
+def _set_object(box, t, floor_y):
+    position, rotation = box["position"][t], box["rotation"][t]
+    box["mesh"].points = box["rest"] @ rotation.T + position
+    box["edges"].points = box["corners"] @ rotation.T + position
+    if box["shadow"] is not None:
+        flat = box["rest"] @ rotation.T + position
+        flat[:, 1] = floor_y + 0.002
+        box["shadow"].points = flat
+
+
+def _add_balls(pl, task, shadows):
+    """Add one sphere and one round shadow per ball; returns their actors, which _set_balls moves."""
+    radius = task["balls"]["radius"]
+    actors = []
+    for i in range(task["balls"]["count"]):
+        color = BALL_COLORS[i % len(BALL_COLORS)]
+        ball = pl.add_mesh(pv.Sphere(radius=radius, theta_resolution=40, phi_resolution=40), color=color,
+                           interpolation="phong", ambient=0.3, diffuse=0.7, specular=0.25)
+        shadow = None
+        if shadows:
+            disc = pv.Disc(center=(0, 0, 0), inner=0.0, outer=radius, normal=(0, 1, 0), c_res=32)
+            shadow = pl.add_mesh(disc, color=SHADOW_COLOR, lighting=False)
+        actors.append((ball, shadow))
+    return actors
+
+
+def _set_balls(balls, centers, floor_y):
+    for (ball, shadow), (x, y, z) in zip(balls, centers.tolist()):
+        ball.position = (x, y, z)
+        if shadow is not None:
+            shadow.position = (x, floor_y + 0.003, z)
 
 
 def _floor(center_xz, half_size, floor_y):
@@ -292,7 +382,7 @@ def main():
     ap.add_argument("motion", type=Path, help="motion .npz, or an experiment folder containing motion.npz")
     ap.add_argument("--task", help="task name or .json (default: task.json next to the motion, if any)")
     ap.add_argument("--out", type=Path, help="output directory (default: videos/ next to the motion)")
-    ap.add_argument("--views", nargs="+", choices=VIEWS, default=list(VIEWS))
+    ap.add_argument("--views", nargs="+", choices=VIEWS + HAND_VIEWS, help="default: all views for this task")
     ap.add_argument("--camera", choices=["track", "fixed"], default="track", help="follow views only")
     ap.add_argument("--size", default="1280x720", help="WIDTHxHEIGHT of each view")
     ap.add_argument("--no-video", action="store_true", help="only write the contact sheets")

@@ -1,0 +1,41 @@
+{
+  "name": "typical-c",
+  "title": "Pick up a box, carry it and put it down",
+  "instruction": "",
+  "fps": 30,
+  "frames": 600,
+  "start": {
+    "state": "standing",
+    "position": [
+      1,
+      1
+    ],
+    "heading_deg": 90
+  },
+  "end": {
+    "state": "standing"
+  },
+  "object": {
+    "label": "box",
+    "size": [
+      0.45,
+      0.25,
+      0.35
+    ],
+    "mass_kg": 8,
+    "start": {
+      "center": [
+        4.0,
+        1.0
+      ],
+      "yaw_deg": 90
+    }
+  },
+  "target": {
+    "center": [
+      2.0,
+      3.5
+    ],
+    "yaw_deg": 45
+  }
+}

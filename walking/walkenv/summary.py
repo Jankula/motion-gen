@@ -44,7 +44,8 @@ def summarize(run):
         "usage_limit_interruptions": len(interruptions),
         "duration_min": round(total("duration_ms") / 60000, 1),
         "turns": total("num_turns"),
-        "cost_usd": round(total("total_cost_usd"), 2),
+        # total_cost_usd is a running total: a resumed part already includes the parts before it.
+        "cost_usd": round(last.get("total_cost_usd") or 0, 2),
         "output_tokens": total("usage", "output_tokens"),
         "thinking_tokens": sum(((r.get("usage") or {}).get("output_tokens_details") or {}).get("thinking_tokens") or 0
                                for r in results),

@@ -1,6 +1,6 @@
 # E03: Start, turn a corner, stop, and turn around on the spot
 
-> **Summary.** The person now has to start from standing, walk 3 m, turn a sharp 90° corner, walk 2.5 m, stop on a marked spot, turn around on the spot and stand still. E02's program could do none of these: it could only walk continuously along smooth curves. The agent redesigned the program around a new idea: **first plan every footstep, then let a simple balance model work out how the body moves over those feet**. With that, starting, stopping, a step turn at the corner and six small turning steps on the spot all come out of one framework. All 15 measurement targets are met on the new task, and both earlier tasks still meet all of theirs. The session was interrupted once by the account's usage limit and resumed. It took 69 minutes of working time and $27.87, by far the most expensive experiment so far.
+> **Summary.** The person now has to start from standing, walk 3 m, turn a sharp 90° corner, walk 2.5 m, stop on a marked spot, turn around on the spot and stand still. E02's program could do none of these: it could only walk continuously along smooth curves. The agent redesigned the program around a new idea: **first plan every footstep, then let a simple balance model work out how the body moves over those feet**. With that, starting, stopping, a step turn at the corner and six small turning steps on the spot all come out of one framework. All 15 measurement targets are met on the new task, and both earlier tasks still meet all of theirs. The session was interrupted once by the account's usage limit and resumed. It took 69 minutes of working time and $21.74, the most expensive experiment so far.
 
 | | |
 |---|---|
@@ -10,7 +10,7 @@
 | **Agent** | Claude Code, model Claude Opus 5.5, headless |
 | **Started from** | the code of [E02](E02-curved-path.md) |
 | **Tools the agent had** | `evaluate.py` (used 15 times), `preview.py` (used 5 of 8 allowed) |
-| **Session** | 69 min of working time in two parts (interrupted once by the account usage limit), 170 turns, $27.87 |
+| **Session** | 69 min of working time in two parts (interrupted once by the account usage limit), 170 turns, $21.74 |
 | **Result** | 15/15 targets met on the new task; 11/11 on each earlier task; 4 s to compute the 12 s clip |
 | **Folder** | [`runs/E03-turns/`](../../runs/E03-turns/) |
 | **Main video** | [`runs/E03-turns/videos/grid.mp4`](../../runs/E03-turns/videos/grid.mp4) |
@@ -165,7 +165,7 @@ The agent's own list, in plain words:
 - **No obstacle avoidance yet:** the program warns if a task contains obstacles.
 - **Inherited:** gait curves tuned from memory, a possibly abrupt heel contact, and self-contact checked only between feet and leg axes.
 
-**About the cost:** $21.74 of the $27.87 was spent in the second part of the session, after the interruption. The second part was also the longer one (40 of the 69 minutes), with many rounds of fixing the corner and the turn, and every turn re-reads the whole, by then very long, conversation.
+**About the cost:** $15.62 of the $21.74 was spent in the second part of the session, after the interruption. (This page first said $27.87 in total, because our summary tool counted the first part twice. Corrected on 2026-11-04.) The second part was also the longer one (40 of the 69 minutes), with many rounds of fixing the corner and the turn, and every turn re-reads the whole, by then very long, conversation.
 
 ## 6. Conclusion and next step
 

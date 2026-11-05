@@ -49,4 +49,4 @@ walkenv/       body model, cameras, renderer, evaluator, experiment creation and
 
 ## What is kept in git
 
-Agent code, notes, motions, measurements, session logs, `grid.mp4` and the contact sheets of every experiment. The single-view videos are kept locally only, because they are large; re-create them with `python -m walkenv.render runs/<ID>`. The SMPL-X model, and files derived from it, are never committed.
+Agent code, notes, motions, measurements and the key facts of each session (`run_summary.json`). Videos and pictures are kept locally only; re-create them with `python -m walkenv.render runs/<ID>`, so the links to them in the reports work on a local copy. Session logs (`transcript.jsonl`) are also kept locally only, because they contain `body_info.json`, which the agent reads. The SMPL-X model, and files derived from it such as `body_info.json`, are never committed.

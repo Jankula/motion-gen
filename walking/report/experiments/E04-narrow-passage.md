@@ -1,6 +1,6 @@
 # E04: Squeezing sideways through a narrow gap
 
-> **Summary.** The person walks towards two tall cabinets with only a 0.40 m gap between them. The gap is narrower than the person's shoulders, so they have to turn sideways and side-step through. Starting from E03's program, the agent added obstacle handling. The program now finds narrow passages along the path, slows the person down, turns them sideways with a step turn, side-steps them through the gap and turns them back into walking. The body passes with **3.9 cm and 4.3 cm** to spare on either side and never touches a cabinet. All 15 measurement targets are met, and all three earlier tasks still meet all of theirs. The agent also added a second technique for slightly wider gaps (turning only the shoulders while walking) and tested both on ten gap variants of its own. The session was interrupted twice by the account's usage limit. It took 58 minutes of working time and $35.21, the most expensive experiment so far, partly because of the resumes.
+> **Summary.** The person walks towards two tall cabinets with only a 0.40 m gap between them. The gap is narrower than the person's shoulders, so they have to turn sideways and side-step through. Starting from E03's program, the agent added obstacle handling. The program now finds narrow passages along the path, slows the person down, turns them sideways with a step turn, side-steps them through the gap and turns them back into walking. The body passes with **3.9 cm and 4.3 cm** to spare on either side and never touches a cabinet. All 15 measurement targets are met, and all three earlier tasks still meet all of theirs. The agent also added a second technique for slightly wider gaps (turning only the shoulders while walking) and tested both on ten gap variants of its own. The session was interrupted twice by the account's usage limit. It took 58 minutes of working time and $18.80.
 
 | | |
 |---|---|
@@ -10,7 +10,7 @@
 | **Agent** | Claude Code, model Claude Opus 5.5, headless |
 | **Started from** | the code of [E03](E03-turns.md) |
 | **Tools the agent had** | `evaluate.py` (used 19 times), `preview.py` (used 6 of 8 allowed) |
-| **Session** | 58 min of working time in three parts (interrupted twice by the account usage limit), 156 turns, $35.21 |
+| **Session** | 58 min of working time in three parts (interrupted twice by the account usage limit), 156 turns, $18.80 |
 | **Result** | 15/15 targets met; 3.9 / 4.3 cm clearance to the cabinets; all three earlier tasks still meet all targets; 8 s to compute the 11 s clip |
 | **Folder** | [`runs/E04-narrow-passage/`](../../runs/E04-narrow-passage/) |
 | **Main video** | [`runs/E04-narrow-passage/videos/grid.mp4`](../../runs/E04-narrow-passage/videos/grid.mp4) |
@@ -166,15 +166,15 @@ The agent's own list, in plain words:
 - **Only gaps across the path are handled.** Obstacles in the way of the path, obstacles that leave room on one side only, and low boxes that could be stepped over are reported but not avoided. The shoulder-turn mode does not slow the person down, which real people usually do.
 - **Inherited:** gait curves tuned from memory, a possibly abrupt heel contact, self-contact checked only between legs and feet, and the balance model treating the body as a single point.
 
-**About the cost.** Of the $35.21:
+**About the cost.** Of the $18.80 (first reported as $35.21, because our summary tool counted earlier parts twice; corrected on 2026-11-04):
 
 | Part | Working time | Cost | What happened |
 |---|---|---|---|
 | 1 | 7 min | $1.95 | reading and measuring, then the limit |
-| 2 | 47 min | $14.45 | building and tuning |
-| 3 | 4 min | $18.80 | final checks and notes |
+| 2 | 47 min | $12.50 | building and tuning |
+| 3 | 4 min | $4.35 | final checks and notes |
 
-The last part was expensive because resuming a long conversation after many hours means the whole conversation (about 424,000 tokens) has to be read in again at full price, rather than from the cheaper short-term cache. Interruptions late in a session are therefore costly.
+For its length, the last part was expensive, because resuming a long conversation after many hours means the whole conversation (about 424,000 tokens) has to be read in again at full price, rather than from the cheaper short-term cache. Interruptions late in a session are therefore costly.
 
 ## 6. Conclusion and next step
 

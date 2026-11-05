@@ -1,0 +1,41 @@
+{
+  "name": "small-light",
+  "title": "Pick up a box, carry it and put it down",
+  "instruction": "",
+  "fps": 30,
+  "frames": 600,
+  "start": {
+    "state": "standing",
+    "position": [
+      0,
+      0
+    ],
+    "heading_deg": 0
+  },
+  "end": {
+    "state": "standing"
+  },
+  "object": {
+    "label": "box",
+    "size": [
+      0.3,
+      0.2,
+      0.25
+    ],
+    "mass_kg": 4,
+    "start": {
+      "center": [
+        0,
+        2.5
+      ],
+      "yaw_deg": 0
+    }
+  },
+  "target": {
+    "center": [
+      2.0,
+      1.0
+    ],
+    "yaw_deg": 45
+  }
+}

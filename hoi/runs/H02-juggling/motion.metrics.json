@@ -1,0 +1,585 @@
+{
+  "task": "juggling",
+  "metrics": [
+    {
+      "group": "Ground contact",
+      "key": "deepest_floor_penetration",
+      "label": "Deepest sinking into the floor",
+      "value": 2.62,
+      "unit": "mm",
+      "target": "≤ 10 mm",
+      "ok": true,
+      "meaning": "How far any part of the skin ever goes below the floor. 0 means never."
+    },
+    {
+      "group": "Ground contact",
+      "key": "frames_sinking",
+      "label": "Frames sinking more than 1 cm",
+      "value": 0.0,
+      "unit": "frames",
+      "target": "0",
+      "ok": true,
+      "meaning": "Frames in which some skin is more than 1 cm below the floor."
+    },
+    {
+      "group": "Ground contact",
+      "key": "frames_airborne",
+      "label": "Frames with nothing on the floor",
+      "value": 0.0,
+      "unit": "frames",
+      "target": "0",
+      "ok": true,
+      "meaning": "Frames in which no part of the body is within 2 cm of the floor. A walking person always has at least one foot on the ground."
+    },
+    {
+      "group": "Foot sliding",
+      "key": "contact_speed_median",
+      "label": "Typical speed of floor-touching skin",
+      "value": 0.11,
+      "unit": "cm/s",
+      "target": "≤ 1 cm/s",
+      "ok": true,
+      "meaning": "How fast skin points that touch the floor move along it, typically. A planted foot should not move, so this should be close to 0."
+    },
+    {
+      "group": "Foot sliding",
+      "key": "contact_speed_p95",
+      "label": "Speed of floor-touching skin, 95th percentile",
+      "value": 0.42,
+      "unit": "cm/s",
+      "target": "≤ 3 cm/s",
+      "ok": true,
+      "meaning": "95 % of floor-touching skin points move slower than this. It catches brief slips. Turning on the spot legitimately raises it a little, because a foot pivots on the ball."
+    },
+    {
+      "group": "Path",
+      "key": "distance_travelled",
+      "label": "Distance travelled by the pelvis",
+      "value": 0.6,
+      "unit": "m",
+      "target": null,
+      "ok": null,
+      "meaning": "Length of the pelvis track seen from above, with the side-to-side sway of each step smoothed out."
+    },
+    {
+      "group": "Path",
+      "key": "average_speed",
+      "label": "Average speed",
+      "value": 0.03,
+      "unit": "m/s",
+      "target": null,
+      "ok": null,
+      "meaning": "Distance travelled divided by the clip length (pauses included). Comfortable walking is about 1.2-1.4 m/s."
+    },
+    {
+      "group": "Path",
+      "key": "start_position_error",
+      "label": "Start position error",
+      "value": 0.0,
+      "unit": "cm",
+      "target": "≤ 15 cm",
+      "ok": true,
+      "meaning": "Distance between the pelvis and the required start position, in the start frame."
+    },
+    {
+      "group": "Path",
+      "key": "start_heading_error",
+      "label": "Start heading error",
+      "value": 0.02,
+      "unit": "°",
+      "target": "≤ 15°",
+      "ok": true,
+      "meaning": "Difference between the direction the pelvis faces and the required start heading."
+    },
+    {
+      "group": "Path",
+      "key": "start_stillness",
+      "label": "Pelvis speed while standing at the start",
+      "value": 0.61,
+      "unit": "cm/s",
+      "target": "≤ 10 cm/s",
+      "ok": true,
+      "meaning": "Fastest horizontal pelvis movement in the first 0.5 s, where the person should be standing still. Small values are natural sway."
+    },
+    {
+      "group": "Path",
+      "key": "end_stillness",
+      "label": "Pelvis speed while standing at the end",
+      "value": 0.29,
+      "unit": "cm/s",
+      "target": "≤ 10 cm/s",
+      "ok": true,
+      "meaning": "Fastest horizontal pelvis movement in the last 0.5 s, where the person should be standing still. Small values are natural sway."
+    },
+    {
+      "group": "Smoothness",
+      "key": "max_joint_speed",
+      "label": "Fastest joint rotation",
+      "value": 673.05,
+      "unit": "°/s",
+      "target": "≤ 800 °/s",
+      "ok": true,
+      "meaning": "Fastest rotation of any joint between two frames (right_elbow, frame 228). In walking the swinging knee peaks at roughly 400-600°/s; far higher values mean a jerk."
+    },
+    {
+      "group": "Smoothness",
+      "key": "frames_with_pops",
+      "label": "Frames with a pop",
+      "value": 0.0,
+      "unit": "frames",
+      "target": "0",
+      "ok": true,
+      "meaning": "Frames in which some joint jumps faster than 1500°/s, which is visible as a glitch."
+    },
+    {
+      "group": "Holding the balls",
+      "key": "start_all_held",
+      "label": "Frames at the start without all balls in the hands",
+      "value": 0.0,
+      "unit": "frames",
+      "target": "0",
+      "ok": true,
+      "meaning": "Frames in the first 0.5 s in which a ball is not in a hand. The person starts by holding all of them."
+    },
+    {
+      "group": "Holding the balls",
+      "key": "end_all_held",
+      "label": "Frames at the end without all balls in the hands",
+      "value": 0.0,
+      "unit": "frames",
+      "target": "0",
+      "ok": true,
+      "meaning": "Frames in the last 0.5 s in which a ball is not in a hand. The person ends by holding all of them."
+    },
+    {
+      "group": "Holding the balls",
+      "key": "hand_capacity",
+      "label": "Frames with more than two balls in one hand",
+      "value": 0.0,
+      "unit": "frames",
+      "target": "0",
+      "ok": true,
+      "meaning": "One hand does not hold all three balls at once."
+    },
+    {
+      "group": "Holding the balls",
+      "key": "contact_width_min",
+      "label": "Narrowest contact between a hand and a held ball",
+      "value": 6.38,
+      "unit": "cm",
+      "target": "≥ 5 cm",
+      "ok": true,
+      "meaning": "While a ball rests in a hand, the width of the palm-side skin within 8 mm of it, at its smallest. The back of the hand does not count. A ball in the hand gives 6-7 cm; a ball balancing on a fingertip about 4 cm."
+    },
+    {
+      "group": "Holding the balls",
+      "key": "frames_unsupported",
+      "label": "Ball-frames in which a held ball has no support from below",
+      "value": 0.0,
+      "unit": "frames",
+      "target": "0",
+      "ok": true,
+      "meaning": "Frames and balls in which the skin touching a held ball is not below the ball's centre on average. A ball lies on a hand. It cannot hang under it or stick to it."
+    },
+    {
+      "group": "Holding the balls",
+      "key": "hand_depth_max",
+      "label": "Deepest hand skin inside a ball",
+      "value": 5.63,
+      "unit": "mm",
+      "target": "≤ 8 mm",
+      "ok": true,
+      "meaning": "How far hand skin goes into a ball (worst at frame 28). Skin gives a little, but fingers must not pass through a ball."
+    },
+    {
+      "group": "The balls in the air",
+      "key": "gravity_error",
+      "label": "Largest gravity error of a flight",
+      "value": 0.0,
+      "unit": "%",
+      "target": "≤ 3 %",
+      "ok": true,
+      "meaning": "For every flight, the gravity that fits its height over time, against the real 9.81 m/s². The worst flight (ball 2, frame 310) has 9.81 m/s²."
+    },
+    {
+      "group": "The balls in the air",
+      "key": "flight_fit_mm",
+      "label": "Largest difference between a flight and a free fall",
+      "value": 0.0,
+      "unit": "mm",
+      "target": "≤ 3 mm",
+      "ok": true,
+      "meaning": "Average distance between a flight and the best free fall with real gravity, for the worst flight (ball 1, frame 388). A ball in the air cannot steer, slow down or hang."
+    },
+    {
+      "group": "The balls in the air",
+      "key": "flights_too_short",
+      "label": "Flights too short to be a throw",
+      "value": 0.0,
+      "unit": "flights",
+      "target": "0",
+      "ok": true,
+      "meaning": "Times a ball leaves the hand for less than 0.17 s. A ball that hops out of a hand and back is not thrown, or the hand does not stay with it."
+    },
+    {
+      "group": "The balls in the air",
+      "key": "flights_uncaught",
+      "label": "Balls that are never caught",
+      "value": 0.0,
+      "unit": "flights",
+      "target": "0",
+      "ok": true,
+      "meaning": "Flights that do not end in a hand: the ball is dropped or still flying at the end of the clip."
+    },
+    {
+      "group": "The balls in the air",
+      "key": "throw_height_min",
+      "label": "Lowest throw",
+      "value": 35.84,
+      "unit": "cm",
+      "target": "≥ 20 cm",
+      "ok": true,
+      "meaning": "Smallest rise of a ball above the height where it left the hand. A real throw goes up."
+    },
+    {
+      "group": "The balls in the air",
+      "key": "throw_peak_max",
+      "label": "Highest point of any ball",
+      "value": 1.63,
+      "unit": "m",
+      "target": "≤ 2.1 m",
+      "ok": true,
+      "meaning": "The largest height of a ball above the floor. Above about 2.1 m it also leaves the picture."
+    },
+    {
+      "group": "The balls in the air",
+      "key": "ball_speed_max",
+      "label": "Fastest ball",
+      "value": 2.96,
+      "unit": "m/s",
+      "target": "≤ 6 m/s",
+      "ok": true,
+      "meaning": "Highest speed of a ball. A jump shows up here."
+    },
+    {
+      "group": "The balls in the air",
+      "key": "ball_overlap_mm",
+      "label": "Deepest two balls go into each other",
+      "value": 0.0,
+      "unit": "mm",
+      "target": "≤ 2 mm",
+      "ok": true,
+      "meaning": "Balls are solid: they cannot pass through each other, in the air or in a hand."
+    },
+    {
+      "group": "The balls in the air",
+      "key": "body_depth_max",
+      "label": "Deepest body skin (not hands) inside a ball",
+      "value": 0.0,
+      "unit": "mm",
+      "target": "≤ 8 mm",
+      "ok": true,
+      "meaning": "How far arms, trunk or head go into a ball (worst at frame 0)."
+    },
+    {
+      "group": "Throwing and catching",
+      "key": "throws_two_feet",
+      "label": "Throws before the foot lifts",
+      "value": 20.0,
+      "unit": "throws",
+      "target": "≥ 9",
+      "ok": true,
+      "meaning": "Throws while the person still stands on both feet."
+    },
+    {
+      "group": "Throwing and catching",
+      "key": "throws_one_foot",
+      "label": "Throws on one foot",
+      "value": 25.0,
+      "unit": "throws",
+      "target": "≥ 12",
+      "ok": true,
+      "meaning": "Throws while one foot is in the air."
+    },
+    {
+      "group": "Throwing and catching",
+      "key": "throws_per_ball_min",
+      "label": "Throws of the least thrown ball",
+      "value": 15.0,
+      "unit": "throws",
+      "target": "≥ 7",
+      "ok": true,
+      "meaning": "All 3 balls have to take part: [15, 15, 15] throws per ball."
+    },
+    {
+      "group": "Throwing and catching",
+      "key": "hands_alternate",
+      "label": "Throws that come from the other hand than the throw before",
+      "value": 100.0,
+      "unit": "%",
+      "target": "≥ 95 %",
+      "ok": true,
+      "meaning": "In the classic pattern the hands take turns."
+    },
+    {
+      "group": "Throwing and catching",
+      "key": "throws_cross",
+      "label": "Throws caught by the other hand",
+      "value": 100.0,
+      "unit": "%",
+      "target": "≥ 95 %",
+      "ok": true,
+      "meaning": "In the classic pattern every ball crosses from one hand to the other."
+    },
+    {
+      "group": "Throwing and catching",
+      "key": "longest_pause",
+      "label": "Longest time between two throws",
+      "value": 0.37,
+      "unit": "s",
+      "target": "≤ 0.6 s",
+      "ok": true,
+      "meaning": "Juggling does not stop, also not while the foot lifts. With three balls, two throws are usually 0.3-0.45 s apart."
+    },
+    {
+      "group": "Throwing and catching",
+      "key": "release_jump",
+      "label": "Largest jump in a ball's speed at the release",
+      "value": 0.8,
+      "unit": "m/s",
+      "target": "≤ 1.5 m/s",
+      "ok": true,
+      "meaning": "Difference between the speed of a ball just before and just after it leaves the hand. A hand has to bring the ball up to speed and let go: a ball that shoots out of a slow hand shows up here."
+    },
+    {
+      "group": "Throwing and catching",
+      "key": "catch_jump",
+      "label": "Largest jump in a ball's speed at the catch",
+      "value": 1.13,
+      "unit": "m/s",
+      "target": "≤ 2.5 m/s",
+      "ok": true,
+      "meaning": "Difference between the speed of a ball just before and just after it is caught. A hand gives way and goes down with the ball. A hand that stands still stops it dead: about 3 m/s."
+    },
+    {
+      "group": "Throwing and catching",
+      "key": "dwell_min",
+      "label": "Shortest time a ball stays in a hand",
+      "value": 0.43,
+      "unit": "s",
+      "target": "≥ 0.12 s",
+      "ok": true,
+      "meaning": "From catch to next throw. A ball that bounces off the hand is not caught and thrown."
+    },
+    {
+      "group": "Standing on one foot",
+      "key": "foot_lifts",
+      "label": "Times the right foot leaves the floor",
+      "value": 1.0,
+      "unit": "times",
+      "target": "1",
+      "ok": true,
+      "meaning": "It is lifted once and comes down once. More means it touches down in between."
+    },
+    {
+      "group": "Standing on one foot",
+      "key": "standing_foot_up",
+      "label": "Frames the left (standing) foot is off the floor",
+      "value": 0.0,
+      "unit": "frames",
+      "target": "0",
+      "ok": true,
+      "meaning": "The person stands on the left foot all the time."
+    },
+    {
+      "group": "Standing on one foot",
+      "key": "one_foot_time",
+      "label": "Time on one foot",
+      "value": 9.73,
+      "unit": "s",
+      "target": "≥ 5 s",
+      "ok": true,
+      "meaning": "Longest time the foot stays off the floor."
+    },
+    {
+      "group": "Standing on one foot",
+      "key": "foot_height",
+      "label": "Typical height of the lifted foot",
+      "value": 13.24,
+      "unit": "cm",
+      "target": "≥ 10 cm",
+      "ok": true,
+      "meaning": "Height of its lowest skin above the floor. It has to be clearly lifted, not hovering."
+    },
+    {
+      "group": "Standing on one foot",
+      "key": "catch_before_foot_down",
+      "label": "Time from the last catch to the foot coming down",
+      "value": 1.03,
+      "unit": "s",
+      "target": "≥ 0.2 s",
+      "ok": true,
+      "meaning": "The person catches all the balls first and only then puts the foot down."
+    },
+    {
+      "group": "Standing on one foot",
+      "key": "all_held_at_foot_down",
+      "label": "All balls in the hands when the foot comes down",
+      "value": "yes",
+      "unit": "",
+      "target": "yes",
+      "ok": true,
+      "meaning": "From the moment the foot comes down, no ball leaves a hand."
+    },
+    {
+      "group": "Standing on one foot",
+      "key": "one_foot_off_balance",
+      "label": "Frames off balance on one foot",
+      "value": 0.0,
+      "unit": "frames",
+      "target": "0",
+      "ok": true,
+      "meaning": "Frames on one foot in which the body's centre of mass (75 kg) is more than 2 cm outside the outline of the standing foot, seen from above. The person would fall over. The weight has to move over the foot before it lifts."
+    },
+    {
+      "group": "Standing on one foot",
+      "key": "one_foot_balance_worst",
+      "label": "Worst balance margin on one foot",
+      "value": -2.3,
+      "unit": "cm",
+      "target": null,
+      "ok": null,
+      "meaning": "Largest distance of the centre of mass outside the standing foot. Negative means it always stayed inside."
+    },
+    {
+      "group": "Standing on one foot",
+      "key": "two_feet_off_balance",
+      "label": "Frames off balance on two feet",
+      "value": 0.0,
+      "unit": "frames",
+      "target": "0",
+      "ok": true,
+      "meaning": "Frames with both feet on the floor and the body moving slowly in which the centre of mass is more than 3 cm outside the outline of the feet."
+    },
+    {
+      "group": "Standing on one foot",
+      "key": "stays_on_spot",
+      "label": "Largest distance of the pelvis from where it starts",
+      "value": 15.45,
+      "unit": "cm",
+      "target": "≤ 20 cm",
+      "ok": true,
+      "meaning": "The person stays in one place. Moving the weight over one foot takes about 10 cm."
+    },
+    {
+      "group": "Standing on one foot",
+      "key": "final_upright",
+      "label": "Standing up at the end",
+      "value": 99.14,
+      "unit": "% of height",
+      "target": "≥ 96 %",
+      "ok": true,
+      "meaning": "Height of the head in the last frame, as a share of its height in a straight stance."
+    },
+    {
+      "group": "Body",
+      "key": "arm_depth_max",
+      "label": "Deepest forearm or hand skin inside the trunk or legs",
+      "value": 0.0,
+      "unit": "mm",
+      "target": "≤ 15 mm",
+      "ok": true,
+      "meaning": "How far forearms and hands go into the trunk or legs (worst at frame 0)."
+    },
+    {
+      "group": "Body",
+      "key": "joints_wrong_way",
+      "label": "Knees and elbows bending the wrong way",
+      "value": 0.0,
+      "unit": "°",
+      "target": "≤ 5°",
+      "ok": true,
+      "meaning": "How far a knee or elbow ever bends backwards."
+    },
+    {
+      "group": "Body",
+      "key": "wrist_bend_max",
+      "label": "Largest wrist rotation",
+      "value": 62.99,
+      "unit": "°",
+      "target": "≤ 85°",
+      "ok": true,
+      "meaning": "Largest total rotation of a wrist. Real wrists stop at about 80°."
+    },
+    {
+      "group": "How the juggling looks",
+      "key": "throw_rate",
+      "label": "Throws per second",
+      "value": 3.04,
+      "unit": "1/s",
+      "target": null,
+      "ok": null,
+      "meaning": "How fast the balls go round."
+    },
+    {
+      "group": "How the juggling looks",
+      "key": "flight_time",
+      "label": "Typical time in the air",
+      "value": 0.57,
+      "unit": "s",
+      "target": null,
+      "ok": null,
+      "meaning": "From release to catch."
+    },
+    {
+      "group": "How the juggling looks",
+      "key": "dwell_time",
+      "label": "Typical time in a hand",
+      "value": 0.5,
+      "unit": "s",
+      "target": null,
+      "ok": null,
+      "meaning": "From catch to next throw."
+    },
+    {
+      "group": "How the juggling looks",
+      "key": "peak_height",
+      "label": "Typical highest point of a throw",
+      "value": 1.58,
+      "unit": "m",
+      "target": null,
+      "ok": null,
+      "meaning": "Height above the floor."
+    },
+    {
+      "group": "How the juggling looks",
+      "key": "peak_spread",
+      "label": "Variation of the highest point",
+      "value": 1.98,
+      "unit": "cm",
+      "target": null,
+      "ok": null,
+      "meaning": "Real people vary by a few centimetres. 0 looks like a machine."
+    },
+    {
+      "group": "How the juggling looks",
+      "key": "rhythm_spread",
+      "label": "Variation of the time between throws",
+      "value": 19.58,
+      "unit": "ms",
+      "target": null,
+      "ok": null,
+      "meaning": "Real people vary a little. 0 looks like a machine."
+    },
+    {
+      "group": "How the juggling looks",
+      "key": "one_foot_sway",
+      "label": "Sway of the centre of mass on one foot",
+      "value": 3.54,
+      "unit": "cm",
+      "target": null,
+      "ok": null,
+      "meaning": "How far the body drifts while balancing. A real person keeps correcting."
+    }
+  ]
+}

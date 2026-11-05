@@ -5,6 +5,8 @@ Two kinds of views:
     direction the body faces, smoothed over about a second: "front" always shows the face, also
     while the person turns. left/right are the subject's own left/right side.
   - scene views (top, overview) are fixed and show the whole scene: path, obstacles and the walker.
+  - hand views (hands_left, hands_right) are close-ups for tasks with an object. They look at the
+    point between the two wrists from slightly above, from the person's front left and front right.
 """
 from dataclasses import dataclass
 
@@ -15,6 +17,7 @@ UP = np.array([0.0, 1.0, 0.0])
 FOLLOW_VIEWS = ("front", "back", "left", "right")
 SCENE_VIEWS = ("top", "overview")
 VIEWS = FOLLOW_VIEWS + SCENE_VIEWS
+HAND_VIEWS = ("hands_left", "hands_right")
 
 
 @dataclass
@@ -26,6 +29,10 @@ class CameraConfig:
     fov: float = 30.0  # vertical field of view of the follow views, degrees
     scene_fov: float = 40.0  # vertical field of view of the scene views, degrees
     smooth_seconds: float = 1.0  # track mode: window that removes step-to-step sway from the camera path
+    hand_distance: float = 2.0  # m, hand views: camera to the point between the wrists
+    hand_elevation: float = 30.0  # degrees above the horizontal, hand views
+    hand_side: float = 50.0  # degrees from straight in front of the person, hand views
+    hand_smooth_seconds: float = 0.5  # hand views: window that removes the arm swing from the camera path
 
 
 def heading_angles(global_orient):
@@ -34,10 +41,15 @@ def heading_angles(global_orient):
     return np.unwrap(np.arctan2(forward[:, 0], forward[:, 2]))
 
 
-def camera_path(view, pelvis, global_orient, floor_y, fps, cfg, aspect, bounds):
-    """Per-frame camera positions and focal points, each (T, 3), and the camera's up vector."""
+def camera_path(view, pelvis, global_orient, floor_y, fps, cfg, aspect, bounds, hands=None):
+    """Per-frame camera positions and focal points, each (T, 3), and the camera's up vector.
+
+    hands: (T, 3) point between the wrists; needed for the hand views.
+    """
     if view in SCENE_VIEWS:
         return _scene_camera(view, global_orient, floor_y, cfg, aspect, bounds, len(pelvis))
+    if view in HAND_VIEWS:
+        return _hand_camera(view, hands, global_orient, fps, cfg)
     ground = pelvis.copy()
     ground[:, 1] = 0.0
     angles = heading_angles(global_orient)
@@ -64,6 +76,19 @@ def camera_path(view, pelvis, global_orient, floor_y, fps, cfg, aspect, bounds):
     focal = targets + UP * (floor_y + cfg.look_height)
     position = targets + offset * distance + UP * (floor_y + cfg.height)
     return position, focal, UP
+
+
+def _hand_camera(view, hands, global_orient, fps, cfg):
+    window = max(1, round(cfg.hand_smooth_seconds * fps))
+    focal = moving_average(hands, window)
+    side = np.radians(cfg.hand_side) * (1 if view == "hands_left" else -1)  # the person's left is a larger heading
+    angles = moving_average(heading_angles(global_orient)[:, None], 2 * window)[:, 0] + side
+    elevation = np.radians(cfg.hand_elevation)
+    direction = np.stack(
+        [np.cos(elevation) * np.sin(angles), np.full_like(angles, np.sin(elevation)), np.cos(elevation) * np.cos(angles)],
+        axis=1,
+    )
+    return focal + cfg.hand_distance * direction, focal, UP
 
 
 def _view_direction(view, angles):

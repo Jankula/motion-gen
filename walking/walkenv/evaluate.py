@@ -24,9 +24,12 @@ CONTACT_M = 0.005  # a skin point this close to the floor counts as touching it
 POP_DEG_PER_S = 1500.0  # a joint rotating faster than this between two frames is a glitch
 
 
-def evaluate(motion, task, body):
-    """Returns a list of metrics: dicts with group, key, label, value, unit, target, ok, meaning."""
-    verts, joints = body.forward(motion)
+def evaluate(motion, task, body, fk=None):
+    """Returns a list of metrics: dicts with group, key, label, value, unit, target, ok, meaning.
+
+    fk: the result of body.forward(motion), if the caller already has it.
+    """
+    verts, joints = fk or body.forward(motion)
     fps = motion["fps"]
     height = verts[:, :, 1] - body.floor_y
     pelvis = joints[:, 0, [0, 2]]
@@ -162,7 +165,8 @@ def metrics_table(metrics):
     rows = ["| | Measurement | Value | Target |", "|---|---|---|---|"]
     for m in metrics:
         mark = {True: "✅", False: "❌", None: ""}[m["ok"]]
-        rows.append(f"| {mark} | {m['label']} | {m['value']:g} {m['unit']} | {m['target'] or ''} |")
+        value = m['value'] if isinstance(m['value'], str) else f"{m['value']:g}"
+        rows.append(f"| {mark} | {m['label']} | {value} {m['unit']} | {m['target'] or ''} |")
     return "\n".join(rows)
 
 

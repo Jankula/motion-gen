@@ -5,7 +5,7 @@
   "usage_limit_interruptions": 1,
   "duration_min": 69.4,
   "turns": 170,
-  "cost_usd": 27.87,
+  "cost_usd": 21.74,
   "output_tokens": 348074,
   "thinking_tokens": 222176,
   "tool_calls": {

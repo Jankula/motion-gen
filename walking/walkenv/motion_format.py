@@ -1,4 +1,4 @@
-"""Motion file format for the walking task.
+"""Motion file format, for the walking tasks and for the tasks with an object.
 
 numpy only: this file is copied into every agent workspace as check_format.py.
 
@@ -25,17 +25,26 @@ OPTIONAL = {
     "leye_pose": (3,),
     "reye_pose": (3,),
 }
+# Tasks with an object: its pose per frame. Unlike OPTIONAL, these are not filled in when absent.
+OBJECT = {
+    "object_transl": (3,),
+    "object_orient": (3,),
+}
+# Tasks with balls: the centre of each ball per frame, shaped (T, number of balls, 3).
+BALLS = "balls_transl"
 
 
 class MotionFormatError(ValueError):
     pass
 
 
-def load_motion(path, expect_fps=None, expect_frames=None):
+def load_motion(path, expect_fps=None, expect_frames=None, expect_object=False, expect_balls=None):
     """Load and validate a motion file.
 
     Returns a dict with "fps" (int) and float32 arrays for every key in REQUIRED and
-    OPTIONAL, shaped (T, *shape); optional keys that are absent are filled with zeros.
+    OPTIONAL, shaped (T, *shape); optional keys that are absent are filled with zeros. The keys in
+    OBJECT are included when the file has them, and are required with expect_object=True. The same goes
+    for BALLS, which is required with expect_balls=<number of balls>.
     Raises MotionFormatError listing every problem found.
     """
     errors = []
@@ -63,9 +72,13 @@ def load_motion(path, expect_fps=None, expect_frames=None):
 
     out = {"fps": fps}
     num_frames = None
-    for key, shape in {**REQUIRED, **OPTIONAL}.items():
+    shapes = {**REQUIRED, **OPTIONAL, **OBJECT}
+    if expect_balls is not None or BALLS in data.files:
+        count = expect_balls if expect_balls is not None else _read(data, BALLS, errors).shape[1]
+        shapes[BALLS] = (count, 3)
+    for key, shape in shapes.items():
         if key not in data.files:
-            if key in REQUIRED:
+            if key in REQUIRED or (expect_object and key in OBJECT) or key == BALLS:
                 errors.append(f"missing key '{key}'")
             continue
         arr = _read(data, key, errors)
@@ -96,9 +109,9 @@ def load_motion(path, expect_fps=None, expect_frames=None):
         if expect_frames is not None and num_frames != expect_frames:
             errors.append(f"must have exactly {expect_frames} frames for this task, got {num_frames}")
 
-    unknown = sorted(set(data.files) - {"fps"} - set(REQUIRED) - set(OPTIONAL))
+    unknown = sorted(set(data.files) - {"fps"} - set(shapes))
     if unknown:
-        errors.append(f"unknown keys {unknown}; allowed: fps, {', '.join([*REQUIRED, *OPTIONAL])}")
+        errors.append(f"unknown keys {unknown}; allowed: fps, {', '.join(shapes)}")
 
     if errors:
         raise MotionFormatError(f"{path}:\n  - " + "\n  - ".join(errors))
@@ -120,13 +133,14 @@ def main(argv):
     if len(argv) not in (2, 3):
         print(__doc__.strip().splitlines()[-1])
         return 2
-    fps, frames = TASK_FPS, TASK_FRAMES
-    if len(argv) == 3:  # the task file says how long the clip must be
+    fps, frames, has_object, balls = TASK_FPS, TASK_FRAMES, False, None
+    if len(argv) == 3:  # the task file says how long the clip must be and whether it has an object or balls
         with open(argv[2], encoding="utf-8") as f:
             task = json.load(f)
-        fps, frames = task["fps"], task["frames"]
+        fps, frames, has_object = task["fps"], task["frames"], "object" in task
+        balls = task["balls"]["count"] if "balls" in task else None
     try:
-        m = load_motion(argv[1], expect_fps=fps, expect_frames=frames)
+        m = load_motion(argv[1], expect_fps=fps, expect_frames=frames, expect_object=has_object, expect_balls=balls)
     except MotionFormatError as e:
         print(f"INVALID {e}")
         return 1

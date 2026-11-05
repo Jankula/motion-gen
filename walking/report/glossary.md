@@ -37,6 +37,25 @@ Terms used in the reports and in the agents' notes, in plain words.
 | **Heading** | The horizontal direction the body faces. 0° means facing the +Z direction of the scene, 90° means facing +X. Turning left increases the heading. |
 | **Contact sheet** | A single image with many still frames side by side, used to inspect a motion without playing the video. |
 
+## Ways of generating motion (used in the proposals)
+
+| Term | Meaning |
+|---|---|
+| **Pretrained motion model** | A neural network trained on large amounts of motion capture that generates new movement from a text description and/or constraints, in seconds or less. Examples: Kimodo, ARDY, MotionBricks, DART, HY-Motion. |
+| **Motion capture (mocap)** | Recording real people's movement with cameras or body sensors. Datasets of such recordings (AMASS, TRUMANS, ParaHome, ...) are used to train models or to search for suitable clips. |
+| **Keyframe** | A pose the body must have at a given moment. Animators set a few keyframes and fill in the movement between them. |
+| **In-betweening** | Generating the movement between keyframes. |
+| **Semantic keyframe** | A keyframe described by what it means ("right hand at the cupboard handle, looking at it") rather than by joint angles; a pose solver turns it into a full pose. |
+| **Retargeting / body conversion** | Transferring motion from one body or skeleton (for example NVIDIA's SOMA) to another (our SMPL-X). Done badly, it causes visible errors ("artifacts"). |
+| **Motion matching** | A game-industry technique: every few frames, the clip in a motion database that best continues the current movement and fits the goal is searched and played. |
+| **Inertialization** | A technique for switching from one motion to another without a visible jump, in milliseconds. |
+| **Layering** | Combining motions by body part, for example legs from walking and arms from carrying. |
+| **Diffusion model** | A kind of generative network that creates data (here, motion) by gradually removing noise. Most current motion models are of this kind. |
+| **Autoregressive generation** | Generating motion piece by piece, each piece continuing from the previous one; this allows long and real-time motion. |
+| **Distillation** | Training a small, fast model to reproduce what a slower system (here, our engine plus data) produces. |
+| **Director / action script** | In the proposed design, the agent writes a short list of actions (walk to, reach, place, ...) with targets and timing, which a motion engine carries out, instead of writing motion code itself. |
+| **GPU / VRAM** | A graphics processor, used both for drawing images and for running neural networks; VRAM is its memory. The NVIDIA L4 has 24 GB. |
+
 ## The experiment setup
 
 | Term | Meaning |

@@ -4,10 +4,6 @@ models/*
 agent_kit/body_info.json
 runs/**/body_info.json
 
-# Rendered output. Each experiment keeps grid.mp4 (all camera views in one video) and the contact
-# sheets, because the reports link to them; the separate per-view videos stay local (they are large
-# and can be re-rendered with `python -m walkenv.render runs/<ID>`).
-runs/**/videos/*.mp4
-!runs/**/videos/grid.mp4
+# Previews and test renders. Videos, pictures and session logs are excluded in the top-level .gitignore.
 runs/**/preview/
 runs/_smoke/
