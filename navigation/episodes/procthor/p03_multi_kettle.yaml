@@ -1,0 +1,13 @@
+id: p03_multi_kettle
+category: multi_step
+scene: scenes/procthor/train_3/scene.yaml
+instruction: Take the kettle from the kitchen counter to the dining table in the living room, then sit on the sofa.
+start: [1.0, 1.0]
+heading: 90
+stops: [[counter_top_1, kettle_1], [dining_table_2], [sofa_1]]
+views:
+  - scenes/procthor/train_3/views/p03_multi_kettle_top
+  - scenes/procthor/train_3/views/p03_multi_kettle_ego_front
+  - scenes/procthor/train_3/views/p03_multi_kettle_ego_left
+  - scenes/procthor/train_3/views/p03_multi_kettle_ego_back
+  - scenes/procthor/train_3/views/p03_multi_kettle_ego_right

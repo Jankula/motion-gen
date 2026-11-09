@@ -1,0 +1,33 @@
+{
+ "name": "p04_multi_lettuce_ego_right",
+ "objects": [
+  {
+   "id": "door_2",
+   "pixels": 117967,
+   "bbox": [
+    0,
+    6,
+    250,
+    599
+   ],
+   "centroid": [
+    106.2,
+    336.1
+   ]
+  },
+  {
+   "id": "garbage_can_1",
+   "pixels": 6870,
+   "bbox": [
+    510,
+    383,
+    586,
+    497
+   ],
+   "centroid": [
+    546.1,
+    439.0
+   ]
+  }
+ ]
+}

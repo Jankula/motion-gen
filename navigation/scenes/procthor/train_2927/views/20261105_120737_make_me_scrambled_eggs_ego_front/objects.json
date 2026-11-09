@@ -1,0 +1,47 @@
+{
+ "name": "20261105_120737_make_me_scrambled_eggs_ego_front",
+ "objects": [
+  {
+   "id": "shelving_unit_1",
+   "pixels": 33679,
+   "bbox": [
+    478,
+    441,
+    750,
+    575
+   ],
+   "centroid": [
+    606.7,
+    507.3
+   ]
+  },
+  {
+   "id": "painting_10",
+   "pixels": 19652,
+   "bbox": [
+    134,
+    5,
+    301,
+    134
+   ],
+   "centroid": [
+    220.7,
+    68.5
+   ]
+  },
+  {
+   "id": "painting_9",
+   "pixels": 43569,
+   "bbox": [
+    491,
+    15,
+    748,
+    205
+   ],
+   "centroid": [
+    611.6,
+    107.7
+   ]
+  }
+ ]
+}

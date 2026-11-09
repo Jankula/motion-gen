@@ -1,0 +1,6 @@
+name: s0_table_mug
+room: {x: [0.0, 6.0], y: [0.0, 5.0], height: 2.6}
+objects:
+  - {id: sofa_1, label: sofa, color: slategray, center: [2.8, 2.5, 0.4], size: [0.9, 2.2, 0.8]}
+  - {id: table_1, label: table, color: burlywood, center: [4.9, 2.5, 0.375], size: [1.2, 0.8, 0.75]}
+  - {id: mug_1, label: mug, color: red, center: [4.9, 2.5, 0.8], size: [0.1, 0.1, 0.1]}

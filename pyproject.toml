@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "motiongen"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = ["numpy", "scipy", "pillow>=10.1", "pyyaml"]
+
+[project.optional-dependencies]
+# Only scripts/export_procthor.py needs these, on a machine with a GPU.
+procthor = ["ai2thor", "prior"]
+
+[project.scripts]
+mg = "motiongen.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

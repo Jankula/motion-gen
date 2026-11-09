@@ -1,0 +1,13 @@
+name: motion-gen
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - numpy
+  - scipy
+  - pillow>=10.1
+  - pyyaml
+  - pytest
+  - pip
+  - pip:
+      - -e .

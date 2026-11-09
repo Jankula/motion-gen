@@ -1,0 +1,14 @@
+id: p09_articulation_open_fridge
+category: articulation
+scene: scenes/procthor/train_10/scene.yaml
+opened: [fridge_1]
+instruction: Go and wash your hands at the bathroom sink.
+start: [7.0, 6.0]
+heading: 0
+stops: [[sink_1]]
+views:
+  - scenes/procthor/train_10/views/p09_articulation_open_fridge_top
+  - scenes/procthor/train_10/views/p09_articulation_open_fridge_ego_front
+  - scenes/procthor/train_10/views/p09_articulation_open_fridge_ego_left
+  - scenes/procthor/train_10/views/p09_articulation_open_fridge_ego_back
+  - scenes/procthor/train_10/views/p09_articulation_open_fridge_ego_right

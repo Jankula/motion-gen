@@ -1,0 +1,47 @@
+{
+ "name": "p02_control_sofa_far_ego_front",
+ "objects": [
+  {
+   "id": "painting_8",
+   "pixels": 7091,
+   "bbox": [
+    185,
+    196,
+    289,
+    270
+   ],
+   "centroid": [
+    238.2,
+    232.6
+   ]
+  },
+  {
+   "id": "door_3",
+   "pixels": 24525,
+   "bbox": [
+    443,
+    163,
+    574,
+    382
+   ],
+   "centroid": [
+    503.2,
+    268.2
+   ]
+  },
+  {
+   "id": "painting_7",
+   "pixels": 6383,
+   "bbox": [
+    0,
+    187,
+    83,
+    281
+   ],
+   "centroid": [
+    35.4,
+    234.2
+   ]
+  }
+ ]
+}

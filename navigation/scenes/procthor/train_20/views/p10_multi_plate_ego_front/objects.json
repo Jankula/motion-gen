@@ -1,0 +1,33 @@
+{
+ "name": "p10_multi_plate_ego_front",
+ "objects": [
+  {
+   "id": "house_plant_1",
+   "pixels": 880,
+   "bbox": [
+    507,
+    303,
+    540,
+    394
+   ],
+   "centroid": [
+    521.8,
+    365.4
+   ]
+  },
+  {
+   "id": "door_5",
+   "pixels": 25054,
+   "bbox": [
+    550,
+    163,
+    706,
+    382
+   ],
+   "centroid": [
+    623.1,
+    268.2
+   ]
+  }
+ ]
+}

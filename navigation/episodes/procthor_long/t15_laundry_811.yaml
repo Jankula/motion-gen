@@ -1,0 +1,31 @@
+id: t15_laundry_811
+category: laundry
+scene: scenes/procthor/train_811/scene.yaml
+instruction: 'Do the laundry: wash the cloth that''s lying in the bathroom, then dry it.'
+start: [7.35, 22.13]
+heading: 0
+max_walks: 20
+max_actions: 40
+goals:
+  events:
+  - {id: got_cloth, pick: cloth}
+  - {id: washed, use: washing machine, containing: cloth}
+  - {id: dried, use: clothes dryer, containing: cloth}
+  order:
+  - [got_cloth, washed]
+  - [washed, dried]
+  final:
+  - in: [cloth, clothes dryer]
+  - {holding: nothing}
+reference:
+- [goto, cloth_1]
+- [pick, cloth_1]
+- [goto, washing_machine_1]
+- [place, cloth_1, washing_machine_1]
+- [use, washing_machine_1]
+- [pick, cloth_1]
+- [goto, clothes_dryer_1]
+- [place, cloth_1, clothes_dryer_1]
+- [use, clothes_dryer_1]
+views: [scenes/procthor/train_811/views/t15_laundry_811_top, scenes/procthor/train_811/views/t15_laundry_811_ego_front, scenes/procthor/train_811/views/t15_laundry_811_ego_left,
+  scenes/procthor/train_811/views/t15_laundry_811_ego_back, scenes/procthor/train_811/views/t15_laundry_811_ego_right]

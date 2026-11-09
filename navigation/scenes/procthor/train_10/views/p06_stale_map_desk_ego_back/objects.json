@@ -1,0 +1,33 @@
+{
+ "name": "p06_stale_map_desk_ego_back",
+ "objects": [
+  {
+   "id": "painting_8",
+   "pixels": 13328,
+   "bbox": [
+    646,
+    136,
+    779,
+    269
+   ],
+   "centroid": [
+    710.2,
+    201.3
+   ]
+  },
+  {
+   "id": "door_1",
+   "pixels": 82630,
+   "bbox": [
+    420,
+    102,
+    675,
+    499
+   ],
+   "centroid": [
+    530.2,
+    285.8
+   ]
+  }
+ ]
+}

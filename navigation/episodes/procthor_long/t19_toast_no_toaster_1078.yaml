@@ -1,0 +1,11 @@
+id: t19_toast_no_toaster_1078
+category: infeasible
+scene: scenes/procthor/train_1078/scene.yaml
+instruction: Make some toast and serve it on a plate at the dining table.
+start: [10.61, 4.43]
+heading: 0
+max_walks: 20
+max_actions: 40
+expect_infeasible: true
+views: [scenes/procthor/train_1078/views/t19_toast_no_toaster_1078_top, scenes/procthor/train_1078/views/t19_toast_no_toaster_1078_ego_front,
+  scenes/procthor/train_1078/views/t19_toast_no_toaster_1078_ego_left, scenes/procthor/train_1078/views/t19_toast_no_toaster_1078_ego_back, scenes/procthor/train_1078/views/t19_toast_no_toaster_1078_ego_right]

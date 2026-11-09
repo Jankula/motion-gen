@@ -1,0 +1,37 @@
+id: t06_coffee_1078
+category: coffee
+scene: scenes/procthor/train_1078/scene.yaml
+instruction: Make me a cup of coffee, bring it to the sofa and sit down there with it.
+start: [6.21, 9.31]
+heading: 0
+max_walks: 20
+max_actions: 40
+goals:
+  events:
+  - id: got_cup
+    pick: [mug, cup]
+  - id: brewed
+    use: coffee machine
+    containing:
+    - [mug, cup]
+  - id: sat
+    goto: &id001 [sofa_1]
+    intent: sit
+  order:
+  - [got_cup, brewed]
+  - [brewed, sat]
+  final:
+  - near:
+    - [mug, cup]
+    - *id001
+  - at: *id001
+reference:
+- [goto, cup_1]
+- [pick, cup_1]
+- [goto, coffee_machine_1]
+- [place, cup_1, coffee_machine_1]
+- [use, coffee_machine_1]
+- [pick, cup_1]
+- [goto, sofa_1, sit]
+views: [scenes/procthor/train_1078/views/t06_coffee_1078_top, scenes/procthor/train_1078/views/t06_coffee_1078_ego_front, scenes/procthor/train_1078/views/t06_coffee_1078_ego_left,
+  scenes/procthor/train_1078/views/t06_coffee_1078_ego_back, scenes/procthor/train_1078/views/t06_coffee_1078_ego_right]

@@ -1,0 +1,32 @@
+id: t11_toast_737
+category: toast
+scene: scenes/procthor/train_737/scene.yaml
+instruction: Make some toast and serve it on a plate at the table where the only plate in the house is.
+start: [2.41, 24.93]
+heading: 0
+max_walks: 20
+max_actions: 40
+goals:
+  events:
+  - {id: got_bread, pick: bread}
+  - {id: toasted, use: toaster, containing: bread}
+  - id: served
+    place: [bread, plate]
+  order:
+  - [got_bread, toasted]
+  - [toasted, served]
+  final:
+  - 'on': [bread, plate]
+  - 'on': [plate, dining_table_3]
+  - {holding: nothing}
+reference:
+- [goto, bread_1]
+- [pick, bread_1]
+- [goto, toaster_1]
+- [place, bread_1, toaster_1]
+- [use, toaster_1]
+- [pick, bread_1]
+- [goto, plate_1]
+- [place, bread_1, plate_1]
+views: [scenes/procthor/train_737/views/t11_toast_737_top, scenes/procthor/train_737/views/t11_toast_737_ego_front, scenes/procthor/train_737/views/t11_toast_737_ego_left,
+  scenes/procthor/train_737/views/t11_toast_737_ego_back, scenes/procthor/train_737/views/t11_toast_737_ego_right]

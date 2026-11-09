@@ -1,0 +1,31 @@
+name: s2_apartment
+room: {x: [0.0, 10.0], y: [0.0, 8.0], height: 2.6}
+objects:
+  # Walls. Living room is south-west, kitchen north-west, bedroom south-east, bathroom north-east.
+  - {id: wall_1, label: wall, color: dimgray, center: [6.0, 0.75, 1.25], size: [0.2, 1.5, 2.5]}
+  - {id: wall_2, label: wall, color: dimgray, center: [6.0, 4.0, 1.25], size: [0.2, 3.0, 2.5]}
+  - {id: wall_3, label: wall, color: dimgray, center: [6.0, 7.25, 1.25], size: [0.2, 1.5, 2.5]}
+  - {id: wall_4, label: wall, color: dimgray, center: [1.25, 4.0, 1.25], size: [2.5, 0.2, 2.5]}
+  - {id: wall_5, label: wall, color: dimgray, center: [4.7, 4.0, 1.25], size: [2.4, 0.2, 2.5]}
+  - {id: wall_6, label: wall, color: dimgray, center: [8.05, 4.0, 1.25], size: [3.9, 0.2, 2.5]}
+  # Living room
+  - {id: front_door_1, label: front door, color: saddlebrown, center: [0.05, 3.0, 1.0], size: [0.1, 0.9, 2.0]}
+  - {id: sofa_1, label: sofa, color: slategray, center: [1.5, 0.6, 0.4], size: [2.0, 0.9, 0.8]}
+  - {id: coffee_table_1, label: coffee table, color: peru, center: [1.5, 1.9, 0.2], size: [1.0, 0.5, 0.4]}
+  - {id: bookshelf_1, label: bookshelf, color: sienna, center: [3.6, 0.25, 0.9], size: [1.0, 0.4, 1.8]}
+  - {id: armchair_1, label: armchair, color: olive, center: [4.8, 0.6, 0.4], size: [0.9, 0.9, 0.8]}
+  - {id: floor_lamp_1, label: floor lamp, color: gold, center: [5.6, 0.3, 0.8], size: [0.3, 0.3, 1.6]}
+  # Kitchen
+  - {id: counter_1, label: counter, color: lightgray, center: [1.5, 7.6, 0.45], size: [3.0, 0.6, 0.9]}
+  - {id: sink_1, label: sink, color: silver, center: [0.9, 7.6, 0.95], size: [0.5, 0.4, 0.1]}
+  - {id: mug_1, label: mug, color: red, center: [2.3, 7.6, 0.95], size: [0.1, 0.1, 0.1]}
+  - {id: dining_table_1, label: dining table, color: burlywood, center: [3.8, 5.8, 0.375], size: [1.6, 0.9, 0.75]}
+  - {id: dining_chair_1, label: dining chair, color: tan, center: [3.8, 5.0, 0.45], size: [0.45, 0.45, 0.9]}
+  - {id: dining_chair_2, label: dining chair, color: tan, center: [3.8, 6.6, 0.45], size: [0.45, 0.45, 0.9]}
+  # Bedroom
+  - {id: bed_1, label: bed, color: lightsteelblue, center: [8.9, 1.1, 0.3], size: [2.0, 1.6, 0.6]}
+  - {id: desk_1, label: desk, color: burlywood, center: [8.2, 3.5, 0.375], size: [1.2, 0.6, 0.75]}
+  - {id: charger_1, label: phone charger, color: black, center: [8.2, 3.5, 0.77], size: [0.1, 0.1, 0.04]}
+  # Bathroom
+  - {id: toilet_1, label: toilet, color: white, center: [7.0, 7.6, 0.4], size: [0.4, 0.6, 0.8]}
+  - {id: sink_2, label: sink, color: silver, center: [9.5, 7.6, 0.45], size: [0.5, 0.5, 0.9]}

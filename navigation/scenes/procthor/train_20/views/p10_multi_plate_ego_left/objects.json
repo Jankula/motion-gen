@@ -1,0 +1,33 @@
+{
+ "name": "p10_multi_plate_ego_left",
+ "objects": [
+  {
+   "id": "painting_8",
+   "pixels": 6394,
+   "bbox": [
+    0,
+    183,
+    72,
+    296
+   ],
+   "centroid": [
+    28.4,
+    245.1
+   ]
+  },
+  {
+   "id": "door_3",
+   "pixels": 56023,
+   "bbox": [
+    295,
+    128,
+    491,
+    456
+   ],
+   "centroid": [
+    393.9,
+    282.8
+   ]
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+id: t18_coffee_no_machine_2957
+category: infeasible
+scene: scenes/procthor/train_2957/scene.yaml
+instruction: Make me a cup of coffee, bring it to the sofa and sit down there with it.
+start: [3.67, 6.27]
+heading: 0
+max_walks: 20
+max_actions: 40
+expect_infeasible: true
+views: [scenes/procthor/train_2957/views/t18_coffee_no_machine_2957_top, scenes/procthor/train_2957/views/t18_coffee_no_machine_2957_ego_front,
+  scenes/procthor/train_2957/views/t18_coffee_no_machine_2957_ego_left, scenes/procthor/train_2957/views/t18_coffee_no_machine_2957_ego_back,
+  scenes/procthor/train_2957/views/t18_coffee_no_machine_2957_ego_right]

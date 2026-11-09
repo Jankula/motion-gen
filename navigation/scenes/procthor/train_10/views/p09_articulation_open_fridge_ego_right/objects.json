@@ -1,0 +1,117 @@
+{
+ "name": "p09_articulation_open_fridge_ego_right",
+ "objects": [
+  {
+   "id": "lettuce_1",
+   "pixels": 58,
+   "bbox": [
+    324,
+    249,
+    332,
+    257
+   ],
+   "centroid": [
+    327.6,
+    253.4
+   ]
+  },
+  {
+   "id": "door_3",
+   "pixels": 4254,
+   "bbox": [
+    429,
+    141,
+    475,
+    434
+   ],
+   "centroid": [
+    453.5,
+    261.6
+   ]
+  },
+  {
+   "id": "floor_lamp_1",
+   "pixels": 627,
+   "bbox": [
+    437,
+    189,
+    462,
+    318
+   ],
+   "centroid": [
+    446.3,
+    243.6
+   ]
+  },
+  {
+   "id": "painting_2",
+   "pixels": 197,
+   "bbox": [
+    425,
+    212,
+    430,
+    261
+   ],
+   "centroid": [
+    427.4,
+    236.0
+   ]
+  },
+  {
+   "id": "soap_bottle_1",
+   "pixels": 88,
+   "bbox": [
+    349,
+    245,
+    357,
+    257
+   ],
+   "centroid": [
+    353.0,
+    252.5
+   ]
+  },
+  {
+   "id": "fridge_1",
+   "pixels": 163525,
+   "bbox": [
+    0,
+    0,
+    317,
+    599
+   ],
+   "centroid": [
+    143.9,
+    332.5
+   ]
+  },
+  {
+   "id": "counter_top_1",
+   "pixels": 4118,
+   "bbox": [
+    293,
+    256,
+    380,
+    319
+   ],
+   "centroid": [
+    340.1,
+    282.3
+   ]
+  },
+  {
+   "id": "spoon_2",
+   "pixels": 2,
+   "bbox": [
+    304,
+    256,
+    307,
+    257
+   ],
+   "centroid": [
+    305.5,
+    256.5
+   ]
+  }
+ ]
+}

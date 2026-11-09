@@ -1,0 +1,6 @@
+id: a1_read
+category: ambiguous
+scene: scenes/s2_apartment.yaml
+instruction: Find somewhere comfortable to sit and read.
+start: [3.0, 6.8]
+stops: [[armchair_1, sofa_1]]

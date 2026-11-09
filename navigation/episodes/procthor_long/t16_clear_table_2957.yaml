@@ -1,0 +1,42 @@
+id: t16_clear_table_2957
+category: clear_table
+scene: scenes/procthor/train_2957/scene.yaml
+instruction: 'Clear the kitchen table: dishes go on the counter, food goes in the fridge.'
+start: [10.25, 5.41]
+heading: 0
+max_walks: 20
+max_actions: 40
+goals:
+  final:
+  - 'on': [bowl_1, counter top]
+  - 'on': [plate_1, counter top]
+  - 'on': [cup_1, counter top]
+  - in: [lettuce_1, fridge]
+  - in: [potato_3, fridge]
+  - 'off':
+    - [bowl_1, plate_1, cup_1, lettuce_1, potato_3]
+    - dining_table_1
+  - {closed: fridge}
+  - {holding: nothing}
+reference:
+- [goto, cup_1]
+- [pick, cup_1]
+- [goto, bowl_1]
+- [place, cup_1, bowl_1]
+- [pick, bowl_1]
+- [goto, plate_1]
+- [pick, plate_1]
+- [goto, counter_top_1]
+- [place, bowl_1, counter_top_1]
+- [place, plate_1, counter_top_1]
+- [goto, lettuce_1]
+- [pick, lettuce_1]
+- [goto, potato_3]
+- [pick, potato_3]
+- [goto, fridge_1]
+- [open, fridge_1]
+- [place, lettuce_1, fridge_1]
+- [place, potato_3, fridge_1]
+- [close, fridge_1]
+views: [scenes/procthor/train_2957/views/t16_clear_table_2957_top, scenes/procthor/train_2957/views/t16_clear_table_2957_ego_front, scenes/procthor/train_2957/views/t16_clear_table_2957_ego_left,
+  scenes/procthor/train_2957/views/t16_clear_table_2957_ego_back, scenes/procthor/train_2957/views/t16_clear_table_2957_ego_right]

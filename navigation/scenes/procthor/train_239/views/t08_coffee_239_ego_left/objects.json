@@ -1,0 +1,33 @@
+{
+ "name": "t08_coffee_239_ego_left",
+ "objects": [
+  {
+   "id": "door_3",
+   "pixels": 86127,
+   "bbox": [
+    2,
+    134,
+    345,
+    431
+   ],
+   "centroid": [
+    191.3,
+    275.6
+   ]
+  },
+  {
+   "id": "garbage_can_1",
+   "pixels": 6364,
+   "bbox": [
+    727,
+    355,
+    799,
+    464
+   ],
+   "centroid": [
+    768.6,
+    410.8
+   ]
+  }
+ ]
+}

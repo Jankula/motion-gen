@@ -1,0 +1,61 @@
+{
+ "name": "p04_multi_lettuce_ego_back",
+ "objects": [
+  {
+   "id": "painting_4",
+   "pixels": 21582,
+   "bbox": [
+    490,
+    0,
+    737,
+    91
+   ],
+   "centroid": [
+    609.6,
+    45.0
+   ]
+  },
+  {
+   "id": "plunger_1",
+   "pixels": 1361,
+   "bbox": [
+    430,
+    491,
+    461,
+    599
+   ],
+   "centroid": [
+    446.0,
+    566.9
+   ]
+  },
+  {
+   "id": "garbage_can_1",
+   "pixels": 9708,
+   "bbox": [
+    0,
+    475,
+    92,
+    599
+   ],
+   "centroid": [
+    39.0,
+    541.0
+   ]
+  },
+  {
+   "id": "toilet_1",
+   "pixels": 8441,
+   "bbox": [
+    720,
+    480,
+    799,
+    599
+   ],
+   "centroid": [
+    763.7,
+    540.5
+   ]
+  }
+ ]
+}

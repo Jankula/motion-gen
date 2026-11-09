@@ -1,0 +1,8 @@
+id: h2_change_plan
+category: stale_map
+scene: scenes/s2_apartment.yaml
+hidden_objects:
+  - {id: blocker_1, label: boxes, color: orange, center: [6.0, 2.0, 0.5], size: [0.6, 1.2, 1.0]}
+instruction: Get the phone charger from the desk, then go to the sofa. If you can't reach the desk, go straight to the front door instead and stop there.
+start: [3.0, 2.5]
+stops: [[front_door_1]]

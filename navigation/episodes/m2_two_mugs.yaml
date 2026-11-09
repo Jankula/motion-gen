@@ -1,0 +1,6 @@
+id: m2_two_mugs
+category: multi_step
+scene: scenes/s1_distractor_gap.yaml
+instruction: Go to the table with the blue mug, then go to the table with the red mug.
+start: [1.0, 4.5]
+stops: [[table_1, mug_1], [table_2, mug_2]]

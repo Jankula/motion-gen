@@ -1,0 +1,33 @@
+{
+ "name": "p02_control_sofa_far_ego_back",
+ "objects": [
+  {
+   "id": "bed_2",
+   "pixels": 57218,
+   "bbox": [
+    491,
+    327,
+    799,
+    599
+   ],
+   "centroid": [
+    666.9,
+    467.7
+   ]
+  },
+  {
+   "id": "pillow_2",
+   "pixels": 717,
+   "bbox": [
+    759,
+    386,
+    799,
+    414
+   ],
+   "centroid": [
+    783.5,
+    396.4
+   ]
+  }
+ ]
+}

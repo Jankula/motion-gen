@@ -1,0 +1,6 @@
+id: m1_bring_mug
+category: multi_step
+scene: scenes/s2_apartment.yaml
+instruction: Get the mug from the kitchen, put it on the dining table, then go and sit on the sofa.
+start: [3.0, 2.5]
+stops: [[counter_1, mug_1], [dining_table_1], [sofa_1]]

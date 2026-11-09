@@ -1,0 +1,61 @@
+{
+ "name": "p07_infeasible_toilet_ego_right",
+ "objects": [
+  {
+   "id": "shelving_unit_3",
+   "pixels": 34271,
+   "bbox": [
+    223,
+    483,
+    532,
+    599
+   ],
+   "centroid": [
+    378.4,
+    541.3
+   ]
+  },
+  {
+   "id": "door_1",
+   "pixels": 113672,
+   "bbox": [
+    548,
+    32,
+    799,
+    599
+   ],
+   "centroid": [
+    695.5,
+    333.7
+   ]
+  },
+  {
+   "id": "chair_7",
+   "pixels": 4125,
+   "bbox": [
+    0,
+    450,
+    36,
+    599
+   ],
+   "centroid": [
+    13.8,
+    529.2
+   ]
+  },
+  {
+   "id": "painting_10",
+   "pixels": 38255,
+   "bbox": [
+    0,
+    12,
+    180,
+    252
+   ],
+   "centroid": [
+    79.4,
+    137.8
+   ]
+  }
+ ]
+}

@@ -1,0 +1,6 @@
+id: g2_narrow_gap
+category: geometry_blocked
+scene: scenes/s3_blocked_rooms.yaml
+instruction: Walk to the bookshelf.
+start: [3.6, 3.6]
+expect_infeasible: true

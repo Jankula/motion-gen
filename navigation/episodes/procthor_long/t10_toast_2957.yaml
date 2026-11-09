@@ -1,0 +1,32 @@
+id: t10_toast_2957
+category: toast
+scene: scenes/procthor/train_2957/scene.yaml
+instruction: Make some toast and serve it on a plate at the kitchen table.
+start: [7.77, 9.81]
+heading: 0
+max_walks: 20
+max_actions: 40
+goals:
+  events:
+  - {id: got_bread, pick: bread}
+  - {id: toasted, use: toaster, containing: bread}
+  - id: served
+    place: [bread, plate]
+  order:
+  - [got_bread, toasted]
+  - [toasted, served]
+  final:
+  - 'on': [bread, plate]
+  - 'on': [plate, dining_table_1]
+  - {holding: nothing}
+reference:
+- [goto, bread_1]
+- [pick, bread_1]
+- [goto, toaster_1]
+- [place, bread_1, toaster_1]
+- [use, toaster_1]
+- [pick, bread_1]
+- [goto, plate_1]
+- [place, bread_1, plate_1]
+views: [scenes/procthor/train_2957/views/t10_toast_2957_top, scenes/procthor/train_2957/views/t10_toast_2957_ego_front, scenes/procthor/train_2957/views/t10_toast_2957_ego_left,
+  scenes/procthor/train_2957/views/t10_toast_2957_ego_back, scenes/procthor/train_2957/views/t10_toast_2957_ego_right]

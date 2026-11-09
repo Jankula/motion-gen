@@ -1,0 +1,6 @@
+id: c1_red_mug
+category: control
+scene: scenes/s0_table_mug.yaml
+instruction: Walk to the table with the red mug.
+start: [0.8, 2.5]
+stops: [[table_1, mug_1]]

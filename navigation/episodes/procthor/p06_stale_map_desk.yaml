@@ -1,0 +1,15 @@
+id: p06_stale_map_desk
+category: stale_map
+scene: scenes/procthor/train_10/scene.yaml
+hidden_objects:
+  - {id: blocker_1, label: boxes, color: orange, center: [2.9, 7.39, 0.5], size: [0.6, 1.3, 1.0]}
+instruction: Go to the desk. If you can't reach it, go to the fridge instead.
+start: [5.0, 1.5]
+heading: 90
+stops: [[fridge_1]]
+views:
+  - scenes/procthor/train_10/views/p06_stale_map_desk_top
+  - scenes/procthor/train_10/views/p06_stale_map_desk_ego_front
+  - scenes/procthor/train_10/views/p06_stale_map_desk_ego_left
+  - scenes/procthor/train_10/views/p06_stale_map_desk_ego_back
+  - scenes/procthor/train_10/views/p06_stale_map_desk_ego_right

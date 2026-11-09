@@ -1,0 +1,1986 @@
+name: procthor_train_2957
+source: {dataset: procthor-10k, split: train, index: 2957}
+room:
+  x: [0.0, 13.753]
+  y: [0.0, 15.718]
+  height: 2.904
+rooms:
+- id: kitchen_1
+  type: kitchen
+  polygon:
+  - [7.859, 7.859]
+  - [7.859, 9.824]
+  - [5.894, 9.824]
+  - [5.894, 11.788]
+  - [13.753, 11.788]
+  - [13.753, 7.859]
+- id: living_room_1
+  type: living_room
+  polygon:
+  - [5.894, 15.718]
+  - [13.753, 15.718]
+  - [13.753, 11.788]
+  - [5.894, 11.788]
+- id: living_room_2
+  type: living_room
+  polygon:
+  - [1.965, 7.859]
+  - [1.965, 11.788]
+  - [5.894, 11.788]
+  - [5.894, 9.824]
+  - [7.859, 9.824]
+  - [7.859, 7.859]
+  - [5.894, 7.859]
+- id: bathroom_1
+  type: bathroom
+  polygon:
+  - [0.0, 7.859]
+  - [0.0, 11.788]
+  - [1.965, 11.788]
+  - [1.965, 7.859]
+- id: bedroom_1
+  type: bedroom
+  polygon:
+  - [0.0, 3.929]
+  - [0.0, 7.859]
+  - [1.965, 7.859]
+  - [5.894, 7.859]
+  - [5.894, 3.929]
+- id: bedroom_2
+  type: bedroom
+  polygon:
+  - [5.894, 3.929]
+  - [5.894, 7.859]
+  - [7.859, 7.859]
+  - [13.753, 7.859]
+  - [13.753, 3.929]
+- id: bedroom_3
+  type: bedroom
+  polygon:
+  - [13.753, 0.0]
+  - [9.824, 0.0]
+  - [9.824, 1.965]
+  - [5.894, 1.965]
+  - [5.894, 3.929]
+  - [13.753, 3.929]
+objects:
+- label: wall
+  color: dimgray
+  center: [13.753, 9.823, 1.452]
+  size: [0.1, 3.929, 2.904]
+  id: wall_1
+- label: wall
+  color: dimgray
+  center: [10.806, 7.859, 1.452]
+  size: [5.894, 0.1, 2.904]
+  id: wall_2
+- label: wall
+  color: dimgray
+  center: [9.823, 15.718, 1.452]
+  size: [7.859, 0.1, 2.904]
+  id: wall_3
+- label: wall
+  color: dimgray
+  center: [13.753, 13.753, 1.452]
+  size: [0.1, 3.93, 2.904]
+  id: wall_4
+- label: wall
+  color: dimgray
+  center: [5.894, 13.753, 1.452]
+  size: [0.1, 3.93, 2.904]
+  id: wall_5
+- label: wall
+  color: dimgray
+  center: [1.965, 9.049, 1.452]
+  size: [0.1, 2.379, 2.904]
+  id: wall_6
+- label: wall
+  color: dimgray
+  center: [1.965, 11.532, 1.452]
+  size: [0.1, 0.512, 2.904]
+  id: wall_7
+- label: wall
+  color: dimgray
+  center: [2.097, 11.788, 1.452]
+  size: [0.264, 0.1, 2.904]
+  id: wall_8
+- label: wall
+  color: dimgray
+  center: [5.018, 11.788, 1.452]
+  size: [1.751, 0.1, 2.904]
+  id: wall_9
+- label: wall
+  color: dimgray
+  center: [6.877, 7.859, 1.452]
+  size: [1.965, 0.1, 2.904]
+  id: wall_10
+- label: wall
+  color: dimgray
+  center: [2.516, 7.859, 1.452]
+  size: [1.102, 0.1, 2.904]
+  id: wall_11
+- label: wall
+  color: dimgray
+  center: [5.001, 7.859, 1.452]
+  size: [1.787, 0.1, 2.904]
+  id: wall_12
+- label: wall
+  color: dimgray
+  center: [0.0, 9.823, 1.452]
+  size: [0.1, 3.929, 2.904]
+  id: wall_13
+- label: wall
+  color: dimgray
+  center: [0.983, 11.788, 1.452]
+  size: [1.965, 0.1, 2.904]
+  id: wall_14
+- label: wall
+  color: dimgray
+  center: [0.983, 7.859, 1.452]
+  size: [1.965, 0.1, 2.904]
+  id: wall_15
+- label: wall
+  color: dimgray
+  center: [0.0, 5.894, 1.452]
+  size: [0.1, 3.93, 2.904]
+  id: wall_16
+- label: wall
+  color: dimgray
+  center: [5.894, 4.716, 1.452]
+  size: [0.1, 1.575, 2.904]
+  id: wall_17
+- label: wall
+  color: dimgray
+  center: [5.894, 7.636, 1.452]
+  size: [0.1, 0.445, 2.904]
+  id: wall_18
+- label: wall
+  color: dimgray
+  center: [2.947, 3.929, 1.452]
+  size: [5.894, 0.1, 2.904]
+  id: wall_19
+- label: wall
+  color: dimgray
+  center: [13.753, 5.894, 1.452]
+  size: [0.1, 3.93, 2.904]
+  id: wall_20
+- label: wall
+  color: dimgray
+  center: [8.597, 3.929, 1.452]
+  size: [5.406, 0.1, 2.904]
+  id: wall_21
+- label: wall
+  color: dimgray
+  center: [13.509, 3.929, 1.452]
+  size: [0.488, 0.1, 2.904]
+  id: wall_22
+- label: wall
+  color: dimgray
+  center: [11.788, 0.0, 1.452]
+  size: [3.929, 0.1, 2.904]
+  id: wall_23
+- label: wall
+  color: dimgray
+  center: [9.824, 0.983, 1.452]
+  size: [0.1, 1.965, 2.904]
+  id: wall_24
+- label: wall
+  color: dimgray
+  center: [7.859, 1.965, 1.452]
+  size: [3.93, 0.1, 2.904]
+  id: wall_25
+- label: wall
+  color: dimgray
+  center: [5.894, 2.947, 1.452]
+  size: [0.1, 1.964, 2.904]
+  id: wall_26
+- label: wall
+  color: dimgray
+  center: [13.753, 1.964, 1.452]
+  size: [0.1, 3.929, 2.904]
+  id: wall_27
+- id: door_1
+  label: door
+  color: saddlebrown
+  center: [3.186, 11.788, 0.0]
+  size: [1.914, 0.163, 0.0]
+  thor_id: door|1|4
+- id: door_3
+  label: door
+  color: saddlebrown
+  center: [3.587, 7.859, 0.0]
+  size: [1.041, 0.242, 0.0]
+  thor_id: door|4|6
+- id: door_4
+  label: door
+  color: saddlebrown
+  center: [5.894, 6.459, 0.0]
+  size: [0.221, 1.91, 0.0]
+  thor_id: door|6|7
+- id: door_5
+  label: door
+  color: saddlebrown
+  center: [12.283, 3.929, 0.0]
+  size: [1.965, 0.172, 0.0]
+  thor_id: door|7|8
+- id: door_2
+  label: door
+  color: saddlebrown
+  center: [1.965, 10.757, 0.0]
+  size: [0.235, 1.038, 0.0]
+  thor_id: door|4|5
+- id: alarm_clock_2
+  label: alarm clock
+  color: darkolivegreen
+  center: [9.732, 3.767, 0.815]
+  size: [0.231, 0.095, 0.166]
+  thor_id: AlarmClock|surface|8|93
+  pickupable: true
+  supported_by: side_table_1
+- id: alarm_clock_1
+  label: alarm clock
+  color: steelblue
+  center: [7.797, 6.064, 0.862]
+  size: [0.175, 0.048, 0.164]
+  thor_id: AlarmClock|surface|7|74
+  pickupable: true
+  supported_by: dining_table_4
+- id: apple_1
+  label: apple
+  color: sienna
+  center: [12.926, 8.648, 0.982]
+  size: [0.08, 0.08, 0.08]
+  thor_id: Apple|surface|2|13
+  pickupable: true
+  supported_by: counter_top_1
+- id: arm_chair_1
+  label: arm chair
+  color: dimgray
+  center: [6.364, 13.465, 0.409]
+  size: [0.891, 0.857, 0.817]
+  thor_id: ArmChair|3|2
+  receptacle: true
+- id: arm_chair_2
+  label: arm chair
+  color: darkslategray
+  center: [13.344, 12.534, 0.363]
+  size: [0.768, 0.763, 0.725]
+  thor_id: ArmChair|3|3
+  receptacle: true
+- id: baseball_bat_1
+  label: baseball bat
+  color: gray
+  center: [11.691, 0.013, 0.02]
+  size: [0.046, 0.069, 0.432]
+  thor_id: BaseballBat|8|5
+  pickupable: true
+- id: baseball_bat_2
+  label: baseball bat
+  color: darkolivegreen
+  center: [8.407, 5.108, 0.04]
+  size: [0.865, 0.576, 0.081]
+  thor_id: BaseballBat|surface|7|83
+  pickupable: true
+- id: basket_ball_1
+  label: basket ball
+  color: sienna
+  center: [12.951, 5.1, 0.12]
+  size: [0.239, 0.239, 0.239]
+  thor_id: BasketBall|7|3
+  pickupable: true
+- id: basket_ball_2
+  label: basket ball
+  color: sienna
+  center: [6.765, 2.687, 0.842]
+  size: [0.239, 0.239, 0.239]
+  thor_id: BasketBall|surface|8|102
+  pickupable: true
+  supported_by: bed_3
+- id: bed_3
+  label: bed
+  color: slategray
+  center: [7.039, 3.074, 0.415]
+  size: [2.239, 1.661, 0.83]
+  thor_id: Bed|8|0
+  receptacle: true
+- id: bed_2
+  label: bed
+  color: lightsteelblue
+  center: [12.522, 6.798, 0.677]
+  size: [2.412, 2.071, 1.355]
+  thor_id: Bed|7|0
+  receptacle: true
+- id: bed_1
+  label: bed
+  color: tan
+  center: [1.055, 5.161, 0.61]
+  size: [2.06, 2.414, 1.22]
+  thor_id: Bed|6|0|0
+  receptacle: true
+- id: book_6
+  label: book
+  color: tan
+  center: [8.685, 5.934, 0.793]
+  size: [0.142, 0.214, 0.027]
+  thor_id: Book|surface|7|85
+  pickupable: true
+  supported_by: dining_table_4
+  openable: true
+  open_box:
+    center: [8.615, 5.934, 0.793]
+    size: [0.281, 0.214, 0.027]
+- id: book_1
+  label: book
+  color: gray
+  center: [6.372, 12.645, 0.736]
+  size: [0.267, 0.365, 0.017]
+  thor_id: Book|surface|3|38
+  pickupable: true
+  inside: drawer_2
+  openable: true
+  open_box:
+    center: [6.501, 12.646, 0.757]
+    size: [0.524, 0.367, 0.236]
+- id: book_4
+  label: book
+  color: silver
+  center: [0.574, 5.149, 0.727]
+  size: [0.22, 0.258, 0.03]
+  thor_id: Book|surface|6|68
+  pickupable: true
+  supported_by: bed_1
+  openable: true
+  open_box:
+    center: [0.465, 5.149, 0.727]
+    size: [0.437, 0.258, 0.03]
+- id: book_5
+  label: book
+  color: lightslategray
+  center: [7.351, 4.319, 0.908]
+  size: [0.258, 0.22, 0.03]
+  thor_id: Book|surface|7|79
+  pickupable: true
+  supported_by: dresser_4
+  openable: true
+  open_box:
+    center: [7.351, 4.211, 0.908]
+    size: [0.258, 0.436, 0.03]
+- id: book_3
+  label: book
+  color: darkgray
+  center: [4.968, 8.08, 0.752]
+  size: [0.224, 0.164, 0.02]
+  thor_id: Book|surface|4|54
+  pickupable: true
+  supported_by: dining_table_3
+  openable: true
+  open_box:
+    center: [4.969, 8.023, 0.751]
+    size: [0.225, 0.328, 0.021]
+- id: book_2
+  label: book
+  color: darkgray
+  center: [4.969, 8.269, 0.749]
+  size: [0.148, 0.188, 0.016]
+  thor_id: Book|surface|4|53
+  pickupable: true
+  supported_by: dining_table_3
+  openable: true
+  open_box:
+    center: [5.042, 8.274, 0.749]
+    size: [0.294, 0.199, 0.016]
+- id: bottle_1
+  label: bottle
+  color: silver
+  center: [9.849, 10.425, 0.871]
+  size: [0.107, 0.107, 0.254]
+  thor_id: Bottle|surface|2|12
+  pickupable: true
+  supported_by: dining_table_1
+- id: bowl_5
+  label: bowl
+  color: darkslategray
+  center: [7.797, 6.304, 0.823]
+  size: [0.223, 0.223, 0.087]
+  thor_id: Bowl|surface|7|86
+  pickupable: true
+  receptacle: true
+  supported_by: dining_table_4
+- id: bowl_3
+  label: bowl
+  color: slategray
+  center: [5.418, 8.079, 0.789]
+  size: [0.158, 0.158, 0.095]
+  thor_id: Bowl|surface|4|52
+  pickupable: true
+  receptacle: true
+  supported_by: dining_table_3
+- id: bowl_1
+  label: bowl
+  color: dimgray
+  center: [10.93, 10.54, 0.789]
+  size: [0.218, 0.228, 0.09]
+  thor_id: Bowl|surface|2|21
+  pickupable: true
+  receptacle: true
+  supported_by: dining_table_1
+- id: bowl_6
+  label: bowl
+  color: darkgray
+  center: [13.542, 0.18, 0.494]
+  size: [0.16, 0.16, 0.088]
+  thor_id: Bowl|surface|8|99
+  pickupable: true
+  receptacle: true
+  supported_by: tv_stand_3
+- id: bowl_4
+  label: bowl
+  color: gray
+  center: [4.049, 4.231, 0.923]
+  size: [0.209, 0.208, 0.059]
+  thor_id: Bowl|surface|6|65
+  pickupable: true
+  receptacle: true
+  supported_by: dresser_3
+- id: bowl_2
+  label: bowl
+  color: slategray
+  center: [13.199, 12.688, 0.358]
+  size: [0.202, 0.202, 0.075]
+  thor_id: Bowl|surface|3|31
+  pickupable: true
+  receptacle: true
+  supported_by: arm_chair_2
+- id: box_1
+  label: box
+  color: burlywood
+  center: [5.576, 8.34, 0.817]
+  size: [0.245, 0.311, 0.151]
+  thor_id: Box|surface|4|56
+  pickupable: true
+  receptacle: true
+  supported_by: dining_table_3
+  openable: true
+  open_box:
+    center: [5.58, 8.34, 0.848]
+    size: [0.447, 0.445, 0.213]
+- id: box_2
+  label: box
+  color: rosybrown
+  center: [13.092, 7.118, 0.889]
+  size: [0.2, 0.36, 0.232]
+  thor_id: Box|surface|7|78
+  pickupable: true
+  receptacle: true
+  supported_by: bed_2
+  openable: true
+  open_box:
+    center: [13.091, 7.117, 0.915]
+    size: [0.364, 0.461, 0.285]
+- id: bread_1
+  label: bread
+  color: rosybrown
+  center: [13.04, 9.412, 1.022]
+  size: [0.142, 0.268, 0.16]
+  thor_id: Bread|surface|2|23
+  pickupable: true
+  supported_by: counter_top_1
+- id: candle_1
+  label: candle
+  color: gray
+  center: [13.661, 14.265, 0.141]
+  size: [0.051, 0.051, 0.105]
+  thor_id: Candle|surface|3|40
+  pickupable: true
+  toggleable: true
+  supported_by: tv_stand_1
+- id: candle_3
+  label: candle
+  color: lightslategray
+  center: [6.356, 12.645, 1.024]
+  size: [0.051, 0.051, 0.105]
+  thor_id: Candle|surface|3|44
+  pickupable: true
+  toggleable: true
+  supported_by: dresser_1
+- id: candle_2
+  label: candle
+  color: darkolivegreen
+  center: [6.269, 12.363, 1.137]
+  size: [0.103, 0.104, 0.331]
+  thor_id: Candle|surface|3|43
+  pickupable: true
+  supported_by: dresser_1
+- id: cart_1
+  label: cart
+  color: lightslategray
+  center: [4.636, 10.776, 0.641]
+  size: [0.712, 0.54, 1.283]
+  thor_id: Cart|4|0
+  receptacle: true
+- id: cd_1
+  label: cd
+  color: gray
+  center: [7.744, 4.393, 0.397]
+  size: [0.105, 0.105, 0.004]
+  thor_id: CD|surface|7|72
+  pickupable: true
+  inside: drawer_19
+- id: cd_4
+  label: cd
+  color: gray
+  center: [13.621, 0.798, 0.274]
+  size: [0.105, 0.105, 0.004]
+  thor_id: CD|surface|8|90
+  pickupable: true
+  supported_by: tv_stand_3
+- id: cd_3
+  label: cd
+  color: gray
+  center: [9.732, 3.767, 0.734]
+  size: [0.105, 0.105, 0.004]
+  thor_id: CD|surface|8|111
+  pickupable: true
+- id: cd_2
+  label: cd
+  color: gray
+  center: [10.022, 0.235, 0.494]
+  size: [0.105, 0.105, 0.004]
+  thor_id: CD|surface|8|103
+  pickupable: true
+  inside: drawer_31
+- id: cell_phone_2
+  label: cell phone
+  color: black
+  center: [7.575, 6.428, 0.785]
+  size: [0.089, 0.18, 0.01]
+  thor_id: CellPhone|surface|7|70
+  pickupable: true
+  toggleable: true
+  supported_by: dining_table_4
+- id: cell_phone_1
+  label: cell phone
+  color: gray
+  center: [6.324, 12.728, 0.419]
+  size: [0.076, 0.146, 0.011]
+  thor_id: CellPhone|surface|3|39
+  pickupable: true
+  toggleable: true
+  inside: drawer_3
+- id: cell_phone_4
+  label: cell phone
+  color: gray
+  center: [13.5, 0.353, 0.094]
+  size: [0.076, 0.146, 0.011]
+  thor_id: CellPhone|surface|8|94
+  pickupable: true
+  toggleable: true
+  supported_by: tv_stand_3
+- id: cell_phone_3
+  label: cell phone
+  color: gray
+  center: [6.207, 4.295, 0.149]
+  size: [0.113, 0.063, 0.014]
+  thor_id: CellPhone|surface|7|84
+  pickupable: true
+  inside: drawer_22
+- id: chair_4
+  label: chair
+  color: rosybrown
+  center: [8.239, 6.65, 0.453]
+  size: [0.589, 0.622, 0.906]
+  thor_id: Chair|7|1|1
+  receptacle: true
+- id: chair_3
+  label: chair
+  color: dimgray
+  center: [6.28, 15.091, 0.441]
+  size: [0.721, 0.675, 0.881]
+  thor_id: Chair|3|1|2
+  receptacle: true
+- id: chair_2
+  label: chair
+  color: indianred
+  center: [7.247, 15.091, 0.441]
+  size: [0.721, 0.675, 0.881]
+  thor_id: Chair|3|1|1
+  receptacle: true
+- id: chair_1
+  label: chair
+  color: darkkhaki
+  center: [10.501, 10.991, 0.437]
+  size: [0.478, 0.524, 0.875]
+  thor_id: Chair|2|2|1
+  receptacle: true
+- id: counter_top_1
+  label: counter top
+  color: dimgray
+  center: [13.268, 9.41, 0.471]
+  size: [0.921, 3.052, 0.942]
+  thor_id: CounterTop|2|0
+  receptacle: true
+- id: credit_card_2
+  label: credit card
+  color: lightslategray
+  center: [8.684, 6.181, 0.783]
+  size: [0.086, 0.054, 0.004]
+  thor_id: CreditCard|surface|7|81
+  pickupable: true
+  supported_by: dining_table_4
+- id: credit_card_1
+  label: credit card
+  color: slategray
+  center: [13.382, 9.793, 0.944]
+  size: [0.054, 0.086, 0.004]
+  thor_id: CreditCard|surface|2|22
+  pickupable: true
+  supported_by: counter_top_1
+- id: credit_card_3
+  label: credit card
+  color: gray
+  center: [10.344, 0.273, 0.18]
+  size: [0.086, 0.054, 0.004]
+  thor_id: CreditCard|surface|8|95
+  pickupable: true
+  inside: drawer_32
+- id: cup_2
+  label: cup
+  color: sienna
+  center: [13.041, 9.03, 1.01]
+  size: [0.108, 0.107, 0.137]
+  thor_id: Cup|surface|2|6
+  pickupable: true
+  receptacle: true
+  supported_by: counter_top_1
+- id: cup_1
+  label: cup
+  color: silver
+  center: [11.146, 10.54, 0.825]
+  size: [0.118, 0.118, 0.161]
+  thor_id: Cup|surface|2|29
+  pickupable: true
+  receptacle: true
+  supported_by: dining_table_1
+- id: cup_3
+  label: cup
+  color: darkgray
+  center: [13.496, 8.648, 1.046]
+  size: [0.073, 0.073, 0.209]
+  thor_id: Cup|surface|2|7
+  pickupable: true
+  receptacle: true
+  supported_by: counter_top_1
+- id: desk_lamp_1
+  label: desk lamp
+  color: darkgray
+  center: [7.112, 4.231, 1.166]
+  size: [0.23, 0.214, 0.545]
+  thor_id: DeskLamp|surface|7|71
+  pickupable: true
+  supported_by: dresser_4
+- id: desk_lamp_2
+  label: desk lamp
+  color: snow
+  center: [8.907, 6.181, 0.989]
+  size: [0.254, 0.29, 0.416]
+  thor_id: DeskLamp|surface|7|87
+  toggleable: true
+  supported_by: dining_table_4
+- id: dining_table_4
+  label: dining table
+  color: saddlebrown
+  center: [8.241, 6.058, 0.39]
+  size: [1.779, 0.988, 0.78]
+  thor_id: DiningTable|7|1|0
+  receptacle: true
+- id: dining_table_2
+  label: dining table
+  color: dimgray
+  center: [6.763, 15.091, 0.371]
+  size: [0.767, 1.203, 0.742]
+  thor_id: DiningTable|3|1|0
+  receptacle: true
+- id: dining_table_3
+  label: dining table
+  color: gray
+  center: [5.266, 8.268, 0.371]
+  size: [1.203, 0.767, 0.742]
+  thor_id: DiningTable|4|2
+  receptacle: true
+- id: dining_table_1
+  label: dining table
+  color: navajowhite
+  center: [10.496, 10.427, 0.372]
+  size: [1.742, 0.926, 0.744]
+  thor_id: DiningTable|2|2|0
+  receptacle: true
+- id: drawer_5
+  label: drawer
+  color: gray
+  center: [1.14, 11.582, 0.397]
+  size: [0.588, 0.268, 0.188]
+  thor_id: Dresser|5|3___1
+  receptacle: true
+  openable: true
+  open_box:
+    center: [1.14, 11.476, 0.397]
+    size: [0.588, 0.48, 0.188]
+- id: drawer_6
+  label: drawer
+  color: gray
+  center: [1.14, 11.582, 0.2]
+  size: [0.588, 0.268, 0.188]
+  thor_id: Dresser|5|3___2
+  receptacle: true
+  openable: true
+  open_box:
+    center: [1.14, 11.476, 0.2]
+    size: [0.588, 0.48, 0.188]
+- id: drawer_10
+  label: drawer
+  color: gray
+  center: [2.614, 4.449, 0.236]
+  size: [0.461, 0.428, 0.248]
+  thor_id: Dresser|6|1___11
+  receptacle: true
+  openable: true
+  open_box:
+    center: [2.614, 4.622, 0.236]
+    size: [0.461, 0.774, 0.248]
+- id: drawer_9
+  label: drawer
+  color: gray
+  center: [2.614, 4.449, 0.739]
+  size: [0.461, 0.428, 0.248]
+  thor_id: Dresser|6|1___10
+  receptacle: true
+  openable: true
+  open_box:
+    center: [2.614, 4.622, 0.739]
+    size: [0.461, 0.774, 0.248]
+- id: drawer_18
+  label: drawer
+  color: gray
+  center: [2.614, 4.449, 0.488]
+  size: [0.461, 0.428, 0.248]
+  thor_id: Dresser|6|1___9
+  receptacle: true
+  openable: true
+  open_box:
+    center: [2.614, 4.622, 0.488]
+    size: [0.461, 0.774, 0.248]
+- id: drawer_19
+  label: drawer
+  color: gray
+  center: [7.585, 4.449, 0.489]
+  size: [0.474, 0.428, 0.248]
+  thor_id: Dresser|7|2___0
+  receptacle: true
+  openable: true
+  open_box:
+    center: [7.585, 4.618, 0.489]
+    size: [0.474, 0.766, 0.248]
+- id: drawer_17
+  label: drawer
+  color: gray
+  center: [3.091, 4.449, 0.237]
+  size: [0.467, 0.428, 0.248]
+  thor_id: Dresser|6|1___8
+  receptacle: true
+  openable: true
+  open_box:
+    center: [3.091, 4.618, 0.237]
+    size: [0.467, 0.766, 0.248]
+- id: drawer_4
+  label: drawer
+  color: gray
+  center: [1.14, 11.582, 0.581]
+  size: [0.588, 0.268, 0.188]
+  thor_id: Dresser|5|3___0
+  receptacle: true
+  openable: true
+  open_box:
+    center: [1.14, 11.476, 0.581]
+    size: [0.588, 0.48, 0.188]
+- id: drawer_16
+  label: drawer
+  color: gray
+  center: [3.091, 4.449, 0.741]
+  size: [0.467, 0.428, 0.248]
+  thor_id: Dresser|6|1___7
+  receptacle: true
+  openable: true
+  open_box:
+    center: [3.091, 4.618, 0.741]
+    size: [0.467, 0.766, 0.248]
+- id: drawer_15
+  label: drawer
+  color: gray
+  center: [3.091, 4.449, 0.489]
+  size: [0.467, 0.428, 0.248]
+  thor_id: Dresser|6|1___6
+  receptacle: true
+  openable: true
+  open_box:
+    center: [3.091, 4.618, 0.489]
+    size: [0.467, 0.766, 0.248]
+- id: drawer_14
+  label: drawer
+  color: gray
+  center: [3.569, 4.449, 0.237]
+  size: [0.469, 0.428, 0.248]
+  thor_id: Dresser|6|1___5
+  receptacle: true
+  openable: true
+  open_box:
+    center: [3.569, 4.618, 0.237]
+    size: [0.469, 0.766, 0.248]
+- id: drawer_13
+  label: drawer
+  color: gray
+  center: [3.569, 4.449, 0.741]
+  size: [0.469, 0.428, 0.248]
+  thor_id: Dresser|6|1___4
+  receptacle: true
+  openable: true
+  open_box:
+    center: [3.569, 4.618, 0.741]
+    size: [0.469, 0.766, 0.248]
+- id: drawer_12
+  label: drawer
+  color: gray
+  center: [3.569, 4.449, 0.489]
+  size: [0.469, 0.428, 0.248]
+  thor_id: Dresser|6|1___3
+  receptacle: true
+  openable: true
+  open_box:
+    center: [3.569, 4.618, 0.489]
+    size: [0.469, 0.766, 0.248]
+- id: drawer_11
+  label: drawer
+  color: gray
+  center: [4.043, 4.449, 0.237]
+  size: [0.474, 0.428, 0.248]
+  thor_id: Dresser|6|1___2
+  receptacle: true
+  openable: true
+  open_box:
+    center: [4.043, 4.618, 0.237]
+    size: [0.474, 0.766, 0.248]
+- id: drawer_20
+  label: drawer
+  color: gray
+  center: [7.585, 4.449, 0.741]
+  size: [0.474, 0.428, 0.248]
+  thor_id: Dresser|7|2___1
+  receptacle: true
+  openable: true
+  open_box:
+    center: [7.585, 4.618, 0.741]
+    size: [0.474, 0.766, 0.248]
+- id: drawer_7
+  label: drawer
+  color: gray
+  center: [4.043, 4.449, 0.489]
+  size: [0.474, 0.428, 0.248]
+  thor_id: Dresser|6|1___0
+  receptacle: true
+  openable: true
+  open_box:
+    center: [4.043, 4.618, 0.489]
+    size: [0.474, 0.766, 0.248]
+- id: drawer_24
+  label: drawer
+  color: gray
+  center: [7.11, 4.449, 0.489]
+  size: [0.469, 0.428, 0.248]
+  thor_id: Dresser|7|2___3
+  receptacle: true
+  openable: true
+  open_box:
+    center: [7.11, 4.618, 0.489]
+    size: [0.469, 0.766, 0.248]
+- id: drawer_8
+  label: drawer
+  color: gray
+  center: [4.043, 4.449, 0.741]
+  size: [0.474, 0.428, 0.248]
+  thor_id: Dresser|6|1___1
+  receptacle: true
+  openable: true
+  open_box:
+    center: [4.043, 4.618, 0.741]
+    size: [0.474, 0.766, 0.248]
+- id: drawer_3
+  label: drawer
+  color: gray
+  center: [6.38, 12.645, 0.545]
+  size: [0.422, 0.708, 0.307]
+  thor_id: Dresser|3|5___2
+  receptacle: true
+  openable: true
+  open_box:
+    center: [6.57, 12.645, 0.545]
+    size: [0.802, 0.708, 0.307]
+- id: drawer_2
+  label: drawer
+  color: gray
+  center: [6.38, 12.645, 0.828]
+  size: [0.417, 0.708, 0.234]
+  thor_id: Dresser|3|5___1
+  receptacle: true
+  openable: true
+  open_box:
+    center: [6.57, 12.645, 0.828]
+    size: [0.797, 0.708, 0.234]
+- id: drawer_23
+  label: drawer
+  color: gray
+  center: [7.585, 4.449, 0.237]
+  size: [0.474, 0.428, 0.248]
+  thor_id: Dresser|7|2___2
+  receptacle: true
+  openable: true
+  open_box:
+    center: [7.585, 4.618, 0.237]
+    size: [0.474, 0.766, 0.248]
+- id: drawer_1
+  label: drawer
+  color: gray
+  center: [6.38, 12.645, 0.223]
+  size: [0.422, 0.708, 0.307]
+  thor_id: Dresser|3|5___0
+  receptacle: true
+  openable: true
+  open_box:
+    center: [6.57, 12.645, 0.223]
+    size: [0.802, 0.708, 0.307]
+- id: drawer_33
+  label: drawer
+  color: gray
+  center: [9.453, 3.68, 0.664]
+  size: [1.086, 0.257, 0.098]
+  thor_id: SideTable|8|4___0
+  receptacle: true
+  openable: true
+  open_box:
+    center: [9.453, 3.575, 0.664]
+    size: [1.086, 0.468, 0.098]
+- id: drawer_31
+  label: drawer
+  color: gray
+  center: [10.344, 0.239, 0.621]
+  size: [0.898, 0.326, 0.304]
+  thor_id: Dresser|8|1___0
+  receptacle: true
+  openable: true
+  open_box:
+    center: [10.344, 0.365, 0.621]
+    size: [0.898, 0.578, 0.304]
+- id: drawer_22
+  label: drawer
+  color: gray
+  center: [6.155, 4.449, 0.236]
+  size: [0.461, 0.428, 0.248]
+  thor_id: Dresser|7|2___11
+  receptacle: true
+  openable: true
+  open_box:
+    center: [6.155, 4.622, 0.236]
+    size: [0.461, 0.774, 0.248]
+- id: drawer_32
+  label: drawer
+  color: gray
+  center: [10.344, 0.239, 0.307]
+  size: [0.898, 0.326, 0.304]
+  thor_id: Dresser|8|1___1
+  receptacle: true
+  openable: true
+  open_box:
+    center: [10.344, 0.365, 0.307]
+    size: [0.898, 0.578, 0.304]
+- id: drawer_30
+  label: drawer
+  color: gray
+  center: [6.155, 4.449, 0.488]
+  size: [0.461, 0.428, 0.248]
+  thor_id: Dresser|7|2___9
+  receptacle: true
+  openable: true
+  open_box:
+    center: [6.155, 4.622, 0.488]
+    size: [0.461, 0.774, 0.248]
+- id: drawer_29
+  label: drawer
+  color: gray
+  center: [6.632, 4.449, 0.237]
+  size: [0.467, 0.428, 0.248]
+  thor_id: Dresser|7|2___8
+  receptacle: true
+  openable: true
+  open_box:
+    center: [6.632, 4.618, 0.237]
+    size: [0.467, 0.766, 0.248]
+- id: drawer_28
+  label: drawer
+  color: gray
+  center: [6.632, 4.449, 0.741]
+  size: [0.467, 0.428, 0.248]
+  thor_id: Dresser|7|2___7
+  receptacle: true
+  openable: true
+  open_box:
+    center: [6.632, 4.618, 0.741]
+    size: [0.467, 0.766, 0.248]
+- id: drawer_27
+  label: drawer
+  color: gray
+  center: [6.632, 4.449, 0.489]
+  size: [0.467, 0.428, 0.248]
+  thor_id: Dresser|7|2___6
+  receptacle: true
+  openable: true
+  open_box:
+    center: [6.632, 4.618, 0.489]
+    size: [0.467, 0.766, 0.248]
+- id: drawer_26
+  label: drawer
+  color: gray
+  center: [7.11, 4.449, 0.237]
+  size: [0.469, 0.428, 0.248]
+  thor_id: Dresser|7|2___5
+  receptacle: true
+  openable: true
+  open_box:
+    center: [7.11, 4.618, 0.237]
+    size: [0.469, 0.766, 0.248]
+- id: drawer_25
+  label: drawer
+  color: gray
+  center: [7.11, 4.449, 0.741]
+  size: [0.469, 0.428, 0.248]
+  thor_id: Dresser|7|2___4
+  receptacle: true
+  openable: true
+  open_box:
+    center: [7.11, 4.618, 0.741]
+    size: [0.469, 0.766, 0.248]
+- id: drawer_21
+  label: drawer
+  color: gray
+  center: [6.155, 4.449, 0.739]
+  size: [0.461, 0.428, 0.248]
+  thor_id: Dresser|7|2___10
+  receptacle: true
+  openable: true
+  open_box:
+    center: [6.155, 4.622, 0.739]
+    size: [0.461, 0.774, 0.248]
+- id: dresser_2
+  label: dresser
+  color: mistyrose
+  center: [1.141, 11.608, 0.35]
+  size: [0.622, 0.314, 0.699]
+  thor_id: Dresser|5|3
+  receptacle: true
+- id: dresser_1
+  label: dresser
+  color: darkslategray
+  center: [6.268, 12.636, 0.486]
+  size: [0.699, 0.766, 0.971]
+  thor_id: Dresser|3|5
+  receptacle: true
+- id: dresser_4
+  label: dresser
+  color: darkslategray
+  center: [6.875, 4.314, 0.447]
+  size: [1.912, 0.721, 0.894]
+  thor_id: Dresser|7|2
+  receptacle: true
+- id: dresser_3
+  label: dresser
+  color: darkslategray
+  center: [3.334, 4.314, 0.447]
+  size: [1.912, 0.721, 0.894]
+  thor_id: Dresser|6|1
+  receptacle: true
+- id: dresser_5
+  label: dresser
+  color: white
+  center: [10.344, 0.219, 0.41]
+  size: [0.99, 0.387, 0.82]
+  thor_id: Dresser|8|1
+  receptacle: true
+- id: egg_2
+  label: egg
+  color: gray
+  center: [9.875, 8.105, 0.646]
+  size: [0.068, 0.069, 0.115]
+  thor_id: Egg|surface|2|26
+  pickupable: true
+  inside: fridge_1
+- id: egg_1
+  label: egg
+  color: gray
+  center: [9.784, 8.382, 1.553]
+  size: [0.053, 0.053, 0.076]
+  thor_id: Egg|surface|2|25
+  pickupable: true
+  inside: fridge_1
+- id: faucet_1
+  label: faucet
+  color: darkslategray
+  center: [0.386, 11.65, 1.078]
+  size: [0.072, 0.215, 0.205]
+  thor_id: Faucet|5|1|1
+  toggleable: true
+  supported_by: sink_1
+- id: floor_lamp_1
+  label: floor lamp
+  color: darkgray
+  center: [9.146, 15.387, 0.945]
+  size: [0.538, 0.611, 1.89]
+  thor_id: FloorLamp|3|4
+  toggleable: true
+- id: floor_lamp_2
+  label: floor lamp
+  color: silver
+  center: [2.248, 9.459, 0.932]
+  size: [0.517, 0.517, 1.864]
+  thor_id: FloorLamp|4|3
+  toggleable: true
+- id: fridge_1
+  label: fridge
+  color: darkslategray
+  center: [9.968, 8.255, 0.895]
+  size: [0.997, 0.741, 1.791]
+  thor_id: Fridge|2|1
+  receptacle: true
+  openable: true
+  open_box:
+    center: [9.904, 8.679, 0.895]
+    size: [1.126, 1.589, 1.791]
+- id: house_plant_4
+  label: house plant
+  color: dimgray
+  center: [10.236, 0.168, 1.055]
+  size: [0.414, 0.239, 0.47]
+  thor_id: HousePlant|surface|8|96
+  supported_by: dresser_5
+- id: house_plant_1
+  label: house plant
+  color: darkolivegreen
+  center: [8.616, 8.2, 0.492]
+  size: [0.598, 0.579, 0.985]
+  thor_id: HousePlant|2|3|0
+- id: house_plant_2
+  label: house plant
+  color: darkolivegreen
+  center: [9.919, 7.513, 0.447]
+  size: [0.58, 0.574, 0.895]
+  thor_id: HousePlant|7|4|0
+- id: house_plant_3
+  label: house plant
+  color: dimgray
+  center: [6.765, 15.566, 1.091]
+  size: [0.276, 0.237, 0.698]
+  thor_id: HousePlant|surface|3|36
+  supported_by: dining_table_2
+- id: kettle_1
+  label: kettle
+  color: slategray
+  center: [13.607, 10.557, 1.035]
+  size: [0.209, 0.197, 0.187]
+  thor_id: Kettle|surface|2|20
+  pickupable: true
+  supported_by: counter_top_1
+  openable: true
+  open_box:
+    center: [13.613, 10.557, 1.035]
+    size: [0.221, 0.197, 0.187]
+- id: key_chain_1
+  label: key chain
+  color: gray
+  center: [13.475, 14.431, 0.453]
+  size: [0.085, 0.142, 0.009]
+  thor_id: KeyChain|surface|3|45
+  pickupable: true
+  supported_by: tv_stand_1
+- id: key_chain_2
+  label: key chain
+  color: gray
+  center: [13.535, 14.554, 0.276]
+  size: [0.129, 0.073, 0.007]
+  thor_id: KeyChain|surface|3|50
+  pickupable: true
+  supported_by: tv_stand_1
+- id: key_chain_3
+  label: key chain
+  color: gray
+  center: [13.524, 0.775, 0.275]
+  size: [0.085, 0.142, 0.009]
+  thor_id: KeyChain|surface|8|97
+  pickupable: true
+  supported_by: tv_stand_3
+- id: knife_1
+  label: knife
+  color: dimgray
+  center: [13.238, 8.233, 0.949]
+  size: [0.336, 0.054, 0.014]
+  thor_id: Knife|surface|2|2
+  pickupable: true
+  supported_by: counter_top_1
+- id: laptop_1
+  label: laptop
+  color: lightslategray
+  center: [10.81, 14.419, 0.533]
+  size: [0.27, 0.35, 0.038]
+  thor_id: Laptop|surface|3|33
+  pickupable: true
+  toggleable: true
+  supported_by: sofa_1
+  openable: true
+  open_box:
+    center: [10.802, 14.419, 0.655]
+    size: [0.286, 0.35, 0.282]
+- id: laptop_2
+  label: laptop
+  color: dimgray
+  center: [8.241, 5.807, 0.798]
+  size: [0.408, 0.296, 0.036]
+  thor_id: Laptop|surface|7|80
+  pickupable: true
+  toggleable: true
+  supported_by: dining_table_4
+  openable: true
+  open_box:
+    center: [8.241, 5.815, 0.936]
+    size: [0.408, 0.312, 0.312]
+- id: laptop_3
+  label: laptop
+  color: darkslategray
+  center: [7.295, 3.276, 0.743]
+  size: [0.423, 0.338, 0.041]
+  thor_id: Laptop|surface|8|92
+  pickupable: true
+  toggleable: true
+  supported_by: bed_3
+  openable: true
+  open_box:
+    center: [7.295, 3.277, 0.897]
+    size: [0.423, 0.341, 0.35]
+- id: lettuce_1
+  label: lettuce
+  color: darkkhaki
+  center: [10.718, 10.193, 0.816]
+  size: [0.145, 0.207, 0.144]
+  thor_id: Lettuce|surface|2|15
+  pickupable: true
+  supported_by: dining_table_1
+- id: microwave_1
+  label: microwave
+  color: darkslategray
+  center: [13.264, 10.173, 1.118]
+  size: [0.367, 0.7, 0.352]
+  thor_id: Microwave|surface|2|3
+  receptacle: true
+  toggleable: true
+  supported_by: counter_top_1
+  openable: true
+  open_box:
+    center: [13.063, 10.18, 1.119]
+    size: [0.769, 0.714, 0.353]
+- id: mug_1
+  label: mug
+  color: rosybrown
+  center: [13.61, 8.251, 0.994]
+  size: [0.086, 0.109, 0.104]
+  thor_id: Mug|surface|2|8
+  pickupable: true
+  receptacle: true
+  supported_by: counter_top_1
+- id: mug_2
+  label: mug
+  color: gray
+  center: [6.685, 4.459, 0.186]
+  size: [0.112, 0.142, 0.085]
+  thor_id: Mug|surface|7|77
+  pickupable: true
+  receptacle: true
+  inside: drawer_29
+- id: mug_3
+  label: mug
+  color: gray
+  center: [13.597, 1.094, 0.131]
+  size: [0.142, 0.112, 0.085]
+  thor_id: Mug|surface|8|106
+  pickupable: true
+  receptacle: true
+  supported_by: tv_stand_3
+- id: newspaper_1
+  label: newspaper
+  color: darkgray
+  center: [6.548, 13.417, 0.334]
+  size: [0.177, 0.328, 0.03]
+  thor_id: Newspaper|surface|3|32
+  pickupable: true
+  supported_by: arm_chair_1
+- id: painting_8
+  label: painting
+  color: gray
+  center: [1.482, 11.773, 1.764]
+  size: [0.458, 0.019, 0.608]
+  thor_id: Painting|5|5
+- id: painting_7
+  label: painting
+  color: gray
+  center: [1.952, 9.551, 1.252]
+  size: [0.016, 0.757, 0.746]
+  thor_id: Painting|5|4
+- id: painting_11
+  label: painting
+  color: darkslategray
+  center: [7.423, 7.838, 1.966]
+  size: [0.87, 0.032, 0.566]
+  thor_id: Painting|7|7
+- id: painting_10
+  label: painting
+  color: dimgray
+  center: [3.994, 3.95, 1.992]
+  size: [0.791, 0.032, 0.596]
+  thor_id: Painting|6|4
+- id: painting_9
+  label: painting
+  color: gray
+  center: [0.726, 7.838, 1.683]
+  size: [0.712, 0.032, 0.425]
+  thor_id: Painting|6|3
+- id: painting_6
+  label: painting
+  color: gray
+  center: [1.986, 8.476, 0.922]
+  size: [0.032, 0.958, 0.657]
+  thor_id: Painting|4|4
+- id: painting_1
+  label: painting
+  color: dimgray
+  center: [13.003, 7.88, 1.976]
+  size: [0.922, 0.032, 0.647]
+  thor_id: Painting|2|5
+- id: painting_12
+  label: painting
+  color: gray
+  center: [7.713, 3.908, 1.9]
+  size: [0.87, 0.032, 0.667]
+  thor_id: Painting|8|6
+- id: painting_4
+  label: painting
+  color: gray
+  center: [5.915, 12.283, 1.987]
+  size: [0.032, 0.527, 0.394]
+  thor_id: Painting|3|6
+- id: painting_3
+  label: painting
+  color: gray
+  center: [9.02, 7.88, 1.765]
+  size: [0.668, 0.032, 0.505]
+  thor_id: Painting|2|7
+- id: painting_5
+  label: painting
+  color: dimgray
+  center: [13.732, 12.487, 1.847]
+  size: [0.032, 0.808, 0.576]
+  thor_id: Painting|3|7
+- id: painting_2
+  label: painting
+  color: gray
+  center: [13.732, 10.64, 1.936]
+  size: [0.032, 0.861, 0.576]
+  thor_id: Painting|2|6
+- id: paper_towel_roll_1
+  label: paper towel roll
+  color: gainsboro
+  center: [0.477, 8.0, 1.053]
+  size: [0.065, 0.078, 0.215]
+  thor_id: PaperTowelRoll|surface|5|58
+  pickupable: true
+  supported_by: toilet_1
+- id: pen_3
+  label: pen
+  color: gray
+  center: [13.422, 0.35, 0.28]
+  size: [0.011, 0.141, 0.016]
+  thor_id: Pen|surface|8|101
+  pickupable: true
+  supported_by: tv_stand_3
+- id: pen_2
+  label: pen
+  color: gray
+  center: [7.591, 4.59, 0.653]
+  size: [0.2, 0.011, 0.011]
+  thor_id: Pen|surface|7|69
+  pickupable: true
+  inside: drawer_20
+- id: pen_4
+  label: pen
+  color: gray
+  center: [13.621, 0.643, 0.094]
+  size: [0.011, 0.2, 0.011]
+  thor_id: Pen|surface|8|89
+  pickupable: true
+  supported_by: tv_stand_3
+- id: pen_1
+  label: pen
+  color: gray
+  center: [10.281, 10.418, 0.75]
+  size: [0.011, 0.2, 0.011]
+  thor_id: Pen|surface|2|24
+  pickupable: true
+  supported_by: dining_table_1
+- id: pencil_6
+  label: pencil
+  color: gray
+  center: [13.502, 0.943, 0.093]
+  size: [0.009, 0.182, 0.009]
+  thor_id: Pencil|surface|8|107
+  pickupable: true
+  supported_by: tv_stand_3
+- id: pencil_3
+  label: pencil
+  color: gray
+  center: [13.462, 14.41, 0.093]
+  size: [0.009, 0.14, 0.009]
+  thor_id: Pencil|surface|3|34
+  pickupable: true
+  supported_by: tv_stand_1
+- id: pencil_4
+  label: pencil
+  color: gray
+  center: [2.619, 4.055, 0.9]
+  size: [0.191, 0.013, 0.012]
+  thor_id: Pencil|surface|6|64
+  pickupable: true
+  supported_by: dresser_3
+- id: pencil_5
+  label: pencil
+  color: gray
+  center: [9.593, 3.677, 0.737]
+  size: [0.009, 0.184, 0.009]
+  thor_id: Pencil|surface|8|105
+  pickupable: true
+  supported_by: side_table_1
+- id: pencil_2
+  label: pencil
+  color: gray
+  center: [10.929, 10.192, 0.749]
+  size: [0.009, 0.09, 0.009]
+  thor_id: Pencil|surface|2|28
+  pickupable: true
+  supported_by: dining_table_1
+- id: pencil_1
+  label: pencil
+  color: gray
+  center: [10.497, 10.309, 0.75]
+  size: [0.013, 0.191, 0.012]
+  thor_id: Pencil|surface|2|27
+  pickupable: true
+  supported_by: plate_1
+- id: pepper_shaker_1
+  label: pepper shaker
+  color: lightslategray
+  center: [13.496, 8.267, 0.999]
+  size: [0.067, 0.067, 0.114]
+  thor_id: PepperShaker|surface|2|4
+  pickupable: true
+  supported_by: counter_top_1
+- id: pillow_3
+  label: pillow
+  color: sienna
+  center: [12.806, 6.495, 0.831]
+  size: [0.386, 0.345, 0.116]
+  thor_id: Pillow|surface|7|75
+  pickupable: true
+  supported_by: bed_2
+- id: pillow_4
+  label: pillow
+  color: darkslategray
+  center: [7.295, 2.874, 0.794]
+  size: [0.332, 0.453, 0.145]
+  thor_id: Pillow|surface|8|88
+  pickupable: true
+  supported_by: bed_3
+- id: pillow_1
+  label: pillow
+  color: darkorchid
+  center: [0.784, 4.38, 0.781]
+  size: [0.442, 0.352, 0.149]
+  thor_id: Pillow|6|0|1
+  pickupable: true
+  supported_by: bed_1
+- id: pillow_2
+  label: pillow
+  color: darkorchid
+  center: [1.326, 4.38, 0.781]
+  size: [0.442, 0.352, 0.149]
+  thor_id: Pillow|6|0|2
+  pickupable: true
+  supported_by: bed_1
+- id: plate_1
+  label: plate
+  color: dimgray
+  center: [10.498, 10.54, 0.758]
+  size: [0.287, 0.288, 0.028]
+  thor_id: Plate|surface|2|9
+  pickupable: true
+  receptacle: true
+  supported_by: dining_table_1
+- id: plate_2
+  label: plate
+  color: gray
+  center: [13.541, 14.709, 0.095]
+  size: [0.246, 0.246, 0.014]
+  thor_id: Plate|surface|3|37
+  pickupable: true
+  receptacle: true
+  supported_by: tv_stand_1
+- id: plunger_1
+  label: plunger
+  color: indianred
+  center: [1.866, 7.958, 0.27]
+  size: [0.148, 0.148, 0.539]
+  thor_id: Plunger|5|2
+  pickupable: true
+- id: potato_1
+  label: potato
+  color: gray
+  center: [10.056, 8.186, 1.366]
+  size: [0.089, 0.122, 0.089]
+  thor_id: Potato|surface|2|14
+  pickupable: true
+  inside: fridge_1
+- id: potato_3
+  label: potato
+  color: peru
+  center: [10.713, 10.421, 0.781]
+  size: [0.074, 0.141, 0.074]
+  thor_id: Potato|surface|2|5
+  pickupable: true
+  supported_by: dining_table_1
+- id: potato_2
+  label: potato
+  color: dimgray
+  center: [12.92, 8.264, 0.976]
+  size: [0.118, 0.069, 0.069]
+  thor_id: Potato|surface|2|16
+  pickupable: true
+  supported_by: counter_top_1
+- id: remote_control_3
+  label: remote control
+  color: cadetblue
+  center: [3.332, 4.23, 0.903]
+  size: [0.216, 0.068, 0.019]
+  thor_id: RemoteControl|surface|6|67
+  pickupable: true
+  supported_by: dresser_3
+- id: remote_control_2
+  label: remote control
+  color: darkgray
+  center: [10.896, 14.158, 0.526]
+  size: [0.212, 0.059, 0.024]
+  thor_id: RemoteControl|surface|3|49
+  pickupable: true
+  supported_by: sofa_1
+- id: remote_control_5
+  label: remote control
+  color: gray
+  center: [13.502, 0.798, 0.098]
+  size: [0.216, 0.068, 0.019]
+  thor_id: RemoteControl|surface|8|108
+  pickupable: true
+  supported_by: tv_stand_3
+- id: remote_control_1
+  label: remote control
+  color: darkslategray
+  center: [6.859, 14.64, 0.751]
+  size: [0.195, 0.041, 0.018]
+  thor_id: RemoteControl|surface|3|46
+  pickupable: true
+  supported_by: dining_table_2
+- id: remote_control_4
+  label: remote control
+  color: dimgray
+  center: [13.091, 6.255, 0.782]
+  size: [0.068, 0.216, 0.019]
+  thor_id: RemoteControl|surface|7|73
+  pickupable: true
+  supported_by: bed_2
+- id: remote_control_7
+  label: remote control
+  color: gray
+  center: [13.581, 0.207, 0.283]
+  size: [0.068, 0.219, 0.022]
+  thor_id: RemoteControl|surface|8|91
+  pickupable: true
+  supported_by: tv_stand_3
+- id: remote_control_6
+  label: remote control
+  color: dimgray
+  center: [13.404, 1.111, 0.461]
+  size: [0.068, 0.219, 0.022]
+  thor_id: RemoteControl|surface|8|110
+  pickupable: true
+  supported_by: tv_stand_3
+- id: safe_1
+  label: safe
+  color: aliceblue
+  center: [10.34, 4.121, 0.152]
+  size: [0.297, 0.335, 0.303]
+  thor_id: Safe|7|5
+  receptacle: true
+  openable: true
+  open_box:
+    center: [10.354, 4.25, 0.152]
+    size: [0.326, 0.592, 0.303]
+- id: salt_shaker_1
+  label: salt shaker
+  color: darkgray
+  center: [12.926, 10.557, 0.997]
+  size: [0.068, 0.068, 0.111]
+  thor_id: SaltShaker|surface|2|30
+  pickupable: true
+  supported_by: counter_top_1
+- id: side_table_1
+  label: side table
+  color: darkslategray
+  center: [9.454, 3.723, 0.366]
+  size: [1.13, 0.362, 0.732]
+  thor_id: SideTable|8|4
+  receptacle: true
+- id: sink_1
+  label: sink
+  color: gray
+  center: [0.386, 11.485, 0.488]
+  size: [0.723, 0.556, 0.976]
+  thor_id: Sink|5|1|0
+  receptacle: true
+- id: soap_bar_1
+  label: soap bar
+  color: snow
+  center: [1.063, 11.535, 0.712]
+  size: [0.055, 0.091, 0.025]
+  thor_id: SoapBar|surface|5|61
+  pickupable: true
+  supported_by: dresser_2
+- id: soap_bottle_1
+  label: soap bottle
+  color: dimgray
+  center: [13.145, 9.412, 1.08]
+  size: [0.083, 0.11, 0.275]
+  thor_id: SoapBottle|surface|2|18
+  pickupable: true
+  supported_by: counter_top_1
+- id: soap_bottle_2
+  label: soap bottle
+  color: silver
+  center: [0.525, 11.478, 1.031]
+  size: [0.122, 0.102, 0.261]
+  thor_id: SoapBottle|surface|5|62
+  pickupable: true
+  supported_by: sink_1
+- id: sofa_1
+  label: sofa
+  color: silver
+  center: [10.635, 14.408, 0.517]
+  size: [1.026, 2.571, 1.034]
+  thor_id: Sofa|3|0|1
+  receptacle: true
+- id: spray_bottle_2
+  label: spray bottle
+  color: khaki
+  center: [0.293, 7.907, 1.053]
+  size: [0.115, 0.096, 0.243]
+  thor_id: SprayBottle|surface|5|60
+  pickupable: true
+- id: spray_bottle_1
+  label: spray bottle
+  color: gainsboro
+  center: [13.492, 9.03, 1.065]
+  size: [0.112, 0.033, 0.246]
+  thor_id: SprayBottle|surface|2|1
+  pickupable: true
+  supported_by: counter_top_1
+- id: statue_1
+  label: statue
+  color: darkgray
+  center: [2.617, 4.406, 1.064]
+  size: [0.149, 0.153, 0.341]
+  thor_id: Statue|surface|6|66
+  pickupable: true
+  supported_by: dresser_3
+- id: stool_1
+  label: stool
+  color: darkslategray
+  center: [13.544, 1.95, 0.293]
+  size: [0.368, 0.357, 0.586]
+  thor_id: Stool|8|3
+  receptacle: true
+- id: television_1
+  label: television
+  color: lightslategray
+  center: [11.474, 7.902, 1.657]
+  size: [1.291, 0.077, 0.78]
+  thor_id: Television|2|4
+  toggleable: true
+- id: television_6
+  label: television
+  color: dimgray
+  center: [13.543, 0.644, 0.826]
+  size: [0.361, 1.062, 0.751]
+  thor_id: Television|8|2|1
+  toggleable: true
+  supported_by: tv_stand_3
+- id: television_3
+  label: television
+  color: lightslategray
+  center: [6.647, 8.186, 1.078]
+  size: [1.31, 0.169, 0.65]
+  thor_id: Television|4|1|1
+  toggleable: true
+  supported_by: tv_stand_2
+- id: television_2
+  label: television
+  color: dimgray
+  center: [13.543, 14.408, 0.861]
+  size: [0.246, 1.24, 0.822]
+  thor_id: Television|3|0|2
+  toggleable: true
+  supported_by: tv_stand_1
+- id: television_5
+  label: television
+  color: slategray
+  center: [9.292, 3.972, 1.434]
+  size: [1.291, 0.077, 0.78]
+  thor_id: Television|7|6
+  toggleable: true
+- id: television_4
+  label: television
+  color: slategray
+  center: [3.054, 3.968, 2.133]
+  size: [1.083, 0.067, 0.737]
+  thor_id: Television|6|2
+  toggleable: true
+- id: tennis_racket_1
+  label: tennis racket
+  color: gray
+  center: [1.297, 5.441, 0.737]
+  size: [0.256, 0.653, 0.05]
+  thor_id: TennisRacket|surface|6|63
+  pickupable: true
+  supported_by: bed_1
+- id: tissue_box_1
+  label: tissue box
+  color: gray
+  center: [13.581, 14.117, 0.163]
+  size: [0.199, 0.102, 0.15]
+  thor_id: TissueBox|surface|3|41
+  pickupable: true
+  supported_by: tv_stand_1
+- id: tissue_box_2
+  label: tissue box
+  color: gray
+  center: [13.581, 14.117, 0.347]
+  size: [0.199, 0.102, 0.15]
+  thor_id: TissueBox|surface|3|42
+  pickupable: true
+  supported_by: tv_stand_1
+- id: tissue_box_6
+  label: tissue box
+  color: gray
+  center: [13.502, 0.205, 0.163]
+  size: [0.199, 0.102, 0.15]
+  thor_id: TissueBox|surface|8|109
+  pickupable: true
+  supported_by: tv_stand_3
+- id: tissue_box_4
+  label: tissue box
+  color: gray
+  center: [7.097, 8.034, 0.828]
+  size: [0.199, 0.102, 0.15]
+  thor_id: TissueBox|surface|4|57
+  pickupable: true
+  supported_by: tv_stand_2
+- id: tissue_box_3
+  label: tissue box
+  color: gray
+  center: [6.356, 12.926, 1.046]
+  size: [0.199, 0.102, 0.15]
+  thor_id: TissueBox|surface|3|47
+  pickupable: true
+  supported_by: dresser_1
+- id: tissue_box_5
+  label: tissue box
+  color: gray
+  center: [9.174, 3.637, 0.807]
+  size: [0.199, 0.102, 0.15]
+  thor_id: TissueBox|surface|8|100
+  pickupable: true
+  supported_by: side_table_1
+- id: toaster_1
+  label: toaster
+  color: darkslategray
+  center: [13.268, 9.044, 1.066]
+  size: [0.235, 0.467, 0.248]
+  thor_id: Toaster|surface|2|19
+  receptacle: true
+  toggleable: true
+  supported_by: counter_top_1
+- id: toilet_1
+  label: toilet
+  color: lavender
+  center: [0.295, 8.315, 0.473]
+  size: [1.119, 1.165, 0.946]
+  thor_id: Toilet|5|0
+  receptacle: true
+  openable: true
+  open_box:
+    center: [0.295, 8.315, 0.544]
+    size: [1.119, 1.165, 1.087]
+  footprint:
+  - [0.235, 7.883, 0.336, 7.933]
+  - [0.086, 7.933, 0.436, 7.982]
+  - [0.536, 7.933, 0.586, 7.982]
+  - [0.036, 7.982, 0.586, 8.182]
+  - [0.086, 8.182, 0.536, 8.232]
+  - [0.136, 8.232, 0.536, 8.332]
+  - [0.086, 8.332, 0.536, 8.482]
+  - [0.086, 8.482, 0.586, 8.633]
+  - [0.086, 8.633, 0.536, 8.682]
+  - [0.136, 8.682, 0.536, 8.732]
+  - [0.136, 8.732, 0.485, 8.783]
+  - [0.286, 8.783, 0.386, 8.832]
+- id: toilet_paper_1
+  label: toilet paper
+  color: snow
+  center: [0.103, 8.071, 1.005]
+  size: [0.104, 0.104, 0.119]
+  thor_id: ToiletPaper|surface|5|59
+  pickupable: true
+  supported_by: toilet_1
+- id: tomato_1
+  label: tomato
+  color: gray
+  center: [9.784, 8.175, 1.564]
+  size: [0.123, 0.126, 0.098]
+  thor_id: Tomato|surface|2|10
+  pickupable: true
+  inside: fridge_1
+- id: tomato_2
+  label: tomato
+  color: sienna
+  center: [13.61, 8.648, 1.015]
+  size: [0.145, 0.146, 0.145]
+  thor_id: Tomato|surface|2|17
+  pickupable: true
+  supported_by: counter_top_1
+- id: tv_stand_1
+  label: tv stand
+  color: darkslategray
+  center: [13.543, 14.408, 0.225]
+  size: [0.37, 1.238, 0.45]
+  thor_id: TVStand|3|0|0
+  receptacle: true
+- id: tv_stand_3
+  label: tv stand
+  color: black
+  center: [13.543, 0.644, 0.225]
+  size: [0.37, 1.238, 0.45]
+  thor_id: TVStand|8|2|0
+  receptacle: true
+- id: tv_stand_2
+  label: tv stand
+  color: darkslategray
+  center: [6.647, 8.186, 0.376]
+  size: [1.205, 0.604, 0.753]
+  thor_id: TVStand|4|1|0
+  receptacle: true
+- id: vase_2
+  label: vase
+  color: gray
+  center: [6.282, 8.369, 0.262]
+  size: [0.182, 0.182, 0.188]
+  thor_id: Vase|surface|4|55
+  pickupable: true
+  supported_by: tv_stand_2
+- id: vase_3
+  label: vase
+  color: darkgray
+  center: [7.589, 4.406, 1.038]
+  size: [0.148, 0.148, 0.289]
+  thor_id: Vase|surface|7|76
+  pickupable: true
+  supported_by: dresser_4
+- id: vase_1
+  label: vase
+  color: dimgray
+  center: [6.183, 12.551, 1.093]
+  size: [0.189, 0.189, 0.244]
+  thor_id: Vase|surface|3|51
+  pickupable: true
+  supported_by: dresser_1
+- id: watch_2
+  label: watch
+  color: gray
+  center: [6.479, 15.239, 0.759]
+  size: [0.048, 0.079, 0.036]
+  thor_id: Watch|surface|3|48
+  pickupable: true
+  supported_by: dining_table_2
+- id: watch_4
+  label: watch
+  color: gray
+  center: [13.422, 0.355, 0.106]
+  size: [0.079, 0.048, 0.036]
+  thor_id: Watch|surface|8|104
+  pickupable: true
+  supported_by: tv_stand_3
+- id: watch_3
+  label: watch
+  color: gray
+  center: [6.634, 4.582, 0.911]
+  size: [0.048, 0.079, 0.036]
+  thor_id: Watch|surface|7|82
+  pickupable: true
+  supported_by: dresser_4
+- id: watch_1
+  label: watch
+  color: gray
+  center: [6.277, 12.56, 0.109]
+  size: [0.079, 0.048, 0.035]
+  thor_id: Watch|surface|3|35
+  pickupable: true
+  inside: drawer_1
+- id: watch_5
+  label: watch
+  color: gray
+  center: [13.621, 0.948, 0.106]
+  size: [0.079, 0.048, 0.035]
+  thor_id: Watch|surface|8|98
+  pickupable: true
+  supported_by: tv_stand_3
+- id: wine_bottle_1
+  label: wine bottle
+  color: darkslategray
+  center: [13.61, 9.412, 1.105]
+  size: [0.088, 0.088, 0.326]
+  thor_id: WineBottle|surface|2|0
+  pickupable: true
+  supported_by: counter_top_1
+- id: wine_bottle_2
+  label: wine bottle
+  color: darkslategray
+  center: [11.145, 10.31, 0.907]
+  size: [0.088, 0.088, 0.326]
+  thor_id: WineBottle|surface|2|11
+  pickupable: true
+  supported_by: dining_table_1

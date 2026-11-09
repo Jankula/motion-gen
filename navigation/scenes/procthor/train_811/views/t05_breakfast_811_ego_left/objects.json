@@ -1,0 +1,33 @@
+{
+ "name": "t05_breakfast_811_ego_left",
+ "objects": [
+  {
+   "id": "door_3",
+   "pixels": 79019,
+   "bbox": [
+    365,
+    105,
+    604,
+    491
+   ],
+   "centroid": [
+    472.8,
+    286.9
+   ]
+  },
+  {
+   "id": "painting_15",
+   "pixels": 13837,
+   "bbox": [
+    703,
+    256,
+    799,
+    462
+   ],
+   "centroid": [
+    761.9,
+    355.8
+   ]
+  }
+ ]
+}

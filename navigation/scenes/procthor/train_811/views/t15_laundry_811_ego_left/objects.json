@@ -1,0 +1,19 @@
+{
+ "name": "t15_laundry_811_ego_left",
+ "objects": [
+  {
+   "id": "fridge_1",
+   "pixels": 4339,
+   "bbox": [
+    0,
+    307,
+    49,
+    476
+   ],
+   "centroid": [
+    16.3,
+    409.0
+   ]
+  }
+ ]
+}

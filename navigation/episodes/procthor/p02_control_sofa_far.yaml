@@ -1,0 +1,13 @@
+id: p02_control_sofa_far
+category: control
+scene: scenes/procthor/train_20/scene.yaml
+instruction: Go to the sofa.
+start: [10.5, 9.5]
+heading: 270
+stops: [[sofa_1]]
+views:
+  - scenes/procthor/train_20/views/p02_control_sofa_far_top
+  - scenes/procthor/train_20/views/p02_control_sofa_far_ego_front
+  - scenes/procthor/train_20/views/p02_control_sofa_far_ego_left
+  - scenes/procthor/train_20/views/p02_control_sofa_far_ego_back
+  - scenes/procthor/train_20/views/p02_control_sofa_far_ego_right

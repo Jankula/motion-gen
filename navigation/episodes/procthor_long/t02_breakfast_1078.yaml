@@ -1,0 +1,49 @@
+id: t02_breakfast_1078
+category: breakfast
+scene: scenes/procthor/train_1078/scene.yaml
+instruction: Make me scrambled eggs, serve them at the dining table, and sit down there to eat. Leave the kitchen tidy.
+start: [10.61, 4.43]
+heading: 0
+max_walks: 20
+max_actions: 40
+goals:
+  events:
+  - {id: got_egg, pick: egg}
+  - {id: cooked, use: microwave, containing: egg}
+  - id: ate
+    goto: [dining_table_1, chair_1, chair_2, chair_4, chair_3]
+    intent: sit
+  order:
+  - [got_egg, cooked]
+  - [cooked, ate]
+  final:
+  - in:
+    - egg
+    - &id001 [bowl, plate, cup, mug, pot, pan]
+  - 'on':
+    - *id001
+    - dining_table_1
+  - {closed: fridge}
+  - {closed: microwave}
+  - {holding: nothing}
+reference:
+- [goto, fridge_1]
+- [open, fridge_1]
+- [pick, egg]
+- [close, fridge_1]
+- [goto, bowl_1]
+- [pick, bowl_1]
+- [place, egg, bowl_1]
+- [goto, microwave_1]
+- [open, microwave_1]
+- [place, bowl_1, microwave_1]
+- [close, microwave_1]
+- [use, microwave_1]
+- [open, microwave_1]
+- [pick, bowl_1]
+- [close, microwave_1]
+- [goto, dining_table_1]
+- [place, bowl_1, dining_table_1]
+- [goto, dining_table_1, sit]
+views: [scenes/procthor/train_1078/views/t02_breakfast_1078_top, scenes/procthor/train_1078/views/t02_breakfast_1078_ego_front, scenes/procthor/train_1078/views/t02_breakfast_1078_ego_left,
+  scenes/procthor/train_1078/views/t02_breakfast_1078_ego_back, scenes/procthor/train_1078/views/t02_breakfast_1078_ego_right]

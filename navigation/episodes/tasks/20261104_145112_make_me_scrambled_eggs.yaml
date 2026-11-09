@@ -1,0 +1,11 @@
+id: 20261104_145112_make_me_scrambled_eggs
+category: task
+scene: scenes/procthor/train_2927/scene.yaml
+instruction: Make me scrambled eggs, serve them at the kitchen table, and sit down there to eat. Leave the kitchen tidy.
+start: [2.5, 1.5]
+heading: 0.0
+max_walks: 20
+max_actions: 40
+views: [scenes/procthor/train_2927/views/20261104_145112_make_me_scrambled_eggs_top, scenes/procthor/train_2927/views/20261104_145112_make_me_scrambled_eggs_ego_front,
+  scenes/procthor/train_2927/views/20261104_145112_make_me_scrambled_eggs_ego_left, scenes/procthor/train_2927/views/20261104_145112_make_me_scrambled_eggs_ego_back,
+  scenes/procthor/train_2927/views/20261104_145112_make_me_scrambled_eggs_ego_right]

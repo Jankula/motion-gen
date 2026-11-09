@@ -1,0 +1,6 @@
+id: a2_wash_hands
+category: ambiguous
+scene: scenes/s2_apartment.yaml
+instruction: I need to wash my hands.
+start: [1.5, 2.8]
+stops: [[sink_1, sink_2]]

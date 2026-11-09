@@ -1,0 +1,6 @@
+id: h3_change_plan_open
+category: stale_map_control
+scene: scenes/s2_apartment.yaml
+instruction: Get the phone charger from the desk, then go to the sofa. If you can't reach the desk, go straight to the front door instead and stop there.
+start: [3.0, 2.5]
+stops: [[desk_1, charger_1], [sofa_1]]

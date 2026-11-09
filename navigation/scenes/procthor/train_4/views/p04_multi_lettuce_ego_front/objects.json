@@ -1,0 +1,19 @@
+{
+ "name": "p04_multi_lettuce_ego_front",
+ "objects": [
+  {
+   "id": "door_2",
+   "pixels": 315968,
+   "bbox": [
+    200,
+    27,
+    799,
+    599
+   ],
+   "centroid": [
+    516.2,
+    302.7
+   ]
+  }
+ ]
+}

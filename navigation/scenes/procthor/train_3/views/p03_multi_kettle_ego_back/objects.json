@@ -1,0 +1,33 @@
+{
+ "name": "p03_multi_kettle_ego_back",
+ "objects": [
+  {
+   "id": "door_1",
+   "pixels": 16210,
+   "bbox": [
+    0,
+    290,
+    103,
+    599
+   ],
+   "centroid": [
+    35.5,
+    490.1
+   ]
+  },
+  {
+   "id": "painting_9",
+   "pixels": 45667,
+   "bbox": [
+    419,
+    157,
+    687,
+    342
+   ],
+   "centroid": [
+    543.6,
+    247.0
+   ]
+  }
+ ]
+}

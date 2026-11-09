@@ -1,0 +1,19 @@
+{
+ "name": "p08_articulation_lettuce_ego_left",
+ "objects": [
+  {
+   "id": "door_2",
+   "pixels": 101823,
+   "bbox": [
+    61,
+    125,
+    422,
+    448
+   ],
+   "centroid": [
+    260.1,
+    277.2
+   ]
+  }
+ ]
+}

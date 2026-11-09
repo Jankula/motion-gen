@@ -1,0 +1,89 @@
+{
+ "name": "20261104_145112_make_me_scrambled_eggs_ego_back",
+ "objects": [
+  {
+   "id": "door_1",
+   "pixels": 14661,
+   "bbox": [
+    703,
+    153,
+    799,
+    379
+   ],
+   "centroid": [
+    764.4,
+    285.4
+   ]
+  },
+  {
+   "id": "desk_lamp_1",
+   "pixels": 5077,
+   "bbox": [
+    621,
+    339,
+    709,
+    427
+   ],
+   "centroid": [
+    660.2,
+    376.6
+   ]
+  },
+  {
+   "id": "dining_table_3",
+   "pixels": 25284,
+   "bbox": [
+    551,
+    380,
+    799,
+    599
+   ],
+   "centroid": [
+    704.0,
+    471.7
+   ]
+  },
+  {
+   "id": "remote_control_2",
+   "pixels": 418,
+   "bbox": [
+    732,
+    389,
+    791,
+    415
+   ],
+   "centroid": [
+    760.6,
+    401.7
+   ]
+  },
+  {
+   "id": "laptop_2",
+   "pixels": 920,
+   "bbox": [
+    749,
+    387,
+    799,
+    418
+   ],
+   "centroid": [
+    780.6,
+    397.3
+   ]
+  },
+  {
+   "id": "statue_2",
+   "pixels": 3280,
+   "bbox": [
+    683,
+    386,
+    799,
+    468
+   ],
+   "centroid": [
+    742.9,
+    429.0
+   ]
+  }
+ ]
+}

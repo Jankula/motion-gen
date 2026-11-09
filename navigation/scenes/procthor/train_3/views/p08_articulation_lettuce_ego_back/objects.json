@@ -1,0 +1,103 @@
+{
+ "name": "p08_articulation_lettuce_ego_back",
+ "objects": [
+  {
+   "id": "bed_1",
+   "pixels": 125209,
+   "bbox": [
+    0,
+    252,
+    466,
+    599
+   ],
+   "centroid": [
+    221.0,
+    455.5
+   ]
+  },
+  {
+   "id": "door_2",
+   "pixels": 45608,
+   "bbox": [
+    649,
+    106,
+    799,
+    575
+   ],
+   "centroid": [
+    744.1,
+    341.2
+   ]
+  },
+  {
+   "id": "painting_1",
+   "pixels": 7554,
+   "bbox": [
+    487,
+    236,
+    599,
+    307
+   ],
+   "centroid": [
+    541.5,
+    271.1
+   ]
+  },
+  {
+   "id": "baseball_bat_1",
+   "pixels": 1044,
+   "bbox": [
+    0,
+    311,
+    115,
+    359
+   ],
+   "centroid": [
+    63.2,
+    332.3
+   ]
+  },
+  {
+   "id": "pillow_1",
+   "pixels": 3772,
+   "bbox": [
+    0,
+    337,
+    109,
+    390
+   ],
+   "centroid": [
+    49.7,
+    362.3
+   ]
+  },
+  {
+   "id": "tennis_racket_1",
+   "pixels": 2663,
+   "bbox": [
+    7,
+    368,
+    163,
+    465
+   ],
+   "centroid": [
+    74.1,
+    428.7
+   ]
+  },
+  {
+   "id": "laptop_1",
+   "pixels": 701,
+   "bbox": [
+    137,
+    315,
+    203,
+    329
+   ],
+   "centroid": [
+    170.2,
+    322.1
+   ]
+  }
+ ]
+}

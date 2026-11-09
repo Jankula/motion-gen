@@ -1,0 +1,33 @@
+{
+ "name": "p02_control_sofa_far_ego_right",
+ "objects": [
+  {
+   "id": "house_plant_1",
+   "pixels": 424,
+   "bbox": [
+    404,
+    281,
+    423,
+    350
+   ],
+   "centroid": [
+    413.3,
+    329.7
+   ]
+  },
+  {
+   "id": "door_5",
+   "pixels": 13755,
+   "bbox": [
+    442,
+    178,
+    536,
+    343
+   ],
+   "centroid": [
+    486.3,
+    258.1
+   ]
+  }
+ ]
+}

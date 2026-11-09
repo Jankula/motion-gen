@@ -1,0 +1,30 @@
+id: t14_salad_2957
+category: salad
+scene: scenes/procthor/train_2957/scene.yaml
+instruction: Make a salad of lettuce and tomato in a bowl and put it on the dining table in the living room.
+start: [3.67, 6.27]
+heading: 0
+max_walks: 20
+max_actions: 40
+goals:
+  events:
+  - {id: got_lettuce, pick: lettuce}
+  - {id: got_tomato, pick: tomato}
+  final:
+  - in: [lettuce, bowl]
+  - in: [tomato, bowl]
+  - 'on': [bowl, dining_table_2]
+  - {closed: fridge}
+  - {holding: nothing}
+reference:
+- [goto, tomato_2]
+- [pick, tomato_2]
+- [goto, lettuce_1]
+- [pick, lettuce_1]
+- [place, lettuce_1, bowl_1]
+- [place, tomato_2, bowl_1]
+- [pick, bowl_1]
+- [goto, dining_table_2]
+- [place, bowl_1, dining_table_2]
+views: [scenes/procthor/train_2957/views/t14_salad_2957_top, scenes/procthor/train_2957/views/t14_salad_2957_ego_front, scenes/procthor/train_2957/views/t14_salad_2957_ego_left,
+  scenes/procthor/train_2957/views/t14_salad_2957_ego_back, scenes/procthor/train_2957/views/t14_salad_2957_ego_right]

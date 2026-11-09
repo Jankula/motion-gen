@@ -1,0 +1,19 @@
+{
+ "name": "t18_coffee_no_machine_2957_ego_front",
+ "objects": [
+  {
+   "id": "door_4",
+   "pixels": 70274,
+   "bbox": [
+    225,
+    149,
+    515,
+    420
+   ],
+   "centroid": [
+    373.4,
+    278.2
+   ]
+  }
+ ]
+}

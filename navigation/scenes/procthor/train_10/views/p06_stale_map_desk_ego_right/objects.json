@@ -1,0 +1,75 @@
+{
+ "name": "p06_stale_map_desk_ego_right",
+ "objects": [
+  {
+   "id": "dining_table_1",
+   "pixels": 239,
+   "bbox": [
+    0,
+    474,
+    13,
+    599
+   ],
+   "centroid": [
+    4.6,
+    524.7
+   ]
+  },
+  {
+   "id": "door_3",
+   "pixels": 11042,
+   "bbox": [
+    0,
+    112,
+    309,
+    490
+   ],
+   "centroid": [
+    197.0,
+    219.7
+   ]
+  },
+  {
+   "id": "door_2",
+   "pixels": 16762,
+   "bbox": [
+    63,
+    187,
+    217,
+    319
+   ],
+   "centroid": [
+    143.4,
+    251.7
+   ]
+  },
+  {
+   "id": "floor_lamp_1",
+   "pixels": 20364,
+   "bbox": [
+    459,
+    58,
+    632,
+    571
+   ],
+   "centroid": [
+    532.1,
+    250.1
+   ]
+  },
+  {
+   "id": "fridge_1",
+   "pixels": 7120,
+   "bbox": [
+    0,
+    200,
+    64,
+    375
+   ],
+   "centroid": [
+    22.6,
+    297.4
+   ]
+  }
+ ]
+}

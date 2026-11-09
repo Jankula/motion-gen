@@ -1,0 +1,8 @@
+id: h1_desk_or_dining
+category: stale_map
+scene: scenes/s2_apartment.yaml
+hidden_objects:
+  - {id: blocker_1, label: boxes, color: orange, center: [6.0, 2.0, 0.5], size: [0.6, 1.2, 1.0]}
+instruction: Go to the desk. If you can't reach it, go to the dining table instead.
+start: [3.0, 2.5]
+stops: [[dining_table_1]]

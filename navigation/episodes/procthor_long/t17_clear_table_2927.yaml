@@ -1,0 +1,31 @@
+id: t17_clear_table_2927
+category: clear_table
+scene: scenes/procthor/train_2927/scene.yaml
+instruction: Clear the dishes off the kitchen table and put them on the kitchen counter.
+start: [3.43, 5.71]
+heading: 0
+max_walks: 20
+max_actions: 40
+goals:
+  final:
+  - 'on': [bowl_2, counter top]
+  - 'on': [cup_1, counter top]
+  - 'on': [cup_2, counter top]
+  - 'off':
+    - [bowl_2, cup_1, cup_2]
+    - dining_table_2
+  - {closed: fridge}
+  - {holding: nothing}
+reference:
+- [goto, cup_1]
+- [pick, cup_1]
+- [goto, cup_2]
+- [pick, cup_2]
+- [goto, bowl_2]
+- [place, cup_1, bowl_2]
+- [place, cup_2, bowl_2]
+- [pick, bowl_2]
+- [goto, counter_top_1]
+- [place, bowl_2, counter_top_1]
+views: [scenes/procthor/train_2927/views/t17_clear_table_2927_top, scenes/procthor/train_2927/views/t17_clear_table_2927_ego_front, scenes/procthor/train_2927/views/t17_clear_table_2927_ego_left,
+  scenes/procthor/train_2927/views/t17_clear_table_2927_ego_back, scenes/procthor/train_2927/views/t17_clear_table_2927_ego_right]

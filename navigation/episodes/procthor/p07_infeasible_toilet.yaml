@@ -1,0 +1,15 @@
+id: p07_infeasible_toilet
+category: infeasible
+scene: scenes/procthor/train_3/scene.yaml
+hidden_objects:
+  - {id: blocker_1, label: boxes, color: orange, center: [12.87, 2.45, 0.5], size: [2.2, 0.5, 1.0]}
+instruction: Go to the toilet.
+start: [5.0, 1.0]
+heading: 0
+expect_infeasible: true
+views:
+  - scenes/procthor/train_3/views/p07_infeasible_toilet_top
+  - scenes/procthor/train_3/views/p07_infeasible_toilet_ego_front
+  - scenes/procthor/train_3/views/p07_infeasible_toilet_ego_left
+  - scenes/procthor/train_3/views/p07_infeasible_toilet_ego_back
+  - scenes/procthor/train_3/views/p07_infeasible_toilet_ego_right

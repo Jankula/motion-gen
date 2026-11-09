@@ -1,0 +1,33 @@
+{
+ "name": "p09_articulation_open_fridge_ego_front",
+ "objects": [
+  {
+   "id": "painting_1",
+   "pixels": 34143,
+   "bbox": [
+    0,
+    157,
+    128,
+    595
+   ],
+   "centroid": [
+    44.7,
+    384.0
+   ]
+  },
+  {
+   "id": "fridge_1",
+   "pixels": 352428,
+   "bbox": [
+    58,
+    0,
+    799,
+    599
+   ],
+   "centroid": [
+    472.4,
+    332.0
+   ]
+  }
+ ]
+}

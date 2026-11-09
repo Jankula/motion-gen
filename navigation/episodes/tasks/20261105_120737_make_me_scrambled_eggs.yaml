@@ -1,0 +1,11 @@
+id: 20261105_120737_make_me_scrambled_eggs
+category: task
+scene: scenes/procthor/train_2927/scene.yaml
+instruction: Make me scrambled eggs and sit down to eat.
+start: [2.5, 1.5]
+heading: 0.0
+max_walks: 20
+max_actions: 40
+views: [scenes/procthor/train_2927/views/20261105_120737_make_me_scrambled_eggs_top, scenes/procthor/train_2927/views/20261105_120737_make_me_scrambled_eggs_ego_front,
+  scenes/procthor/train_2927/views/20261105_120737_make_me_scrambled_eggs_ego_left, scenes/procthor/train_2927/views/20261105_120737_make_me_scrambled_eggs_ego_back,
+  scenes/procthor/train_2927/views/20261105_120737_make_me_scrambled_eggs_ego_right]

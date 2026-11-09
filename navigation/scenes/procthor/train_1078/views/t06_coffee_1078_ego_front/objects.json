@@ -1,0 +1,33 @@
+{
+ "name": "t06_coffee_1078_ego_front",
+ "objects": [
+  {
+   "id": "painting_2",
+   "pixels": 700,
+   "bbox": [
+    779,
+    377,
+    799,
+    436
+   ],
+   "centroid": [
+    792.1,
+    415.3
+   ]
+  },
+  {
+   "id": "door_3",
+   "pixels": 438826,
+   "bbox": [
+    0,
+    0,
+    799,
+    599
+   ],
+   "centroid": [
+    388.4,
+    282.8
+   ]
+  }
+ ]
+}

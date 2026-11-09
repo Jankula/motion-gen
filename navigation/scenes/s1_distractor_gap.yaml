@@ -1,0 +1,13 @@
+name: s1_distractor_gap
+room: {x: [0.0, 8.0], y: [0.0, 6.0], height: 2.6}
+objects:
+  # A dividing wall with one gap, 0.7 m wide, that the 0.5 m wide body can pass.
+  - {id: partition_1, label: partition, color: dimgray, center: [4.0, 1.35, 1.25], size: [0.2, 2.7, 2.5]}
+  - {id: partition_2, label: partition, color: dimgray, center: [4.0, 4.7, 1.25], size: [0.2, 2.6, 2.5]}
+  # Hangs above the body in the gap, so it must not block the path.
+  - {id: lamp_1, label: lamp, color: gold, center: [4.0, 3.05, 2.2], size: [0.4, 0.4, 0.3]}
+  # The nearby table holds the blue mug; the red mug is behind the partition.
+  - {id: table_1, label: table, color: burlywood, center: [2.0, 1.2, 0.375], size: [1.2, 0.8, 0.75]}
+  - {id: mug_1, label: mug, color: blue, center: [2.0, 1.2, 0.8], size: [0.1, 0.1, 0.1]}
+  - {id: table_2, label: table, color: burlywood, center: [6.5, 4.5, 0.375], size: [1.2, 0.8, 0.75]}
+  - {id: mug_2, label: mug, color: red, center: [6.5, 4.5, 0.8], size: [0.1, 0.1, 0.1]}

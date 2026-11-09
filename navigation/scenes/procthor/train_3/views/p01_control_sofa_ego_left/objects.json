@@ -1,0 +1,19 @@
+{
+ "name": "p01_control_sofa_ego_left",
+ "objects": [
+  {
+   "id": "painting_2",
+   "pixels": 22556,
+   "bbox": [
+    680,
+    188,
+    799,
+    455
+   ],
+   "centroid": [
+    753.0,
+    317.9
+   ]
+  }
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "name": "p03_multi_kettle_ego_left",
+ "objects": [
+  {
+   "id": "television_2",
+   "pixels": 29897,
+   "bbox": [
+    634,
+    359,
+    799,
+    599
+   ],
+   "centroid": [
+    727.2,
+    468.1
+   ]
+  },
+  {
+   "id": "tv_stand_1",
+   "pixels": 11347,
+   "bbox": [
+    558,
+    518,
+    799,
+    599
+   ],
+   "centroid": [
+    657.5,
+    569.3
+   ]
+  },
+  {
+   "id": "painting_9",
+   "pixels": 13785,
+   "bbox": [
+    0,
+    143,
+    87,
+    396
+   ],
+   "centroid": [
+    30.5,
+    283.2
+   ]
+  }
+ ]
+}

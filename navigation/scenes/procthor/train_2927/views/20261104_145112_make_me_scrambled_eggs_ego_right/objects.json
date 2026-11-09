@@ -1,0 +1,33 @@
+{
+ "name": "20261104_145112_make_me_scrambled_eggs_ego_right",
+ "objects": [
+  {
+   "id": "shelving_unit_1",
+   "pixels": 25519,
+   "bbox": [
+    0,
+    407,
+    232,
+    599
+   ],
+   "centroid": [
+    132.2,
+    521.5
+   ]
+  },
+  {
+   "id": "painting_9",
+   "pixels": 9204,
+   "bbox": [
+    0,
+    0,
+    72,
+    204
+   ],
+   "centroid": [
+    25.1,
+    122.2
+   ]
+  }
+ ]
+}
