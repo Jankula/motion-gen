@@ -1,0 +1,495 @@
+{
+  "task": "box-carry",
+  "metrics": [
+    {
+      "group": "Ground contact",
+      "key": "deepest_floor_penetration",
+      "label": "Deepest sinking into the floor",
+      "value": 6.84,
+      "unit": "mm",
+      "target": "≤ 10 mm",
+      "ok": true,
+      "meaning": "How far any part of the skin ever goes below the floor. 0 means never."
+    },
+    {
+      "group": "Ground contact",
+      "key": "frames_sinking",
+      "label": "Frames sinking more than 1 cm",
+      "value": 0.0,
+      "unit": "frames",
+      "target": "0",
+      "ok": true,
+      "meaning": "Frames in which some skin is more than 1 cm below the floor."
+    },
+    {
+      "group": "Ground contact",
+      "key": "frames_airborne",
+      "label": "Frames with nothing on the floor",
+      "value": 0.0,
+      "unit": "frames",
+      "target": "0",
+      "ok": true,
+      "meaning": "Frames in which no part of the body is within 2 cm of the floor. A walking person always has at least one foot on the ground."
+    },
+    {
+      "group": "Foot sliding",
+      "key": "contact_speed_median",
+      "label": "Typical speed of floor-touching skin",
+      "value": 0.12,
+      "unit": "cm/s",
+      "target": "≤ 1 cm/s",
+      "ok": true,
+      "meaning": "How fast skin points that touch the floor move along it, typically. A planted foot should not move, so this should be close to 0."
+    },
+    {
+      "group": "Foot sliding",
+      "key": "contact_speed_p95",
+      "label": "Speed of floor-touching skin, 95th percentile",
+      "value": 1.03,
+      "unit": "cm/s",
+      "target": "≤ 3 cm/s",
+      "ok": true,
+      "meaning": "95 % of floor-touching skin points move slower than this. It catches brief slips. Turning on the spot legitimately raises it a little, because a foot pivots on the ball."
+    },
+    {
+      "group": "Path",
+      "key": "distance_travelled",
+      "label": "Distance travelled by the pelvis",
+      "value": 6.96,
+      "unit": "m",
+      "target": null,
+      "ok": null,
+      "meaning": "Length of the pelvis track seen from above, with the side-to-side sway of each step smoothed out."
+    },
+    {
+      "group": "Path",
+      "key": "average_speed",
+      "label": "Average speed",
+      "value": 0.35,
+      "unit": "m/s",
+      "target": null,
+      "ok": null,
+      "meaning": "Distance travelled divided by the clip length (pauses included). Comfortable walking is about 1.2-1.4 m/s."
+    },
+    {
+      "group": "Path",
+      "key": "start_position_error",
+      "label": "Start position error",
+      "value": 0.64,
+      "unit": "cm",
+      "target": "≤ 15 cm",
+      "ok": true,
+      "meaning": "Distance between the pelvis and the required start position, in the start frame."
+    },
+    {
+      "group": "Path",
+      "key": "start_heading_error",
+      "label": "Start heading error",
+      "value": 0.0,
+      "unit": "°",
+      "target": "≤ 15°",
+      "ok": true,
+      "meaning": "Difference between the direction the pelvis faces and the required start heading."
+    },
+    {
+      "group": "Path",
+      "key": "start_stillness",
+      "label": "Pelvis speed while standing at the start",
+      "value": 4.11,
+      "unit": "cm/s",
+      "target": "≤ 10 cm/s",
+      "ok": true,
+      "meaning": "Fastest horizontal pelvis movement in the first 0.5 s, where the person should be standing still. Small values are natural sway."
+    },
+    {
+      "group": "Path",
+      "key": "end_stillness",
+      "label": "Pelvis speed while standing at the end",
+      "value": 0.61,
+      "unit": "cm/s",
+      "target": "≤ 10 cm/s",
+      "ok": true,
+      "meaning": "Fastest horizontal pelvis movement in the last 0.5 s, where the person should be standing still. Small values are natural sway."
+    },
+    {
+      "group": "Smoothness",
+      "key": "max_joint_speed",
+      "label": "Fastest joint rotation",
+      "value": 603.53,
+      "unit": "°/s",
+      "target": "≤ 800 °/s",
+      "ok": true,
+      "meaning": "Fastest rotation of any joint between two frames (left_knee, frame 353). In walking the swinging knee peaks at roughly 400-600°/s; far higher values mean a jerk."
+    },
+    {
+      "group": "Smoothness",
+      "key": "frames_with_pops",
+      "label": "Frames with a pop",
+      "value": 0.0,
+      "unit": "frames",
+      "target": "0",
+      "ok": true,
+      "meaning": "Frames in which some joint jumps faster than 1500°/s, which is visible as a glitch."
+    },
+    {
+      "group": "Grip",
+      "key": "box_start_error",
+      "label": "The box starts where the task says",
+      "value": 0.03,
+      "unit": "mm",
+      "target": "≤ 5 mm",
+      "ok": true,
+      "meaning": "Distance between the box in the first frame and its required start position."
+    },
+    {
+      "group": "Grip",
+      "key": "grip_before_lift",
+      "label": "Hands on the box before it moves",
+      "value": 1.0,
+      "unit": "s",
+      "target": "≥ 0.15 s",
+      "ok": true,
+      "meaning": "How long both hands are on the box before it starts to move. A person takes hold first and then lifts."
+    },
+    {
+      "group": "Grip",
+      "key": "frames_moving_unheld",
+      "label": "Frames the box moves without both hands on it",
+      "value": 0.0,
+      "unit": "frames",
+      "target": "0",
+      "ok": true,
+      "meaning": "Frames in which the box moves although at least one hand is more than 1.5 cm away from it. A semi-heavy box does not move by itself."
+    },
+    {
+      "group": "Grip",
+      "key": "hand_gap_max",
+      "label": "Largest gap between a hand and the box while carrying",
+      "value": 0.0,
+      "unit": "mm",
+      "target": "≤ 10 mm",
+      "ok": true,
+      "meaning": "The worst moment of the worse hand: how far its closest skin is from the box surface. 0 means the skin touches."
+    },
+    {
+      "group": "Grip",
+      "key": "hand_depth_max",
+      "label": "Deepest hand skin inside the box",
+      "value": 8.41,
+      "unit": "mm",
+      "target": "≤ 10 mm",
+      "ok": true,
+      "meaning": "How far hand skin goes into the box over the whole clip. Skin is soft, so a few millimetres are fine; more shows as fingers passing through the box."
+    },
+    {
+      "group": "Grip",
+      "key": "touch_points_min",
+      "label": "Fewest hand skin points touching the box",
+      "value": 378.0,
+      "unit": "points",
+      "target": "≥ 40",
+      "ok": true,
+      "meaning": "While carrying, the smallest number of skin points of a hand within 8 mm of the box. A flat hand on a surface gives about 40, or about 85 pressed in by 4 mm; one fingertip gives at most 28. A real grip needs a real contact area."
+    },
+    {
+      "group": "Grip",
+      "key": "hand_slide",
+      "label": "Hands sliding over the box while carrying",
+      "value": 0.61,
+      "unit": "cm",
+      "target": "≤ 2 cm",
+      "ok": true,
+      "meaning": "How far the skin that touches the box moves over its surface while it is carried. A firm grip does not move."
+    },
+    {
+      "group": "Grip",
+      "key": "grip_opposition",
+      "label": "How opposite the two hands are",
+      "value": 147.87,
+      "unit": "°",
+      "target": "≥ 120°",
+      "ok": true,
+      "meaning": "Angle at the centre of the box between the two hands, at its smallest. 180° means exactly opposite sides. Two hands resting on top, or on the same side, cannot carry a box."
+    },
+    {
+      "group": "The box in the air",
+      "key": "box_lift_height",
+      "label": "Highest the bottom of the box gets",
+      "value": 80.62,
+      "unit": "cm",
+      "target": "≥ 20 cm",
+      "ok": true,
+      "meaning": "Largest height of the box's lowest corner above the floor. It has to be really picked up."
+    },
+    {
+      "group": "The box in the air",
+      "key": "frames_dragged",
+      "label": "Frames the box slides along the floor",
+      "value": 0.0,
+      "unit": "frames",
+      "target": "0",
+      "ok": true,
+      "meaning": "Frames in which the box stands on the floor but moves sideways: it is dragged, not carried."
+    },
+    {
+      "group": "The box in the air",
+      "key": "box_floor_depth",
+      "label": "Deepest the box goes into the floor",
+      "value": 0.0,
+      "unit": "mm",
+      "target": "≤ 3 mm",
+      "ok": true,
+      "meaning": "How far the box's lowest corner goes below the floor at any moment."
+    },
+    {
+      "group": "The box in the air",
+      "key": "box_tilt_max",
+      "label": "Largest tilt of the box while carrying",
+      "value": 2.82,
+      "unit": "°",
+      "target": "≤ 15°",
+      "ok": true,
+      "meaning": "How far the box's top leans away from horizontal."
+    },
+    {
+      "group": "The box in the air",
+      "key": "box_speed_max",
+      "label": "Fastest the box moves",
+      "value": 1.14,
+      "unit": "m/s",
+      "target": "≤ 2 m/s",
+      "ok": true,
+      "meaning": "Highest speed of the box. A jump shows up here."
+    },
+    {
+      "group": "The box in the air",
+      "key": "box_accel_max",
+      "label": "Strongest acceleration of the box",
+      "value": 3.36,
+      "unit": "m/s²",
+      "target": "≤ 5 m/s²",
+      "ok": true,
+      "meaning": "Largest change of the box's speed, smoothed over 0.17 s. A semi-heavy box cannot be jerked around: at 10 kg, 5 m/s² already takes a 50 N push on top of its weight."
+    },
+    {
+      "group": "Putting it down",
+      "key": "target_error",
+      "label": "Distance from the marked spot",
+      "value": 0.0,
+      "unit": "cm",
+      "target": "≤ 10 cm",
+      "ok": true,
+      "meaning": "Distance between the box's final centre and the centre of the marked spot, seen from above."
+    },
+    {
+      "group": "Putting it down",
+      "key": "target_yaw_error",
+      "label": "Final rotation error of the box",
+      "value": 0.0,
+      "unit": "°",
+      "target": "≤ 15°",
+      "ok": true,
+      "meaning": "Difference between the box's final rotation and the marked one (turned by 180° counts as the same)."
+    },
+    {
+      "group": "Putting it down",
+      "key": "final_floor_gap",
+      "label": "The box stands on the floor at the end",
+      "value": 0.03,
+      "unit": "mm",
+      "target": "≤ 3 mm",
+      "ok": true,
+      "meaning": "Height of the box's lowest corner in the last frame. It should be 0."
+    },
+    {
+      "group": "Putting it down",
+      "key": "final_tilt",
+      "label": "Final tilt of the box",
+      "value": 0.0,
+      "unit": "°",
+      "target": "≤ 1°",
+      "ok": true,
+      "meaning": "The box should stand flat."
+    },
+    {
+      "group": "Putting it down",
+      "key": "touchdown_speed",
+      "label": "Speed at touchdown",
+      "value": 0.1,
+      "unit": "m/s",
+      "target": "≤ 0.15 m/s",
+      "ok": true,
+      "meaning": "Downward speed of the box in the last 0.1 s before it reaches the floor. Set down carefully means slowly; dropped from 10 cm would be 1.4 m/s."
+    },
+    {
+      "group": "Putting it down",
+      "key": "hands_stay_after_touchdown",
+      "label": "Hands stay on the box after it lands",
+      "value": 0.73,
+      "unit": "s",
+      "target": "≥ 0.1 s",
+      "ok": true,
+      "meaning": "Time between the box reaching the floor and the first hand leaving it. A careful person lets go after the box stands, not before."
+    },
+    {
+      "group": "Putting it down",
+      "key": "final_hand_clearance",
+      "label": "Hands off the box at the end",
+      "value": 57.07,
+      "unit": "cm",
+      "target": "≥ 5 cm",
+      "ok": true,
+      "meaning": "Distance from the box to the closer hand in the last frame."
+    },
+    {
+      "group": "Putting it down",
+      "key": "final_upright",
+      "label": "Standing up at the end",
+      "value": 99.84,
+      "unit": "% of height",
+      "target": "≥ 96 %",
+      "ok": true,
+      "meaning": "Height of the head in the last frame, as a share of its height in a straight stance."
+    },
+    {
+      "group": "Body",
+      "key": "body_depth_max",
+      "label": "Deepest body skin (not hands) inside the box",
+      "value": 7.45,
+      "unit": "mm",
+      "target": "≤ 15 mm",
+      "ok": true,
+      "meaning": "How far torso, arms, legs or feet ever go into the box. Clothes and soft tissue give a little."
+    },
+    {
+      "group": "Body",
+      "key": "arm_depth_max",
+      "label": "Deepest forearm or hand skin inside the trunk or legs",
+      "value": 2.27,
+      "unit": "mm",
+      "target": "≤ 15 mm",
+      "ok": true,
+      "meaning": "How far forearms and hands go into the trunk or legs (worst at frame 528). A few millimetres of pressing is natural; more shows as an arm passing through the body."
+    },
+    {
+      "group": "Body",
+      "key": "joints_wrong_way",
+      "label": "Knees and elbows bending the wrong way",
+      "value": 0.0,
+      "unit": "°",
+      "target": "≤ 5°",
+      "ok": true,
+      "meaning": "How far a knee or elbow ever bends backwards."
+    },
+    {
+      "group": "Body",
+      "key": "wrist_bend_max",
+      "label": "Largest wrist rotation",
+      "value": 41.79,
+      "unit": "°",
+      "target": "≤ 85°",
+      "ok": true,
+      "meaning": "Largest total rotation of a wrist. Real wrists stop at about 80°."
+    },
+    {
+      "group": "Balance",
+      "key": "frames_off_balance",
+      "label": "Frames off balance with both feet down",
+      "value": 0.0,
+      "unit": "frames",
+      "target": "0",
+      "ok": true,
+      "meaning": "Frames in which both feet are on the floor, the body moves slowly, and the combined centre of mass of body (75 kg) and held box (10 kg) is more than 3 cm outside the outline of the feet. The person would topple. This is what the weight of the box demands: holding it far from the body pushes the balance point forward."
+    },
+    {
+      "group": "Balance",
+      "key": "balance_worst",
+      "label": "Worst balance margin",
+      "value": -0.9,
+      "unit": "cm",
+      "target": null,
+      "ok": null,
+      "meaning": "Largest distance of the centre of mass outside the outline of the feet in those frames. Negative means it stayed inside."
+    },
+    {
+      "group": "How the weight shows",
+      "key": "lowest_pelvis",
+      "label": "Lowest pelvis height",
+      "value": 0.45,
+      "unit": "m",
+      "target": null,
+      "ok": null,
+      "meaning": "How far the person goes down. Standing is 0.95 m."
+    },
+    {
+      "group": "How the weight shows",
+      "key": "lean_at_grip",
+      "label": "Trunk lean at the grip",
+      "value": 59.63,
+      "unit": "°",
+      "target": null,
+      "ok": null,
+      "meaning": "Forward lean of the trunk (pelvis to neck) when the lift begins."
+    },
+    {
+      "group": "How the weight shows",
+      "key": "speed_before",
+      "label": "Walking speed without the box",
+      "value": 0.87,
+      "unit": "m/s",
+      "target": null,
+      "ok": null,
+      "meaning": "Typical speed on the way to the box."
+    },
+    {
+      "group": "How the weight shows",
+      "key": "lean_before",
+      "label": "Trunk lean without the box",
+      "value": -1.15,
+      "unit": "°",
+      "target": null,
+      "ok": null,
+      "meaning": "Typical lean while walking to the box. Positive is forward."
+    },
+    {
+      "group": "How the weight shows",
+      "key": "speed_carrying",
+      "label": "Walking speed with the box",
+      "value": 0.79,
+      "unit": "m/s",
+      "target": null,
+      "ok": null,
+      "meaning": "Typical speed while carrying."
+    },
+    {
+      "group": "How the weight shows",
+      "key": "lean_carrying",
+      "label": "Trunk lean with the box",
+      "value": -4.12,
+      "unit": "°",
+      "target": null,
+      "ok": null,
+      "meaning": "Typical lean while carrying. Negative means leaning back against the weight."
+    },
+    {
+      "group": "How the weight shows",
+      "key": "box_ahead_of_chest",
+      "label": "Box centre in front of the chest while carrying",
+      "value": 28.75,
+      "unit": "cm",
+      "target": null,
+      "ok": null,
+      "meaning": "How far in front of the chest the box is held. Close to the body is how a heavy load is carried."
+    },
+    {
+      "group": "How the weight shows",
+      "key": "box_height_carrying",
+      "label": "Height of the box centre while carrying",
+      "value": 0.95,
+      "unit": "m",
+      "target": null,
+      "ok": null,
+      "meaning": "How high the box is carried."
+    }
+  ]
+}

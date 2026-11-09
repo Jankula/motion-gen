@@ -1,0 +1,30 @@
+{
+  "name": "long-clip",
+  "kit": "juggling",
+  "title": "Juggle three balls, also on one foot",
+  "instruction": "One adult stands in one place, holding three small balls in their hands, ready to juggle. The person starts juggling the three balls in the air, in the classic three-ball pattern, throwing them from hand to hand. While they keep juggling without a break, they lift one foot off the floor and stand on the other foot, and they go on juggling like that. At the end, still on one foot, they catch all the balls, so that no ball is in the air any more. Only then do they put the foot down again and stand still on both feet, with the balls in their hands.",
+  "fps": 30,
+  "frames": 900,
+  "start": {
+    "state": "standing",
+    "position": [
+      0,
+      0
+    ],
+    "heading_deg": 0
+  },
+  "end": {
+    "state": "standing"
+  },
+  "balls": {
+    "count": 3,
+    "radius": 0.0325,
+    "mass_kg": 0.12
+  },
+  "juggle": {
+    "standing_foot": "left",
+    "min_throws_two_feet": 15,
+    "min_throws_one_foot": 20,
+    "min_one_foot_s": 10
+  }
+}

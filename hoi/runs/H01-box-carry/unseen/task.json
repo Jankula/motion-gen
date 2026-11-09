@@ -1,0 +1,11 @@
+{
+  "name": "box-carry-variant",
+  "title": "Pick up a different box in a different place (unseen check)",
+  "instruction": "The same job as box-carry with a different layout, a different box and a target on the other side. This task is not shown to the agent: it is used after the session to check whether its program generalises.",
+  "fps": 30,
+  "frames": 660,
+  "start": {"state": "standing", "position": [1.0, -0.5], "heading_deg": 30},
+  "end": {"state": "standing"},
+  "object": {"label": "box", "size": [0.36, 0.26, 0.34], "mass_kg": 8, "start": {"center": [2.6, 2.3], "yaw_deg": 30}},
+  "target": {"center": [-0.6, 3.6], "yaw_deg": 0}
+}

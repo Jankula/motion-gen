@@ -1,0 +1,34 @@
+{
+ "fps": 30,
+ "frames": 300,
+ "start": {
+  "state": "walking",
+  "position": [
+   0,
+   0
+  ],
+  "heading_deg": 0
+ },
+ "end": {
+  "state": "walking"
+ },
+ "path": {
+  "segments": [
+   {
+    "type": "straight",
+    "length": 1.0
+   },
+   {
+    "type": "arc",
+    "radius": 1.0,
+    "turn_deg": -180
+   },
+   {
+    "type": "straight",
+    "length": 8
+   }
+  ],
+  "tolerance_m": 0.15
+ },
+ "name": "tight-arc"
+}

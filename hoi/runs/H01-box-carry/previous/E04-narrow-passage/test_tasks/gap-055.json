@@ -1,0 +1,53 @@
+{
+ "name": "gap-055",
+ "fps": 30,
+ "frames": 240,
+ "start": {
+  "state": "walking",
+  "position": [
+   0,
+   0
+  ],
+  "heading_deg": 0
+ },
+ "end": {
+  "state": "walking"
+ },
+ "path": {
+  "segments": [
+   {
+    "type": "straight",
+    "length": 10
+   }
+  ],
+  "tolerance_m": 0.15
+ },
+ "obstacles": [
+  {
+   "label": "left",
+   "center": [
+    0.775,
+    4.0
+   ],
+   "size": [
+    1.0,
+    2.0,
+    0.6
+   ],
+   "yaw_deg": 0.0
+  },
+  {
+   "label": "right",
+   "center": [
+    -0.775,
+    4.0
+   ],
+   "size": [
+    1.0,
+    2.0,
+    0.6
+   ],
+   "yaw_deg": 0.0
+  }
+ ]
+}

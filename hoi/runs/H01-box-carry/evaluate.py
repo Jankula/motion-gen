@@ -1,0 +1,22 @@
+"""Measure a motion on the real body mesh and print a table of results with targets.
+
+    python evaluate.py                                # motion.npz with task.json
+    python evaluate.py motion_other.npz other.json
+
+Also writes <motion name>.metrics.json with every number and a plain-language meaning, and
+<motion name>.timeline.csv with the contact and balance numbers for every frame.
+"""
+import os
+import subprocess
+import sys
+from pathlib import Path
+
+PYTHON = r"C:/Projects/motion-gen/walking/.venv/Scripts/python.exe"
+HOI_ROOT = r"C:/Projects/motion-gen/hoi"
+HERE = Path(__file__).resolve().parent
+
+motion = (HERE / (sys.argv[1] if len(sys.argv) > 1 else "motion.npz")).resolve()
+task = (HERE / (sys.argv[2] if len(sys.argv) > 2 else "task.json")).resolve()
+cmd = [PYTHON, "-m", "hoienv.evaluate", str(motion), "--task", str(task),
+       "--out", str(motion.with_name(f"{motion.stem}.metrics.json"))]
+sys.exit(subprocess.run(cmd, cwd=HOI_ROOT, env={**os.environ, "PYTHONIOENCODING": "utf-8"}).returncode)

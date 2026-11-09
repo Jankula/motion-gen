@@ -1,0 +1,135 @@
+{
+  "task": "curved-path",
+  "metrics": [
+    {
+      "group": "Ground contact",
+      "key": "deepest_floor_penetration",
+      "label": "Deepest sinking into the floor",
+      "value": 2.64,
+      "unit": "mm",
+      "target": "≤ 10 mm",
+      "ok": true,
+      "meaning": "How far any part of the skin ever goes below the floor. 0 means never."
+    },
+    {
+      "group": "Ground contact",
+      "key": "frames_sinking",
+      "label": "Frames sinking more than 1 cm",
+      "value": 0.0,
+      "unit": "frames",
+      "target": "0",
+      "ok": true,
+      "meaning": "Frames in which some skin is more than 1 cm below the floor."
+    },
+    {
+      "group": "Ground contact",
+      "key": "frames_airborne",
+      "label": "Frames with nothing on the floor",
+      "value": 0.0,
+      "unit": "frames",
+      "target": "0",
+      "ok": true,
+      "meaning": "Frames in which no part of the body is within 2 cm of the floor. A walking person always has at least one foot on the ground."
+    },
+    {
+      "group": "Foot sliding",
+      "key": "contact_speed_median",
+      "label": "Typical speed of floor-touching skin",
+      "value": 0.38,
+      "unit": "cm/s",
+      "target": "≤ 1 cm/s",
+      "ok": true,
+      "meaning": "How fast skin points that touch the floor move along it, typically. A planted foot should not move, so this should be close to 0."
+    },
+    {
+      "group": "Foot sliding",
+      "key": "contact_speed_p95",
+      "label": "Speed of floor-touching skin, 95th percentile",
+      "value": 1.27,
+      "unit": "cm/s",
+      "target": "≤ 3 cm/s",
+      "ok": true,
+      "meaning": "95 % of floor-touching skin points move slower than this. It catches brief slips. Turning on the spot legitimately raises it a little, because a foot pivots on the ball."
+    },
+    {
+      "group": "Path",
+      "key": "distance_travelled",
+      "label": "Distance travelled by the pelvis",
+      "value": 11.55,
+      "unit": "m",
+      "target": null,
+      "ok": null,
+      "meaning": "Length of the pelvis track seen from above, with the side-to-side sway of each step smoothed out."
+    },
+    {
+      "group": "Path",
+      "key": "average_speed",
+      "label": "Average speed",
+      "value": 1.16,
+      "unit": "m/s",
+      "target": null,
+      "ok": null,
+      "meaning": "Distance travelled divided by the clip length (pauses included). Comfortable walking is about 1.2-1.4 m/s."
+    },
+    {
+      "group": "Path",
+      "key": "path_deviation_mean",
+      "label": "Average distance from the path",
+      "value": 1.86,
+      "unit": "cm",
+      "target": "≤ 15 cm",
+      "ok": true,
+      "meaning": "Average distance of the pelvis from the marked path, seen from above."
+    },
+    {
+      "group": "Path",
+      "key": "path_deviation_max",
+      "label": "Largest distance from the path",
+      "value": 4.62,
+      "unit": "cm",
+      "target": "≤ 15 cm",
+      "ok": true,
+      "meaning": "Largest distance of the pelvis from the marked path at any moment."
+    },
+    {
+      "group": "Path",
+      "key": "start_position_error",
+      "label": "Start position error",
+      "value": 0.9,
+      "unit": "cm",
+      "target": "≤ 15 cm",
+      "ok": true,
+      "meaning": "Distance between the pelvis and the required start position, in the start frame."
+    },
+    {
+      "group": "Path",
+      "key": "start_heading_error",
+      "label": "Start heading error",
+      "value": 2.87,
+      "unit": "°",
+      "target": "≤ 15°",
+      "ok": true,
+      "meaning": "Difference between the direction the pelvis faces and the required start heading."
+    },
+    {
+      "group": "Smoothness",
+      "key": "max_joint_speed",
+      "label": "Fastest joint rotation",
+      "value": 449.19,
+      "unit": "°/s",
+      "target": "≤ 800 °/s",
+      "ok": true,
+      "meaning": "Fastest rotation of any joint between two frames (right_ankle, frame 96). In walking the swinging knee peaks at roughly 400-600°/s; far higher values mean a jerk."
+    },
+    {
+      "group": "Smoothness",
+      "key": "frames_with_pops",
+      "label": "Frames with a pop",
+      "value": 0.0,
+      "unit": "frames",
+      "target": "0",
+      "ok": true,
+      "meaning": "Frames in which some joint jumps faster than 1500°/s, which is visible as a glitch."
+    }
+  ]
+}

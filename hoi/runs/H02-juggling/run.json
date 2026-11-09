@@ -1,0 +1,9 @@
+{
+  "experiment": "H02-juggling",
+  "task": "juggling",
+  "started_from": "H01-box-carry",
+  "feedback": "visual",
+  "max_previews": 12,
+  "created": "2026-11-04 22:43",
+  "kickoff": "Read TASK.md and SMPLX_INTERFACE.md, then complete the task. Work autonomously until every deliverable in TASK.md is done."
+}

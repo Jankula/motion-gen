@@ -1,0 +1,38 @@
+{
+ "name": "corner-left-stop",
+ "fps": 30,
+ "frames": 300,
+ "start": {
+  "state": "standing",
+  "position": [
+   0,
+   0
+  ],
+  "heading_deg": 0
+ },
+ "end": {
+  "state": "standing",
+  "position": [
+   3,
+   4
+  ],
+  "heading_deg": 90
+ },
+ "path": {
+  "points": [
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    4
+   ],
+   [
+    3,
+    4
+   ]
+  ],
+  "tolerance_m": 0.3
+ }
+}

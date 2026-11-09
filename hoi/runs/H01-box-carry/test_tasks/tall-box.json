@@ -1,0 +1,41 @@
+{
+  "name": "tall-box",
+  "title": "Pick up a box, carry it and put it down",
+  "instruction": "",
+  "fps": 30,
+  "frames": 600,
+  "start": {
+    "state": "standing",
+    "position": [
+      0,
+      0
+    ],
+    "heading_deg": 0
+  },
+  "end": {
+    "state": "standing"
+  },
+  "object": {
+    "label": "box",
+    "size": [
+      0.35,
+      0.5,
+      0.3
+    ],
+    "mass_kg": 9,
+    "start": {
+      "center": [
+        0,
+        3.0
+      ],
+      "yaw_deg": 0
+    }
+  },
+  "target": {
+    "center": [
+      -2.5,
+      4.5
+    ],
+    "yaw_deg": -90
+  }
+}

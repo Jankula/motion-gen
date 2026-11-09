@@ -1,0 +1,33 @@
+{
+ "fps": 30,
+ "frames": 300,
+ "start": {
+  "state": "walking",
+  "position": [
+   0,
+   0
+  ],
+  "heading_deg": 0
+ },
+ "end": {
+  "state": "walking"
+ },
+ "path": {
+  "points": [
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    3
+   ],
+   [
+    -5,
+    3
+   ]
+  ],
+  "tolerance_m": 0.15
+ },
+ "name": "corner90"
+}

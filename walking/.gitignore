@@ -1,0 +1,9 @@
+# SMPL-X is licence-restricted: never commit the model or data derived from it
+models/*
+!models/README.md
+agent_kit/body_info.json
+runs/**/body_info.json
+
+# Previews and test renders. Videos, pictures and session logs are excluded in the top-level .gitignore.
+runs/**/preview/
+runs/_smoke/

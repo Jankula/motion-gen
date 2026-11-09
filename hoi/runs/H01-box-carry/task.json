@@ -1,0 +1,11 @@
+{
+  "name": "box-carry",
+  "title": "Pick up a box, carry it and put it down",
+  "instruction": "One adult stands still, facing a cardboard-like box that stands on the floor about 3 m ahead. The person walks to the box, stops, takes hold of it with both hands, picks it up, carries it to the marked spot on the floor, sets it down carefully on that spot, lets go and stands up. The box is semi-heavy: not too light, not too heavy. It takes some effort, and the person handles it the way a real person handles something of that weight. The person ends standing still next to the box.",
+  "fps": 30,
+  "frames": 600,
+  "start": {"state": "standing", "position": [0, 0], "heading_deg": 0},
+  "end": {"state": "standing"},
+  "object": {"label": "box", "size": [0.40, 0.30, 0.30], "mass_kg": 10, "start": {"center": [0, 3.0], "yaw_deg": 0}},
+  "target": {"center": [3.0, 4.0], "yaw_deg": 90}
+}

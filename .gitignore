@@ -1,4 +1,26 @@
 runs/
-__pycache__/
 *.egg-info/
 .pytest_cache/
+
+# SMPL-X is licence-restricted: never commit the model files or the download
+models_smplx_v1_1/
+models_smplx_v1_1.zip
+
+# Python virtual environments, at any depth
+.venv/
+__pycache__/
+
+# Videos and pictures stay local: they are large and can be re-rendered
+*.mp4
+*.png
+*.jpg
+*.jpeg
+*.gif
+
+# Session logs stay local: the agent reads body_info.json, so they contain data derived from SMPL-X.
+# The key facts of a session are in run_summary.json.
+transcript.jsonl
+
+# Working files of a session
+.preview_count
+stderr.txt

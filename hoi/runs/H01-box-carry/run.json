@@ -1,0 +1,16 @@
+{
+  "experiment": "H01-box-carry",
+  "task": "box-carry",
+  "started_from": "E04-narrow-passage",
+  "feedback": "visual",
+  "max_previews": 12,
+  "created": "2026-11-04 14:20",
+  "kickoff": "Read TASK.md and SMPLX_INTERFACE.md, then complete the task. Work autonomously until every deliverable in TASK.md is done.",
+  "resumed": [
+    {
+      "at": "2026-11-04 21:17",
+      "session_id": "f6715a28-cd2d-4d99-8468-e5ca1db7d570",
+      "reason": "account usage limit reached"
+    }
+  ]
+}

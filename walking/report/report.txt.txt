@@ -1,0 +1,8 @@
+The agent never saw a render; it worked only from the prompt files and its own numerical checks. The run took 61 minutes, 75 turns and $12.71. Watch grid.mp4 first, which shows all four views at once. The separate views are in videos/.
+
+Gait: 1.23 m/s, 113 steps per minute, 0.65 m steps. These are normal adult values, and it chose them to suit this body's leg length.
+How it built it: feet are pinned to the floor during stance and the legs are solved to reach them. The foot rolls from heel to ball to toe, and the pelvis height is solved to match target knee bends. The trunk counter-rotates, the head is kept steady, and the arms swing opposite to the legs.
+Real-mesh check: the agent only had approximate sole points, so I measured on the actual skin. Feet sink at most 2.7 mm into the floor, planted feet sit a median 0.4 mm above it, and floor-contact points slide at a median 0.3–0.6 cm/s, which is effectively not at all.
+Rules: every file access and all 113 shell commands stayed inside its workspace.
+Weaknesses it listed itself: heel strike may look slightly stompy, the motion is very regular, and the fingers never move. Its full write-up is in NOTES.md, and the complete agent log is in transcript.jsonl.
+

@@ -1,0 +1,14 @@
+{
+  "name": "narrow-passage",
+  "title": "Squeeze through a narrow gap",
+  "instruction": "One adult walks forward along +Z. About 4 m ahead there is a narrow gap between two tall cabinets: the gap is only 0.40 m wide and 0.6 m deep, narrower than the person's shoulders. The person approaches, gets through the gap without touching either cabinet (turning the body sideways as much as needed), and then continues walking normally along +Z. The person is already walking when the clip starts and is still walking when it ends.",
+  "fps": 30,
+  "frames": 330,
+  "start": {"state": "walking", "position": [0, 0], "heading_deg": 0},
+  "end": {"state": "walking"},
+  "path": {"segments": [{"type": "straight", "length": 10}], "tolerance_m": 0.15},
+  "obstacles": [
+    {"label": "left cabinet", "center": [0.7, 4.3], "size": [1.0, 2.0, 0.6], "yaw_deg": 0},
+    {"label": "right cabinet", "center": [-0.7, 4.3], "size": [1.0, 2.0, 0.6], "yaw_deg": 0}
+  ]
+}

@@ -1,0 +1,42 @@
+{
+ "name": "zigzag-stop-turn",
+ "fps": 30,
+ "frames": 420,
+ "start": {
+  "state": "standing",
+  "position": [
+   0,
+   0
+  ],
+  "heading_deg": 0
+ },
+ "end": {
+  "state": "standing",
+  "position": [
+   -2.0,
+   5.0
+  ],
+  "heading_deg": 180
+ },
+ "path": {
+  "points": [
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    2.5
+   ],
+   [
+    -2,
+    2.5
+   ],
+   [
+    -2,
+    5.0
+   ]
+  ],
+  "tolerance_m": 0.3
+ }
+}
